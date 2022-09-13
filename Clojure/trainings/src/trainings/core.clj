@@ -107,27 +107,49 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 (defn decompose-prime-factors
   ""
-  [n-integer factors-map]
-  (let [factors-of-n (partial factors n-integer)] 
-    (map factors-of-n (prime-iterator (inc n-integer))))
-  
-  ;;https://clojuredocs.org/clojure.core/zipmap
-  
+  [n-integer]
+  (let [factors-of-n (partial factors n-integer)
+        primes (prime-iterator (inc n-integer))]
+    (zipmap primes (map factors-of-n primes))))
+
+;;https://clojuredocs.org/clojure.core/zipmap 
+
+(defn compare-factors
+  ""
+  [muliple-factors-map n-factors-map]
+  (merge-with max muliple-factors-map n-factors-map) ;;https://clojure.org/guides/learn/hashed_colls
   )
 
-(defn smallest-multiple
-  "Not correct"
-  ([] (smallest-multiple 1 1))
-  ([current n]
-   (cond
-     (>= current 10) n
-     (zero? (mod n current)) (smallest-multiple (inc current) n)
-     :else (smallest-multiple (inc current) (* n current)))))
+(defn rebuild-from-factors
+  "Using the prime factors and their exponent it return the number ie {2:2 , 5:1} -> 2^2 * 5 = 20"
+  [factors-map]
+  (reduce-kv (fn [init k v] (* init (expt k v))) 1 factors-map))
 
-;; n = 6
-;; current = 4
+
+
+(defn smallest-multiple
+  "
+   Smallest multiple
+   2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+   What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+  "
+  ([] (smallest-multiple (range 2 21) {}))
+  ([numbers] (smallest-multiple numbers {}))
+  ([numbers multiple-factors-map]
+   (cond
+     (empty? numbers) (rebuild-from-factors multiple-factors-map)
+     :else (smallest-multiple (rest numbers) (compare-factors multiple-factors-map (decompose-prime-factors (first numbers)))))))
+
+(defn sum-square-difference
+  "
+   Project euler: Problem 6
+   Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
+  ([] (sum-square-difference 101))
+  ([limit-integer] (- (expt (reduce + (range limit-integer)) 2) (reduce + (map (fn [x] (* x x)) (range limit-integer))))))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println  (smallest-multiple)))
+  (println (time (sum-square-difference))))
