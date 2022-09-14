@@ -148,8 +148,31 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
   ([] (sum-square-difference 101))
   ([limit-integer] (- (expt (reduce + (range limit-integer)) 2) (reduce + (map (fn [x] (* x x)) (range limit-integer))))))
 
+(defn penalty
+  "
+   Penalty Shootout Simulator
+   
+   "
+  ([kicks-sequence] (penalty  kicks-sequence [0 0] 0))
+  ([kicks-sequence results current-team]
+   (let [other-team (if (= 0 current-team) 1 0)
+         remaining-total-kicks (count kicks-sequence)
+         current-team-remaining-kicks-count (if (even? remaining-total-kicks) (/ remaining-total-kicks 2) (inc (quot remaining-total-kicks 2)))
+         other-team-remaining-kicks-count (if (even? remaining-total-kicks) (/ remaining-total-kicks 2) (quot (dec remaining-total-kicks) 2))
+         current-team-max-results (+ (results current-team) current-team-remaining-kicks-count)
+         other-team-max-results (+ (results other-team) other-team-remaining-kicks-count)
+         should-not-continue (pos? (* (- (results current-team) other-team-max-results) (- current-team-max-results  (results other-team)))   )
+         ]
+     (cond
+       should-not-continue  results 
+       (empty? kicks-sequence) results
+       (= \O (first kicks-sequence)) (recur (rest kicks-sequence)  (assoc results current-team (inc (results current-team))) other-team)
+       (= \X (first kicks-sequence)) (recur (rest kicks-sequence) results other-team)))))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println (time (sum-square-difference))))
+  (println (time (penalty "OOXOOOOOXO")))
+  (println (time (penalty "OOOOOOOOXO")))
+  (println (time (penalty "OOOOOOOOOO")))
+  )
