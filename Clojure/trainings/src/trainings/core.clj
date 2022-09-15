@@ -161,18 +161,17 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
          other-team-remaining-kicks-count (if (even? remaining-total-kicks) (/ remaining-total-kicks 2) (quot (dec remaining-total-kicks) 2))
          current-team-max-results (+ (results current-team) current-team-remaining-kicks-count)
          other-team-max-results (+ (results other-team) other-team-remaining-kicks-count)
-         should-not-continue (pos? (* (- (results current-team) other-team-max-results) (- current-team-max-results  (results other-team)))   )
-         ]
+         should-not-continue (pos? (* (- (results current-team) other-team-max-results) (- current-team-max-results  (results other-team))))]
      (cond
-       should-not-continue  results 
+       should-not-continue  results
        (empty? kicks-sequence) results
        (= \O (first kicks-sequence)) (recur (rest kicks-sequence)  (assoc results current-team (inc (results current-team))) other-team)
        (= \X (first kicks-sequence)) (recur (rest kicks-sequence) results other-team)))))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
   (println (time (penalty "OOXOOOOOXO")))
   (println (time (penalty "OOOOOOOOXO")))
-  (println (time (penalty "OOOOOOOOOO")))
-  )
+  (println (time (penalty "OOOOOOOOOO"))))
