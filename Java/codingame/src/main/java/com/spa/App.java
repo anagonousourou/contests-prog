@@ -1,6 +1,6 @@
 package com.spa;
 
-import java.util.stream.IntStream;
+import com.spa.leetcode.SolutionLeetCode;
 
 /**
  * Hello world!
@@ -19,5 +19,5 @@ public final class App {
     }
 
 
-    
+
 }

@@ -1,4 +1,4 @@
-package com.spa;
+package com.spa.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -153,7 +153,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/find-pivot-index/
-     * 
+     *
      * @param nums
      * @return
      */
