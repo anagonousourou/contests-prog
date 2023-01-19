@@ -180,6 +180,12 @@ How many years does the town need to see its population greater or equal to p = 
                                                   ) ]))
        ))
 
+(defn distinct-by
+  "https://stackoverflow.com/questions/32998869/custom-equality-in-clojure-distinct"
+  [f coll]
+  (let [groups (group-by f coll)]
+    (map #(first (groups %)) (distinct (map f coll)))))
+
 
 (defn -main
   "I don't do a whole lot."
