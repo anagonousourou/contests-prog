@@ -6,7 +6,7 @@
   Find all integers between m and n (m and n integers with 1 <= m <= n) such that the sum of
   their squared divisors is itself a square. ")
 
-(defn get-divisors [n]
+(defn- get-divisors [n]
   (conj (vec (filter #(zero? (mod n %)) (range 1 (inc (quot n 2))))) n)
   ;;^there is no divisors of n between in ]n/2; n[
   )
