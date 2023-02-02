@@ -8,7 +8,9 @@ public class SimpleMusicEncoder {
 
     interface SequenceFinder {
         void flush();
-        void addToken(int token);
+        boolean addToken(int token);
+
+        void resetWithToken(int token);
     }
 
     List<String> encodingResults = new ArrayList<>();
@@ -39,7 +41,7 @@ public class SimpleMusicEncoder {
         }
 
         @Override
-        public void addToken(int input){
+        public boolean addToken(int input){
             switch (currentState){
                 case CONSECUTIVE_SEQUENCE_FINDER_STATE_ONE:
                     if(Math.abs(firstNumber - input)  == 1){// 2,2,2,3
@@ -73,9 +75,17 @@ public class SimpleMusicEncoder {
                             econdingResults.add("%d-%d".formatted(firstNumber, lastNumber));
                             this.firstNumber = input;
                             this.currentState = ConsecutiveSequenceFinderState.CONSECUTIVE_SEQUENCE_FINDER_STATE_ONE;
+                            return true;
                         }
                     break;
             }
+            return false;
+        }
+
+        @Override
+        public void resetWithToken(int token) {
+            this.currentState = ConsecutiveSequenceFinderState.CONSECUTIVE_SEQUENCE_FINDER_STATE_ONE;
+            this.firstNumber = token;
         }
     }
 
@@ -99,7 +109,7 @@ public class SimpleMusicEncoder {
         }
 
         @Override
-        public void addToken(int input){
+        public boolean addToken(int input){
             if(input ==  number){
                 this.counter++;
             }
@@ -108,11 +118,19 @@ public class SimpleMusicEncoder {
                 econdingResults.add("%d*%d".formatted(number, counter));
                 this.number = input;
                 this.counter = 1;
+                return true;
             }
             else{
                 this.number = input;
                 this.counter = 1;
             }
+            return false;
+        }
+
+        @Override
+        public void resetWithToken(int token) {
+            this.number = token;
+            this.counter = 1;
         }
     }
 
@@ -136,7 +154,7 @@ public class SimpleMusicEncoder {
         }
 
         @Override
-        public void addToken(int input){
+        public boolean addToken(int input){
             switch (currentState){
                 case ONE :
                     if(Math.abs(input - c1) > 1){
@@ -172,15 +190,23 @@ public class SimpleMusicEncoder {
                         econdingResults.add("%d-%d/%d".formatted(c1, c3, Math.abs(interval)));
                         this.currentState = State.ONE;
                         this.c1 = input;
+                        return true;
                     }
                     break;
             }
+            return false;
+        }
+
+        @Override
+        public void resetWithToken(int token) {
+            this.c1 = token;
+            this.currentState = State.ONE;
         }
 
         @Override
         public void flush(){
             if(this.currentState == State.THREE){
-                int counter = (Math.abs(c3 - c1) % Math.abs(interval) );
+                int counter = (Math.abs(c3 - c1) / Math.abs(interval) ) +1;
                 this.econdingResults.subList(this.econdingResults.size() - counter, this.econdingResults.size()).clear();
                 this.econdingResults.add("%d-%d/%d".formatted(c1, c3, Math.abs(interval)));
             }
@@ -193,13 +219,24 @@ public class SimpleMusicEncoder {
         var identicalSequenceFinder = new IdenticalSequenceFinder(raw[0], encodingResults);
         var intervalSequenceFinder = new IntervalSequenceFinder(raw[0], encodingResults);
         for (int i = 1; i < raw.length; i++) {
-            identicalSequenceFinder.addToken(raw[i]);
-            //consecutiveSequenceFinder.addToken(raw[i]);
-            intervalSequenceFinder.addToken(raw[i]);
+            boolean modifiedList = identicalSequenceFinder.addToken(raw[i]);
+            if(modifiedList){
+                consecutiveSequenceFinder.resetWithToken(raw[i]);
+                intervalSequenceFinder.resetWithToken(raw[i]);
+            }
+            else{
+                modifiedList =  consecutiveSequenceFinder.addToken(raw[i]);
+                if(modifiedList){
+                    intervalSequenceFinder.resetWithToken(raw[i]);
+                }else{
+                    intervalSequenceFinder.addToken(raw[i]);
+                }
+            }
+
             this.encodingResults.add("%d".formatted(raw[i]));
         }
-        consecutiveSequenceFinder.flush();
         identicalSequenceFinder.flush();
+        consecutiveSequenceFinder.flush();
         intervalSequenceFinder.flush();
         return String.join("," , this.encodingResults);
     }
