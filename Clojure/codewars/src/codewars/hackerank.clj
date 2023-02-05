@@ -148,5 +148,172 @@
 (println (polygon-perimeter (read-input!)))
 
 
+;;Compute the GCD of two numbers
+(let [f (fn [a-int b-int]
+                   (loop [a-inner-int a-int, b-inner b-int]
+                     (cond
+                       (or (zero? (rem a-inner-int b-inner)) (zero? (rem b-inner a-inner-int))) (min a-inner-int b-inner)
+                       :else (recur (rem (max a-inner-int b-inner) (min a-inner-int b-inner)) (min a-inner-int b-inner) )
+                       )
+                     )
+                    ) [m n] (map read-string (re-seq #"\d+" (read-line)))] (println (f m  n)))
 
 
+;;Fibonacci Numbers
+(defn fib [n-int]
+  (loop [a-int 0 b-int 1 n-itr-int 1]
+    (if (= n-itr-int n-int) a-int (recur b-int (+ a-int b-int) (inc n-itr-int)))
+    ))
+
+(-> (read-line)
+    (Integer/parseInt)
+    (fib)
+    (println))
+
+
+;;string mingling
+
+(println (apply str (interleave (read-line), (read-line))))
+
+;; string o-permute
+
+(defn string-permute [input-str]
+  (loop [[a-char, b-char & rem-chars :as input-itr-str] input-str, result-vec []]
+    (if (empty? input-itr-str) (apply str result-vec)
+                               (recur rem-chars (conj result-vec b-char a-char)))
+    )
+  )
+
+(doseq [_ (range (Integer/parseInt (read-line)))] (println (string-permute (read-line))))
+
+
+;;string compression https://www.hackerrank.com/challenges/string-compression/problem?isFullScreen=true
+
+(defn compress-char [character-char, character-count-int]
+  (if (= character-count-int 1) character-char
+                                   (format "%s%d" character-char character-count-int) ))
+(defn string-compression [input-str]
+  (loop [input-itr-str (rest input-str),
+         current-char (first input-str),
+         current-char-count-int 1,
+         result-str ""]
+    (if (empty? input-itr-str) (str result-str (compress-char current-char current-char-count-int))
+                               (recur (rest input-itr-str),
+                                      (first input-itr-str),
+                                      (if (= current-char (first input-itr-str)) (inc current-char-count-int) 1 ),
+                                      (if (= current-char (first input-itr-str)) result-str
+                                                                                 (str result-str (compress-char current-char current-char-count-int) ) )))
+    )
+  )
+
+(println (string-compression (read-line)))
+
+
+;;prefix compression https://www.hackerrank.com/challenges/prefix-compression/problem?isFullScreen=true
+
+(defn prefix-compression [x-str, y-str]
+  (loop [x-prime-chars-seq x-str, y-prime-chars-seq y-str, p-str ""]
+    (cond
+      (or (not= (first x-prime-chars-seq) (first y-prime-chars-seq))
+          (or (empty? x-prime-chars-seq) (empty? y-prime-chars-seq))
+          )
+      ,,, {
+           :p-str p-str
+           :x-prime-str (apply str x-prime-chars-seq)
+           :y-prime-str (apply str y-prime-chars-seq)
+           }
+      (= (first x-prime-chars-seq) (first y-prime-chars-seq)),,, (recur
+                                                                   (rest x-prime-chars-seq)
+                                                                   (rest y-prime-chars-seq)
+                                                                   (str p-str (first x-prime-chars-seq)))
+      )
+
+    )
+  )
+
+
+(let [{:keys [p-str, x-prime-str, y-prime-str]} (prefix-compression (read-line) (read-line))]
+  (println (count p-str) p-str)
+  (println (count x-prime-str) x-prime-str)
+  (println (count y-prime-str) y-prime-str)
+  )
+
+
+;;string reductions https://www.hackerrank.com/challenges/string-reductions/problem?isFullScreen=true
+
+(->> (read-line)
+     (distinct)
+     (apply str)
+     (println))
+
+
+;; sequence full of colors
+
+(defn color-char->color-keyword [color-char]
+  (case color-char
+    \R :red
+    \G :green
+    \Y :yellow
+    \B :blue)
+  )
+(defn full-of-colors? [colors-chars-seq]
+  (loop [colors-itr-seq (map color-char->color-keyword colors-chars-seq),
+         colors-count {:red 0, :green 0, :yellow 0, :blue 0}
+         ]
+
+    (cond
+      (> (Math/abs ^int (- (colors-count :red) (colors-count :green))) 1)  false
+      (> (Math/abs ^int (- (colors-count :yellow) (colors-count :blue))) 1)  false
+      (empty? colors-itr-seq) (and (= (colors-count :red) (colors-count :green))
+                                   (= (colors-count :yellow) (colors-count :blue)))
+
+      :else (recur (rest colors-itr-seq) (update colors-count (first colors-itr-seq) inc))
+      )
+    )
+  )
+
+(doseq [_ (range (Integer/parseInt (read-line))) ] (if (full-of-colors? (read-line)) (println "True") (println "False")))
+
+
+;; filter elements https://www.hackerrank.com/challenges/filter-elements/problem?isFullScreen=true
+(defn filter-elts-with-at-least-k-frequency [elts-ints-seq, k]
+  (-> elts-ints-seq
+      (frequencies)
+      ((fn [elts-frequencies] (filter (fn [x] (>= (elts-frequencies x) k)) elts-ints-seq )))
+      (distinct)
+      ))
+
+(doseq [_ (range (Integer/parseInt (read-line)))]
+  (let [k (->> (read-line) (re-seq #"\w+") (second) (Integer/parseInt)),
+        elts-ints-seq (map #(Integer/parseInt %) (->> (read-line) (re-seq #"\w+")))
+        elts-filtered-int-seq (filter-elts-with-at-least-k-frequency elts-ints-seq, k)
+        ]
+    (if (empty? elts-filtered-int-seq) (println -1)  (println (clojure.string/join " " elts-filtered-int-seq)))
+
+    )
+  )
+
+;;another Fibonacci
+
+(defn fibonacci [n-int]
+  (loop [a-int 0N b-int 1N n-itr-int 0]
+    (cond )
+    (if (= n-itr-int n-int) a-int (recur b-int (+ a-int b-int) (inc n-itr-int)))
+    ))
+
+(defn fibonacci-recursive [n-int]
+  (cond
+    (<= n-int 1) n-int
+    :else (+ (fibonacci-recursive (dec n-int)) (fibonacci-recursive (- n-int 2) ))
+    )
+  )
+
+(def fib-memo (memoize fibonacci-recursive))
+
+(doseq [_ (range (Integer/parseInt (read-line)))]
+  (-> (read-line)
+      (Integer/parseInt)
+      (fib-memo)
+      (mod 100000007)
+      (str)
+      (println)))
