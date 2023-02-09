@@ -297,23 +297,47 @@
 
 (defn fibonacci [n-int]
   (loop [a-int 0N b-int 1N n-itr-int 0]
-    (cond )
     (if (= n-itr-int n-int) a-int (recur b-int (+ a-int b-int) (inc n-itr-int)))
     ))
 
-(defn fibonacci-recursive [n-int]
-  (cond
-    (<= n-int 1) n-int
-    :else (+ (fibonacci-recursive (dec n-int)) (fibonacci-recursive (- n-int 2) ))
-    )
-  )
-
-(def fib-memo (memoize fibonacci-recursive))
+(def m-fib
+  (memoize (fn [n]
+             (condp = n
+               0 1
+               1 1
+               (+ (m-fib (dec n)) (m-fib (- n 2)))))))
 
 (doseq [_ (range (Integer/parseInt (read-line)))]
   (-> (read-line)
       (Integer/parseInt)
-      (fib-memo)
+      (m-fib)
       (mod 100000007)
       (str)
       (println)))
+
+
+(defn gcd-from-prime-factorisation [a-map-int->int, b-map-int->int]
+  (let [common-keys (clojure.set/intersection (set (keys a-map-int->int))  (set (keys b-map-int->int)))]
+    (merge-with min (select-keys a-map-int->int common-keys) (select-keys b-map-int->int common-keys))
+    )
+  )
+
+(let [n (Integer/parseInt (read-line))]
+  (->> (range n)
+       (map (fn [_] (->> (read-line)
+                         (format "{%s}")
+                         (read-string))))
+       (reduce gcd-from-prime-factorisation)
+
+       )
+  )
+(doseq [_ (range )]
+  (->> (read-line)
+       (format "{%s}")
+      (read-string)
+      (m-fib)
+      (mod 100000007)
+      (str)
+      (println)))
+
+;; https://www.hackerrank.com/challenges/lists-and-gcd/problem?isFullScreen=true
