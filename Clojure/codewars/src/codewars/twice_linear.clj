@@ -23,5 +23,4 @@
        (distinct)
        ((fn[coll] (nth coll  n)))
        )
-
   )

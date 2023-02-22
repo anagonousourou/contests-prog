@@ -1,4 +1,5 @@
-(ns codewars.hackerank)
+(ns codewars.hackerank
+  (:require [clojure.set :refer :all]))
 
 
 (defn list-replication [num lst] (flatten (map (partial repeat num) lst)))
@@ -316,28 +317,280 @@
       (println)))
 
 
+
 (defn gcd-from-prime-factorisation [a-map-int->int, b-map-int->int]
-  (let [common-keys (clojure.set/intersection (set (keys a-map-int->int))  (set (keys b-map-int->int)))]
+  (let [common-keys (filter (set (keys a-map-int->int)) (set (keys b-map-int->int)))]
     (merge-with min (select-keys a-map-int->int common-keys) (select-keys b-map-int->int common-keys))
     )
+  )
+
+(defn read-to-map [input-string]
+  (->> input-string
+       (re-seq #"\w+")
+       (map #(Integer/parseInt %))
+       (partition 2)
+       (map vec)
+       (into {})
+       )
   )
 
 (let [n (Integer/parseInt (read-line))]
   (->> (range n)
        (map (fn [_] (->> (read-line)
-                         (format "{%s}")
-                         (read-string))))
+                         (read-to-map))))
        (reduce gcd-from-prime-factorisation)
-
+       (sort-by key)
+       (flatten)
+       (clojure.string/join " ")
        )
   )
-(doseq [_ (range )]
+(doseq [_ (range)]
   (->> (read-line)
        (format "{%s}")
-      (read-string)
-      (m-fib)
-      (mod 100000007)
-      (str)
-      (println)))
+       (read-string)
+       ))
 
 ;; https://www.hackerrank.com/challenges/lists-and-gcd/problem?isFullScreen=true
+
+
+;;https://www.hackerrank.com/challenges/missing-numbers-fp/problem?isFullScreen=true
+
+(defn get-missing-numbers [list-a-frequencies, missing-numbers, n, n-freq] (cond
+                                                                             (= n-freq (list-a-frequencies n)) missing-numbers
+                                                                             (nil? (list-a-frequencies n)) (conj missing-numbers n)
+                                                                             (< (list-a-frequencies n) n-freq) (conj missing-numbers n)
+                                                                             ))
+(defn missing-numbers-fp! []
+  (let [_ (read-line)
+        list-1 (->> (read-line) (format "[%s]") (read-string))
+        _ (read-line)
+        list-2 (->> (read-line) (format "[%s]") (read-string))
+        list-a (if (< (count list-1) (count list-2)) list-1 list-2)
+        list-b (if (< (count list-1) (count list-2)) list-2 list-1)
+        list-a-frequencies (frequencies list-a)
+        list-b-frequencies (frequencies list-b)
+        ]
+    (->> list-b-frequencies
+         (reduce-kv (partial get-missing-numbers list-a-frequencies) [])
+         (sort)
+         (clojure.string/join " ")
+         (println)
+         )
+    )
+  )
+
+;;https://www.hackerrank.com/challenges/rotate-string/problem?isFullScreen=true
+
+(defn rotate-string [input-string]
+  (loop [rotated-strings []]
+    (cond
+      (empty? rotated-strings) (recur (conj rotated-strings (str (.substring input-string 1) (first input-string))))
+      (= (count rotated-strings) (count input-string)) rotated-strings ;; we stop when we have done every possible rotations
+      :else (let [latest-rotated-string (peek rotated-strings)]
+              (recur (conj rotated-strings (str (.substring latest-rotated-string 1) (first latest-rotated-string))))
+              )
+      )
+    )
+  )
+
+(doseq [_ (range (Integer/parseInt (read-line)))]
+  (->> (read-line)
+       (rotate-string)
+       (clojure.string/join " ")
+       (println))
+  )
+
+;;https://www.hackerrank.com/challenges/subset-sum/problem?isFullScreen=true
+
+(defn subset-sum [a-vector, s-int]
+  (loop [subset-size 0 a-seq a-vector, subset-val 0]
+    (cond
+      (<= s-int subset-val) subset-size
+      (empty? a-seq) -1
+      :else (recur (inc subset-size), (rest a-seq), (+' subset-val (first a-seq)))
+      )
+    )
+  )
+(let [_ (read-line)
+      a-seq (->> (read-line) (format "[%s]") (read-string) (sort >))
+      nb-test-cases (Integer/parseInt (read-line))]
+  (doseq [_ (range nb-test-cases)]
+    (->> (Integer/parseInt (read-line))
+         (subset-sum a-seq,)
+         (println))
+    )
+  )
+
+
+;;https://www.hackerrank.com/challenges/captain-prime/problem?isFullScreen=true
+
+(defn prime? [n-int]
+  (if (<= n-int 1) false
+                   (every? #(not (zero? (rem n-int %))) (range 2 (-> (Math/sqrt n-int) (int) (inc)))))
+  )
+
+(defn has-zero? [n-int]
+  (some (partial = \0) (str n-int))
+  )
+
+(defn get-left-numbers
+  "Take a positive integer and return the numbers that are obtained when the
+  left digits are successively taken off,
+  Ex: 4781 -> [781,81,1]
+  "
+  [n-int]
+  (loop [left-numbers [], digits (rest (str n-int))]
+    (cond
+      (empty? digits) left-numbers
+      :else (recur (conj left-numbers (->> (clojure.string/join digits) (Integer/parseInt))), (rest digits))
+      )
+    ))
+
+(defn get-right-numbers
+  "Take a positive integer and return the numbers that are obtained when the
+right digits are successively taken off,
+Ex: 4781 -> [478, 47, 4]
+"
+  [n-int]
+  (loop [right-numbers [], n-inner-int (quot n-int 10)]
+    (cond
+      (zero? n-inner-int) right-numbers
+      :else (recur (conj right-numbers n-inner-int), (quot n-inner-int 10))
+      )
+    )
+  )
+
+(defn left-prime? [n-int]
+  (every? prime? (get-left-numbers n-int))
+  )
+(defn right-prime? [n-int]
+  (every? prime? (get-right-numbers n-int))
+  )
+(doseq [_ (range (Integer/parseInt (read-line)))]
+  (->> (read-line)
+       (Integer/parseInt)
+       ((fn [n-int] {:n-int n-int, :is-prime (prime? n-int)})) ;; check if a number is prime
+       ;;check if the number has zero in its digits, do not do the computation if the number is not a prime
+       ;; as the default value for a non existing key will be nil equivalent to false
+       ((fn [{:keys [n-int is-prime] :as result}] (if (not is-prime) result (assoc result :no-zero (not (has-zero? n-int))))))
+       ;; if the number is prime, check if its 'left numbers' are prime
+       ((fn [{:keys [n-int, is-prime, no-zero] :as result}]
+          (if (and is-prime no-zero) (assoc result :left (left-prime? n-int)) result)))
+       ;; if the number is prime check if its right numbers are prime
+       ((fn [{:keys [n-int, is-prime, no-zero] :as result}]
+          (if (and is-prime no-zero) (assoc result :right (right-prime? n-int)) result)))
+       ;; return the position of the number depending of the previous results
+       ((fn [{:keys [is-prime, no-zero, left, right]}] (cond
+                                                         (and is-prime, no-zero, left, right) "CENTRAL"
+                                                         (and is-prime, no-zero, left) "LEFT"
+                                                         (and is-prime, no-zero, right) "RIGHT"
+                                                         :else "DEAD"
+                                                         )))
+       (println)
+       )
+  )
+
+;;https://www.hackerrank.com/challenges/remove-duplicates/problem?isFullScreen=true
+
+(->> (read-line)
+     (distinct)
+     (clojure.string/join)
+     (println))
+
+
+;;https://www.hackerrank.com/challenges/jumping-bunnies/problem?isFullScreen=true
+
+(defn pgcd [a b]
+  (if (zero? b) a (recur b (rem a b)))
+  )
+
+
+
+(defn ppcm [a b]
+  ;; autopromote numbers with *'
+  (quot (*' a b) (pgcd a b)))                               ;;https://stackoverflow.com/questions/8767627/how-do-i-avoid-arithmeticexception-integer-overflow-in-clojure
+
+(defn read-vector! []
+  (->> (read-line) (re-seq #"\w+") (map #(Integer/parseInt %)) (into []))
+  )
+
+(let [_ (read-line)
+      js (read-vector!)]
+  (->> js
+       (reduce ppcm)
+       (str)
+       (println)
+       )
+  )
+
+;;https://www.hackerrank.com/challenges/one-week-preparation-kit-plus-minus/problem?isFullScreen
+
+(defn plusMinus [arr]
+  (let [n-int (count arr)
+        nb-positives (count (filter pos? arr))
+        nb-negatives (count (filter neg? arr))
+        nb-zeros (count (filter zero? arr))
+
+        ratios-elts (map #(/ (double %) n-int) [nb-positives, nb-negatives, nb-zeros])
+        ]
+    (doseq [elt ratios-elts] (println (format "%.6f" elt)))
+    )
+  )
+
+
+(defn miniMaxSum [arr]
+  (let [arr-sorted (sort arr)
+        max-sum (reduce + 0 (rest arr-sorted))
+        min-sum (reduce + 0 (drop-last arr-sorted))]
+    (println min-sum max-sum)
+    )
+  )
+
+
+(defn timeConversion [^String s]
+  (let [time-parts-strings (re-seq #"\d+" s)
+        hour-int (Integer/parseInt (first time-parts-strings))
+        period-of-day (.substring s 8)
+        ]
+    (cond
+      ;;special cases
+      (and (= hour-int 12) (= period-of-day "AM")) (format "00%s" (.substring s 2 8))
+      (and (= hour-int 12) (= period-of-day "PM")) (.substring s 0 8)
+      (= period-of-day "AM") (.substring s 0 8)
+      (= period-of-day "PM") (format "%2d%s" (+ 12 hour-int) (.substring s 2 8))
+      )
+    ))
+
+(defn fizzBuzz [n]
+  (doseq [i (range 1 (inc n))] (cond
+                                 (zero? (mod i 15)) (println "FizzBuzz")
+                                 (zero? (mod i 5)) (println "Buzz")
+                                 (zero? (mod i 3)) (println "Fizz")
+                                 :else (println i)
+                                 ))
+
+  )
+
+(defn lonelyinteger [a]
+  (->> (frequencies a)
+       (filter #(= 1 (val %)))
+       (first)
+       (key)
+       )
+  )
+
+;;https://www.hackerrank.com/challenges/one-week-preparation-kit-diagonal-difference/problem?isFullScreen=true
+(defn diagonalDifference [arr]
+  (let [diag1-sum (->> (for [i (range (count arr))] (get-in arr [i i]))
+                       (reduce + 0)),
+        diag2-sum (->> (for [i (range (count arr))] (get-in arr [i (- (dec (count arr)) i)]))
+                       (reduce + 0))
+        ]
+    (Math/abs (- diag1-sum diag2-sum))
+    )
+  )
+
+
+(defn countingSort [arr]
+  (reduce (fn [frequency-arr, elt] (update-in frequency-arr [elt] inc)) (into [] (repeat 100 0)) arr)
+  )
