@@ -2,6 +2,8 @@ package com.spa.codewars;
 
 import com.spa.commonfns.NumberHelpers;
 
+import java.math.BigInteger;
+import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class GapInPrimes {
@@ -13,5 +15,11 @@ public class GapInPrimes {
             }
         }
         return null;
+    }
+
+    public static IntStream stream() {
+        return IntStream.iterate(2, i -> i + 1).filter(i ->
+            BigInteger.valueOf(i).isProbablePrime(10)
+        );
     }
 }

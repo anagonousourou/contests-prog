@@ -1,10 +1,18 @@
 package com.spa.commonfns;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.Stack;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,6 +49,10 @@ public final class StringHelpers {
 
     public static <A> Map<A, Long> frequencies(List<A> elements) {
         return elements.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public static <A> Map<A, Integer> frequenciesInteger(List<A> elements) {
+        return elements.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.reducing(0, e -> 1, Integer::sum)));
     }
 
     /**
@@ -81,6 +93,12 @@ public final class StringHelpers {
     public static <A> A first(List<A> input) {
         return input.get(0);
     }
+    public static <A> List<A> rest(List<A> input) {
+        if (input.size() <= 1) {
+            return List.of();
+        }
+        return input.subList(1, input.size());
+    }
 
     public static <A> A last(List<A> input) {
         return input.get(input.size() - 1);
@@ -113,5 +131,84 @@ public final class StringHelpers {
         return  stringBuilder.toString();
     }
 
+    /**
+     *
+     * @param originalMap a map where the values are collections
+     * @param <KeyType> type parameter of the key in the result
+     * @param <ValueType> type parameter of the value in the result
+     * @return a map where the elements of the collections are now the keys
+     */
+    static <KeyType, ValueType> Map<KeyType, ValueType> transform(Map<ValueType, Collection<KeyType>> originalMap) {
+        Map<KeyType, ValueType> newMap = new HashMap<>();
+        originalMap.forEach(((valueType, keyTypes) ->
+            keyTypes.forEach(keyType ->
+                newMap.put(keyType, valueType)
+            )
+        ));
+        return newMap;
+    }
+
+    private static final Set<String> OPENING_BRACKETS = Set.of("(", "{", "[");
+    private static final Set<String> CLOSING_BRACKETS = Set.of(")", "}", "]");
+    private static final Map<String, String> MATCHING_BRACKETS = Map.of("(", ")", "{", "}", "[", "]");
+
+    private boolean isPairedRecursive(String brackets, Stack<String> bracketsStacks) {
+        String first = brackets.isEmpty() ? "" : brackets.substring(0, 1);
+        String rest = brackets.isEmpty() ? "" : brackets.substring(1);
+        if (brackets.isEmpty()) {
+            return bracketsStacks.isEmpty();
+        } else if (OPENING_BRACKETS.contains(first)) {
+            bracketsStacks.push(MATCHING_BRACKETS.get(first));
+            return isPairedRecursive(rest, bracketsStacks);
+        } else if (CLOSING_BRACKETS.contains(first) && !bracketsStacks.isEmpty() && first.equals(bracketsStacks.peek())) {
+            bracketsStacks.pop();
+            return isPairedRecursive(rest, bracketsStacks);
+        } else if (CLOSING_BRACKETS.contains(first) && (bracketsStacks.isEmpty() || !first.equals(bracketsStacks.peek()))) {
+            return false;
+        } else {
+            return isPairedRecursive(rest, bracketsStacks);
+        }
+    }
+
+    public static String md5(String input){
+        try {
+            byte[] bytesOfMessage = input.getBytes(StandardCharsets.UTF_8);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] thedigest = md.digest(bytesOfMessage);
+            return String.format("%032x", new BigInteger(1, thedigest));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String sha256(String input){
+        try {
+            byte[] bytesOfMessage = input.getBytes(StandardCharsets.UTF_8);
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] thedigest = md.digest(bytesOfMessage);
+            return String.format("%064x", new BigInteger(1, thedigest));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static List<Object> flatten(Object object, List<Object> result) {
+        if (object == null) {
+            return result;
+        }
+        if (object instanceof List) {
+            List<Object> objects = (List<Object>) object;
+            if (objects.isEmpty()) {
+                return result;
+            } else {
+                flatten(first(objects), result);
+                return flatten(rest(objects), result);
+            }
+        } else {
+            result.add(object);
+            return result;
+        }
+
+    }
 
 }

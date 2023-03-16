@@ -12,8 +12,6 @@ import java.util.stream.IntStream;
 
 public class ClosestPairOfPointsInLinearithmicTime {
     public static List<Point> closestPair(List<Point> points) {
-
         return List.of();
-           // points.stream().sorted(Comparator.comparingDouble(a -> a.x * a.x + a.y * a.y));
     }
 }
