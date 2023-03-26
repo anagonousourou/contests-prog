@@ -5,3 +5,6 @@ target
 bin
 .idea
 .idea/*.xml
+*.bin
+*.class
+build

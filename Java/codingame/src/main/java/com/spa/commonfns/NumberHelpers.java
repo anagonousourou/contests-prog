@@ -54,10 +54,13 @@ public class NumberHelpers {
         return n % 2 != 0;
     }
 
-    public static boolean isPrime(long n){
+    public static boolean isPrime(long n) {
+        if(n == 1){
+            return false;
+        }
         int limit = (int) Math.sqrt(n);
         for (int i = 2; i <= limit; i++) {
-            if( n % i == 0){
+            if (n % i == 0) {
                 return false;
             }
         }

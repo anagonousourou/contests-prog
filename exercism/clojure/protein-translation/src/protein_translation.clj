@@ -1,12 +1,12 @@
 (ns protein-translation)
 
-(defn translate-codon [codon] 
+(defn translate-codon [codon] ;; <- arglist goes here
       (case codon
         "AUG" "Methionine"
         "UUU" "Phenylalanine"
         "UUC" "Phenylalanine"
-        "UUA" "Leucine"
         "UUG" "Leucine"
+        "UUA" "Leucine"
         "UCU" "Serine"
         "UCC" "Serine"
         "UCA" "Serine"
@@ -17,17 +17,11 @@
         "UGC" "Cysteine"
         "UGG" "Tryptophan"
         "UAA" "STOP"
-        "UAG" "STOP"
+        "UAG"	"STOP"
         "UGA" "STOP"
         )
 )
 
-(defn translate-rna 
-  [rna]
-  (->> rna
-       (re-seq #"[A-Z]{3}")
-       (take-while (fn [codon] (not (contains? #{"UAA" "UAG" "UGA"} codon))))
-       (map translate-codon)
-   )
-  
+(defn translate-rna [] ;; <- arglist goes here
+  ;; your code goes here
 )
