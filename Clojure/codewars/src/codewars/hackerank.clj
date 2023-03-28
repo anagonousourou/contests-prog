@@ -594,3 +594,135 @@ Ex: 4781 -> [478, 47, 4]
 (defn countingSort [arr]
   (reduce (fn [frequency-arr, elt] (update-in frequency-arr [elt] inc)) (into [] (repeat 100 0)) arr)
   )
+
+;;https://www.hackerrank.com/challenges/one-week-preparation-kit-grid-challenge/problem?isFullScreen=true
+
+(defn- column-ordered? [grid, column-number]
+  (->> grid
+       (map (fn [chars-seq] (nth chars-seq column-number)))
+       (map int)                                            ;; have to convert
+       (apply <=)
+       )
+  )
+(defn gridChallenge
+  "Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, ascending.
+  Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not"
+  [grid-strings]
+  (let [sorted-grid-seq-of-seq-of-char (for [s grid-strings] (into [] (sort s)))
+        _ (println sorted-grid-seq-of-seq-of-char)
+        string-length (count (first grid-strings))
+        ] (if (every? (partial column-ordered? sorted-grid-seq-of-seq-of-char) (range string-length))
+            "YES" "NO"))
+
+  )
+
+(defn repeat-string [n ^String s-string]
+  (->> (repeat n s-string) (clojure.string/join)
+       ))
+(defn ^String super-digit [^String p-inner-string]
+  "Given a number (as a string) sum the digits recursively until there is only one left"
+  (if (= (count p-inner-string) 1) p-inner-string           ;; base case
+                                   (->> p-inner-string
+                                        (map (fn [x] (Character/getNumericValue x))) ;; transform the character into numbers
+                                        (reduce +')         ;; sum them up
+                                        (str)               ;; transform to string
+                                        (recur)             ;; do a recursion in case the sum is greater than 9
+                                        )))
+(defn ^String superDigit [^String n-string k-int]
+  (let [partial-super-digit (Integer/parseInt (super-digit n-string))
+        partial-super-digit (*' k-int partial-super-digit)
+        ]
+    (super-digit (str partial-super-digit))
+    )
+
+  )
+
+
+(defn minimumBribes [q-seq-of-ints]
+  (loop [q-inner q-seq-of-ints, i-itr 1, nb-bribes 0]
+    (cond
+      (empty? q-inner) (println nb-bribes)
+      (<= 0 (- (first q-inner) i-itr) 2) (recur (rest q-inner) (inc i-itr) (+ (- (first q-inner) i-itr) nb-bribes))
+      (<= 3 (- (first q-inner) i-itr)) (println "Too chaotic")
+      :else (recur (rest q-inner) (inc i-itr) nb-bribes)
+      )
+    )
+  )
+
+(def matching-brackets-map {\( \), \{ \}, \[ \]})
+(defn matching-brackets [input-string]
+  (loop [[current-char & remaining-chars :as input-inner-string] input-string, brackets-stack []]
+    (cond
+      (empty? input-inner-string) (empty? brackets-stack)
+      (contains? #{\( \{ \[} current-char) (recur remaining-chars (conj brackets-stack (matching-brackets-map current-char)))
+      (and (contains? #{\) \} \]} current-char) (= (peek brackets-stack) current-char)) (recur remaining-chars (pop brackets-stack))
+      (contains? #{\) \} \]} current-char) false
+      :else (recur remaining-chars brackets-stack)
+      )
+    )
+  )
+
+(defn isBalanced [input-string]
+  (if (matching-brackets input-string) "YES" "NO")
+  )
+
+(defn parse-command [command-string]
+  (let [tokens-seq (re-seq #"\w+" command-string)]
+    (case (first tokens-seq)
+      "1" {:operation :append, :param (second tokens-seq)}
+      "2" {:operation :delete :param (Integer/parseInt (second tokens-seq))}
+      "3" {:operation :print :param (Integer/parseInt (second tokens-seq))}
+      "4" {:operation :undo}
+      )
+    )
+  )
+
+(defn read-command [{:keys [previous-content-strings, ^String content-string] :as editor-content-map}, command-map]
+  (case (:operation command-map)
+    :append {
+             :previous-content-strings (conj previous-content-strings content-string),
+             :content-string           (str content-string (:param command-map))
+             }
+    :delete {
+             :previous-content-strings (conj previous-content-strings content-string),
+             :content-string           (.substring content-string 0 (- (count content-string) (:param command-map)))
+             }
+
+    :print (do
+             (println (.charAt content-string (dec (:param command-map))))
+             editor-content-map
+             )
+    :undo {
+           :previous-content-strings (pop previous-content-strings),
+           :content-string           (peek previous-content-strings)
+           }
+    )
+  )
+
+(loop [i (Integer/parseInt (read-line)), editor-content-map {:content-string "", :previous-content-strings []}]
+  (cond
+    (zero? i) (:content-string editor-content-map)
+    :else (recur (dec i) (read-command editor-content-map (-> (read-line) (parse-command))))
+    )
+  )
+
+;;https://www.hackerrank.com/challenges/one-week-preparation-kit-jesse-and-cookies/problem?isFullScreen=true
+
+(defn one? [n-int]
+  (= n-int 1))
+(defn cookies [^long k-int, A-vec-of-int]
+  (loop [A-inner-vec-of-int A-vec-of-int, nb-ops-int 0]
+    (cond
+      (every? (partial <= k-int) A-inner-vec-of-int) nb-ops-int
+      (and (one? (count A-inner-vec-of-int)) (< (first A-inner-vec-of-int) k-int)) -1
+      :else (let [sorted-A (into [] (sort A-inner-vec-of-int))
+                  least-sweet (first sorted-A)
+                  second-least-sweet (second sorted-A)
+                  sweeter-A (conj (subvec sorted-A 2) (+' least-sweet (*' 2 second-least-sweet)))
+                  ]
+              (recur sweeter-A (inc nb-ops-int))
+              )
+      )
+    )
+
+  )

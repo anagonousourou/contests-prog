@@ -14,7 +14,7 @@ service /travel on new http:Listener(9090) {
 
     // Define a resource method to arrange a tour, that accepts `POST` requests in the path `/arrangeTour`.
     // This resource should accept a value of the type `TourArrangement` that already defined below.
-    resource function post arrangeTour(@http:Payload TourArrangement tour) returns http:ListenerError?|error|http:Response {
+    resource function post arrangeTour(@http:Payload TourArrangement tour) returns error|http:Response {
 
         // Extract Travel infomation from the travel reservation request
 
