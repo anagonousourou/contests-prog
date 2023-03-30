@@ -1,2 +1,4 @@
 # contests-prog
-for  problems of contests
+This repository is for trying out languages and algorithms...
+
+

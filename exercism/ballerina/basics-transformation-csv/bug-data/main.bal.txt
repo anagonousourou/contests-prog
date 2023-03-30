@@ -31,23 +31,24 @@ function processFuelRecords(string inputFilePath, string outputFilePath) returns
     string[][]|io:Error entries = io:fileReadCsv(inputFilePath, 0);
     if (entries is string[][]) {
         FillUpEntry[] typedEntries = entries.'map(entry => {
-            employeeId: check int:fromString(entry[0].trim()),
-            odometerReading: check int:fromString(entry[1].trim()),
-            gallons: check decimal:fromString(entry[2].trim()),
-            gasPrice: check decimal:fromString(entry[3].trim())
-        });
+                employeeId: check int:fromString(entry[0].trim()),
+                odometerReading: check int:fromString(entry[1].trim()),
+                gallons: check decimal:fromString(entry[2].trim()),
+                gasPrice: check decimal:fromString(entry[3].trim())
+    });
         AggregatedConsumptionResult[] consumptionsFinal = check processFuelRecordsInternal(typedEntries);
         string[][] csvRows = consumptionsFinal.'map(consumption => [
-            consumption.employeeId.toString(),
-            consumption.gasFillUpCount.toString(),
-            consumption.totalFuelCost.toString(),
-            consumption.totalGallons.toString(),
-            consumption.totalMilesAccrued.toString()
+            consumption.employeeId.toString(), consumption.gasFillUpCount.toString(),
+            consumption.totalFuelCost.toString(), consumption.totalGallons.toString(), consumption.totalMilesAccrued.toString()
         ]);
-
-        // _ = check io:fileWriteCsv(outputFilePath, csvRows); this line throws an exception, maybe a bug on ballerina side
-        _ = check io:fileWriteLinesFromStream(outputFilePath, csvRows.'map(row => string:'join(",", ...row)).toStream());
+        io:println(csvRows, outputFilePath);
+        io:Error? result = io:fileWriteCsvFromStream(outputFilePath, csvRows.toStream());
+        io:println("End writing to csv file");
+        io:println(result);
     }
+
+    //io:println("Here 87");
+    //
 
 }
 
@@ -78,10 +79,10 @@ function processFuelRecordsInternal(FillUpEntry[] entries) returns AggregatedCon
     }
 
     return consumptionsIntermediate.'map(consumption => {
-        employeeId: consumption.employeeId,
-        gasFillUpCount: consumption.gasFillUpCount,
-        totalFuelCost: consumption.totalFuelCost,
-        totalGallons: consumption.totalGallons,
-        totalMilesAccrued: consumption.totalMilesAccrued
+                employeeId: consumption.employeeId,
+                gasFillUpCount: consumption.gasFillUpCount,
+                totalFuelCost: consumption.totalFuelCost,
+                totalGallons: consumption.totalGallons,
+                totalMilesAccrued: consumption.totalMilesAccrued
     }).toArray().sort(array:ASCENDING, (consumption) => consumption.employeeId);
 }

@@ -1,0 +1,42 @@
+::basics_fuel_allowance::
+
+processFuelRecordsTest#0 || java.lang.UnsupportedOperationException
+	at ballerina.io.1:writeRecordExtern(writable_record_channel.bal:72)
+	   ballerina.io.1.WritableTextRecordChannel:write(writable_record_channel.bal:48)
+	   ballerina.io.1.WritableCSVChannel:write(writable_csv_channel.bal:56)
+	   ballerina.io.1:channelWriteCsvFromStream(channel_csv_io.bal:77)
+	   ballerina.io.1:fileWriteCsvFromStream(file_csv_io.bal:71)
+	   ballerina_exercism.basics_fuel_allowance.0:processFuelRecords(main.bal:45)
+	   ballerina_exercism.basics_fuel_allowance$test.0.tests.tests:processFuelRecordsTest(tests/tests.bal:9)
+processFuelRecordsTest#1 || java.lang.UnsupportedOperationException
+	at ballerina.io.1:writeRecordExtern(writable_record_channel.bal:72)
+	   ballerina.io.1.WritableTextRecordChannel:write(writable_record_channel.bal:48)
+	   ballerina.io.1.WritableCSVChannel:write(writable_csv_channel.bal:56)
+	   ballerina.io.1:channelWriteCsvFromStream(channel_csv_io.bal:77)
+	   ballerina.io.1:fileWriteCsvFromStream(file_csv_io.bal:71)
+	   ballerina_exercism.basics_fuel_allowance.0:processFuelRecords(main.bal:45)
+	   ballerina_exercism.basics_fuel_allowance$test.0.tests.tests:processFuelRecordsTest(tests/tests.bal:9)
+processFuelRecordsTest#2 || java.lang.UnsupportedOperationException
+	at ballerina.io.1:writeRecordExtern(writable_record_channel.bal:72)
+	   ballerina.io.1.WritableTextRecordChannel:write(writable_record_channel.bal:48)
+	   ballerina.io.1.WritableCSVChannel:write(writable_csv_channel.bal:56)
+	   ballerina.io.1:channelWriteCsvFromStream(channel_csv_io.bal:77)
+	   ballerina.io.1:fileWriteCsvFromStream(file_csv_io.bal:71)
+	   ballerina_exercism.basics_fuel_allowance.0:processFuelRecords(main.bal:45)
+	   ballerina_exercism.basics_fuel_allowance$test.0.tests.tests:processFuelRecordsTest(tests/tests.bal:9)
+processFuelRecordsTest#3 || java.lang.UnsupportedOperationException
+	at ballerina.io.1:writeRecordExtern(writable_record_channel.bal:72)
+	   ballerina.io.1.WritableTextRecordChannel:write(writable_record_channel.bal:48)
+	   ballerina.io.1.WritableCSVChannel:write(writable_csv_channel.bal:56)
+	   ballerina.io.1:channelWriteCsvFromStream(channel_csv_io.bal:77)
+	   ballerina.io.1:fileWriteCsvFromStream(file_csv_io.bal:71)
+	   ballerina_exercism.basics_fuel_allowance.0:processFuelRecords(main.bal:45)
+	   ballerina_exercism.basics_fuel_allowance$test.0.tests.tests:processFuelRecordsTest(tests/tests.bal:9)
+processFuelRecordsTest#4 || java.lang.UnsupportedOperationException
+	at ballerina.io.1:writeRecordExtern(writable_record_channel.bal:72)
+	   ballerina.io.1.WritableTextRecordChannel:write(writable_record_channel.bal:48)
+	   ballerina.io.1.WritableCSVChannel:write(writable_csv_channel.bal:56)
+	   ballerina.io.1:channelWriteCsvFromStream(channel_csv_io.bal:77)
+	   ballerina.io.1:fileWriteCsvFromStream(file_csv_io.bal:71)
+	   ballerina_exercism.basics_fuel_allowance.0:processFuelRecords(main.bal:45)
+	   ballerina_exercism.basics_fuel_allowance$test.0.tests.tests:processFuelRecordsTest(tests/tests.bal:9
