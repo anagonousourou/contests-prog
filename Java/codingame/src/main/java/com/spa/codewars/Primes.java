@@ -11,12 +11,12 @@ public class Primes {
 
     public static IntStream stream() {
 
-        Map<Integer, Set<Integer>> compositeIterators = new HashMap<>();
-        compositeIterators.put(4, new HashSet<>(Set.of(2)));
+        Map<Long, Set<Long>> compositeIterators = new HashMap<>();
+        compositeIterators.put(4L, new HashSet<>(Set.of(2L)));
         IntPredicate isPrime = i -> {
-            if(compositeIterators.containsKey(i)){
-                Set<Integer> primeNumberMultiplesOfI = compositeIterators.get(i);
-                compositeIterators.remove(i);
+            if(compositeIterators.containsKey((long) i)){
+                Set<Long> primeNumberMultiplesOfI = compositeIterators.get((long) i);
+                compositeIterators.remove((long)i);
                 primeNumberMultiplesOfI.forEach(p -> {
                     compositeIterators.compute((p + i),(key, value) -> {
                         if(value == null){
@@ -31,12 +31,12 @@ public class Primes {
                 return false;
             }
             else{
-                compositeIterators.compute(i+i, (key, value) ->{
+                compositeIterators.compute((((long)i) * i), (key, value) ->{
                     if(value == null){
-                        return new HashSet<>(Set.of(i));
+                        return new HashSet<>(Set.of((long)i));
                     }
                     else{
-                        value.add(i);
+                        value.add((long)i);
                         return value;
                     }
                 });

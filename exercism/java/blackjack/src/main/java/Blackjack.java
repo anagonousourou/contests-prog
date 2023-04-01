@@ -1,8 +1,7 @@
 import java.util.Map;
 
 public class Blackjack {
-
-    static Map<String, Integer> cardsValues = Map.ofEntries(
+    private static Map<String, Integer> cardValues = Map.ofEntries(
             Map.entry("ace", 11),
             Map.entry("two", 2),
             Map.entry("three", 3),
@@ -15,44 +14,22 @@ public class Blackjack {
             Map.entry("ten", 10),
             Map.entry("jack", 10),
             Map.entry("queen", 10),
-            Map.entry("king", 10)
-
-    );
+            Map.entry("king", 10));
 
     public int parseCard(String card) {
-        return Blackjack.cardsValues.getOrDefault(card, 0);
+        return Blackjack.cardValues.getOrDefault(card, 0);
     }
 
     public boolean isBlackjack(String card1, String card2) {
-        return this.parseCard(card2) + this.parseCard(card1) == 21;
+       return parseCard(card2) + parseCard(card1) == 21;
     }
 
     public String largeHand(boolean isBlackjack, int dealerScore) {
-        if (!isBlackjack) {
-            return "P";
-        } else {
-            if (dealerScore != 11 && dealerScore != 10) {
-                return "W";
-            } else {
-                return "S";
-            }
-        }
+        return 
     }
 
     public String smallHand(int handScore, int dealerScore) {
-        if (handScore >= 17) {
-            return "S";
-        } else if (handScore <= 11) {
-            return "H";
-        } else if ((12 <= handScore && handScore <= 16)) {
-            if (dealerScore >= 7) {
-                return "H";
-            } else {
-                return "S";
-            }
-
-        }
-        return null;
+        throw new UnsupportedOperationException("Please implement the Blackjack.smallHand method");
     }
 
     // FirstTurn returns the semi-optimal decision for the first turn, given the
