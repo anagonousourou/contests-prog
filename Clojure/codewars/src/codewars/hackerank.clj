@@ -315,7 +315,7 @@
       (str)
       (println)))
 
-
+;; https://www.hackerrank.com/challenges/lists-and-gcd/problem?isFullScreen=true
 (defn gcd-from-prime-factorisation [a-map-int->int, b-map-int->int]
   (let [common-keys (clojure.set/intersection (set (keys a-map-int->int))  (set (keys b-map-int->int)))]
     (merge-with min (select-keys a-map-int->int common-keys) (select-keys b-map-int->int common-keys))
@@ -340,4 +340,92 @@
       (str)
       (println)))
 
-;; https://www.hackerrank.com/challenges/lists-and-gcd/problem?isFullScreen=true
+
+;;https://www.hackerrank.com/challenges/common-divisors/problem?isFullScreen=true
+
+(defn- get-divisors
+  "
+  This function find the divisors of n
+  "
+  [^long n]
+  (->> (range 1 (-> n (Math/sqrt) (inc) (long)))
+       (reduce (fn [result-coll, x] (if (zero? (mod n x)) (conj result-coll x, (quot n x)) result-coll)), #{})
+       )
+  )
+(doseq [_ (range (Integer/parseInt (read-line)) )]
+  (let [input-line  (re-seq #"\w+" (read-line))
+        a-int (Integer/parseInt (first input-line))
+        b-int (Integer/parseInt (second input-line))]
+    (-> (clojure.set/intersection (get-divisors a-int) (get-divisors b-int))
+        (count)
+        (println)
+        )
+    )
+)
+
+;;https://www.hackerrank.com/challenges/one-week-preparation-kit-tower-breakers-1/problem?isFullScreen=true
+
+(defn towerBreakers [n m]
+  (if (or (= m 1) (even? n))  2 1)
+  )
+
+;; https://www.hackerrank.com/challenges/one-week-preparation-kit-caesar-cipher-1/problem?isFullScreen=true
+
+
+(defn rotate
+  "Rotate a sequence XS-SEQ by k toward the left
+  Eg: (rotate 'abcd' 2) -> (c, d, a, b)
+  "
+  [xs-seq, k]
+  (let [n (count xs-seq)
+        k (mod k n)]
+    (concat (drop k xs-seq) (take k xs-seq))
+    )
+  )
+
+(defn caesarCipher [s k]
+  (let [cipher (zipmap "abcdefghijklmnopqrstuvwxyz" (rotate "abcdefghijklmnopqrstuvwxyz" k))]
+    (->> s
+         (map (fn[c-char] (cond
+                            (and (Character/isUpperCase c-char) (Character/isLetter c-char)) (Character/toUpperCase ^char (cipher (Character/toLowerCase c-char) ))
+                            (and (Character/isLowerCase c-char) (Character/isLetter c-char))  (cipher c-char)
+                            :else c-char
+                            )))
+         (clojure.string/join)
+         )
+    )
+)
+
+(defn mergesorted
+  [list-1, list-2]
+  (loop [result [], [a_x & a_xs :as a] list-1 [b_x & b_xs :as b] list-2]
+    (cond
+      (and (empty? a) (empty? b)) result
+      (empty? a) (into result b)
+      (empty? b) (into result a)
+      (< a_x b_x) (recur (conj result a_x) a_xs b )
+      (< b_x a_x) (recur (conj result b_x) a b_xs)
+      (= a_x b_x) (recur (conj result a_x b_x) a_xs b_xs)
+      )
+    )
+  )
+(def list-1 [])
+(def list-2 [])
+(doseq [_ (range (Integer/parseInt (read-line)))]
+  (def list-1 [])
+  (def list-2 [])
+  (let [list-1-length (Integer/parseInt (read-line))
+        _ (println "List1 length" list-1-length)
+        _ (doseq [_ (range list-1-length)]  (def list-1 (conj list-1 (Integer/parseInt (read-line)))))
+        list-2-length (Integer/parseInt (read-line))
+        _ (println "List2 length" list-2-length)
+        _ (doseq [_ (range list-2-length)]  (def list-2 (conj list-2 (Integer/parseInt (read-line)))))
+        _ (println "List 1" list-1)
+        _ (println "List 2" list-2)
+        ]
+    (->> (mergesorted list-1 list-2)
+         (clojure.string/join " ")
+         (println))
+    )
+  )
+
