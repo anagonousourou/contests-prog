@@ -1,0 +1,10 @@
+exit
+load hello.test.u
+update hello.u
+load hello.test.u
+update hello.u
+add hello.u
+load hello.test.u
+load hello.u
+load hello.test.u
+add

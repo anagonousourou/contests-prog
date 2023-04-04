@@ -4,66 +4,72 @@
   (:require [clojure.string])
   (:gen-class))
 
-(defn get-crates-index-in-string
-  "Input: ' 1   2   3'
-   Output: '({:string-index 9, :stack-number 3} {:string-index 5, :stack-number 2} {:string-index 1, :stack-number 1})
-  "
-  [crates-position-string]
-  (loop [i 0 positions crates-position-string result '()]
-    (if (empty? positions)
-      result
-      (recur (inc i) (rest positions)  (if (Character/isDigit (first positions))
-                                         (conj result {:string-index i, :stack-number (Character/getNumericValue (first positions))})
-                                         result
+; file =  {:file-type :file|:directory, :size 4589, :entries [file...]}
 
-                                         ))
-      )
+(defn run-simulation [input-str]
+
+  )
+
+(defn go-in-directory [file-system, dest-directory]
+  (update-in file-system [:context :current-directory] (fn[current-dir] (str current-dir "/" dest-directory)))
+  )
+
+(defn go-back [file-system-and-context]
+  (update-in file-system-and-context [:context :current-directory] (fn[current-dir] (-> current-dir
+                                                                                         (clojure.string/split #"/")
+                                                                                         (drop-last)
+                                                                                         ((fn[path-segments] (clojure.string/join "/" path-segments))))
+                                                                                     ))
+  )
+
+(defn go-to-root [file-system]
+  (update-in file-system [:context :current-directory] (fn[_] "/"))
+  )
+
+(defn command? [input]
+  (.startsWith input "$")
+  )
+
+(defn execute-command [file-system-and-context, input]
+  (cond
+    (.contains input "cd ..") (go-back file-system-and-context)
+    (.contains input "cd /")  (go-to-root file-system-and-context)
+    (.contains input "$ ls")  (update-in file-system-and-context [:context :listing-context] (fn [_] true))
+    :else (go-in-directory file-system-and-context (last (re-seq #"[\w]+" input)))
     )
   )
 
-(defn parse-crate-level [crates-possible-positions crates-level-str]
-  (reduce (fn [crate-level-composition crate-position]
-            (let [crate-index (:string-index crate-position)]
-              (cond
-                (< crate-index (count crates-level-str)) (if (->> crate-index
-                                                                  (nth crates-level-str)
-                                                                  (Character/isJavaLetter)),
-                                                           (conj crate-level-composition {
-                                                                                          :stack-number (:stack-number crate-position),
-                                                                                          :crate (nth crates-level-str crate-index)
-                                                                                          }),
-                                                           crate-level-composition)
-                :else crate-level-composition
-                ))) '() crates-possible-positions)
-  )
-(defn parse-actions [actions-str]
-  )
-
-(defn parse-crates [crates-str]
-  (->> crates-str
-       (clojure.string/split-lines)
-       ((fn [lines] (map (partial parse-crate-level  (get-crates-index-in-string (last lines))) (drop-last lines))))
-       (flatten)
-       (reduce (fn [all-stacks, crate-info] (update-in all-stacks [(:stack-number crate-info)] (fn[stack] (if (nil? stack)
-                                                                                                              [(:crate crate-info)]
-                                                                                                              (conj stack (:crate crate-info)    ))) )) {})
-       )
+(defn read-file-entry [file-system-and-context, input-str]
+  (let [
+        words (re-seq #"[\w.]+" input-str)
+        file-type (if (= "dir" (first words)) :directory :file)
+        current-directory (get-in file-system-and-context [:context :current-directory])
+        file-name (str current-directory "/" (second words))
+        ]
+    (case file-type
+      :directory
+      :file (update-in file-system-and-context [:file-system file-name] ))
+    )
 
   )
 
 
 
-
-
-
+(defn rebuild-file-system [file-system-and-context , command-or-entry]
+  (cond
+    (command? command-or-entry) (execute-command file-system-and-context command-or-entry)
+    )
+  )
 
 
 
 (defn -main
   "I don't do a lot ... yet."
   [& args]
-  (->> "inputs-2022/my-2022-day5-input-2"
+  (->> "inputs-2022/2022-day6-input"
        (io/resource)
        (slurp)
-       (parse-crates)
-       (println)))
+       (run-simulation)
+       (println)
+       )
+  )
