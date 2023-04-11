@@ -11,14 +11,23 @@ This repository is for trying out languages and algorithms...
 - Exhaustive error handling
 - Union types
 - Light thread
+- Allow use of keyword as name when quoted `'keyword`
+- No silent overflow of number arithmetics (throw runtime exception)
+- unicode identifier
+
+
 
 ### Clojure
 
 - No operator precedence
 - Macros
 - Immutability
-- No silent overflow of number arithmetics
+- No silent overflow of number arithmetics (throw runtime exception)
 - Transactional memory
+- operators like `+`, `*`, ... are functions
+
+#### Cheatsheet
+- https://clojure.org/api/cheatsheet
 
 ### C++
 
@@ -35,13 +44,19 @@ This repository is for trying out languages and algorithms...
 ### Julia
 
 - Macros
-- Unicode character in source code and for variable/function names
+- Unicode character & emojis in source code and for variable/function names
+- operators like `+`, `*`, ... are functions
+
+#### Cheatsheet
+- https://cheatsheet.juliadocs.org/
 
 ### Python
 
 - Arbitrary integer precision
 
 ### Rust
+
+- Macros
 
 ### Scala
 
@@ -55,6 +70,9 @@ This repository is for trying out languages and algorithms...
 - https://stackoverflow.com/questions/72216122/how-to-check-if-a-string-is-alphanumeric
 - https://stackoverflow.com/questions/29143667/whats-the-best-way-to-convert-an-int-to-a-char-in-julia#29146061
 - https://stackoverflow.com/questions/40520131/convert-float-to-int-in-julia-lang#40539387
+
+
+
 
 
 
