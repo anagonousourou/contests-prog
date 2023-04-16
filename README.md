@@ -70,6 +70,7 @@ This repository is for trying out languages and algorithms...
 - https://stackoverflow.com/questions/72216122/how-to-check-if-a-string-is-alphanumeric
 - https://stackoverflow.com/questions/29143667/whats-the-best-way-to-convert-an-int-to-a-char-in-julia#29146061
 - https://stackoverflow.com/questions/40520131/convert-float-to-int-in-julia-lang#40539387
+- https://stackoverflow.com/questions/35042458/how-to-fill-an-array-by-row-in-julia#35042583
 
 
 
