@@ -8,4 +8,8 @@ bin
 *.bin
 *.class
 *.pyc
+*catch.hpp 
 build
+*elm-stuff
+.cpcache
+*.lein-failures
