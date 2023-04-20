@@ -1,10 +1,31 @@
 module grains;
 
+ulong square(int s)
+{
+    if (1 <= s && s <= 64)
+    {
+        return 2uL ^^ (s - 1);
+    }
+    else
+    {
+        import std.string;
+
+        throw new Exception(format("Invalid value %s", s));
+
+    }
+
+}
+
+ulong total()
+{
+    return (2uL ^^ 64) - 1;
+}
+
 unittest
 {
     import std.exception : assertThrown;
 
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Returns the number of grains on the square
     assert(square(1) == 1);
