@@ -12,6 +12,9 @@ function fib(n::Int)
     end
 end
 
+#=
+nthfibo(n::Integer) = first([0 1] * [0 1; 1 1] ^ n)
+=#
 
 using FactCheck
 
