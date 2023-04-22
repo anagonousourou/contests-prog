@@ -1,8 +1,16 @@
 module armstrong_numbers;
 
+bool isArmstrongNumber(int n)
+{
+    import std.conv;
+    import std.algorithm;
+    
+    string nstring = n.to!string;
+    return nstring.map!(a => (a - '0') ^^ nstring.length).sum() == n;
+}
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Zero is an Armstrong number
     assert(isArmstrongNumber(0));
