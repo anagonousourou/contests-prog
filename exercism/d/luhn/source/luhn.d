@@ -3,20 +3,49 @@ module luhn;
 bool valid(string creditCardNumber)
 {
     import std.string;
-    
-    creditCardNumber = creditCardNumber.strip();
-    
+    import std.algorithm.mutation : reverse;
+    import std.ascii : isDigit;
+
+    creditCardNumber = creditCardNumber.strip().dup().reverse().replace(" ", "");
+    if (creditCardNumber.length <= 1)
+    {
+        return false;
+    }
+
+    int s = 0;
+    foreach (i, digitchar; creditCardNumber)
+    {
+        if (!digitchar.isDigit())
+        {
+            return false;
+        }
+
+        if (i % 2 == 1)
+        {
+            int digit = (digitchar - '0') * 2;
+            digit = digit > 9 ? digit - 9 : digit;
+            s += digit;
+        }
+        else
+        {
+            s += (digitchar - '0');
+        }
+    }
+    return s % 10 == 0;
 }
 
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
-    // Single digit strings can not be valid
-    assert(!valid("1"));
+    // A valid Canadian SIN
+    assert(valid("055 444 285"));
 
     static if (allTestsEnabled)
     {
+        // Single digit strings can not be valid
+        assert(!valid("1"));
+        
         // A single zero is invalid
         assert(!valid("0"));
 
@@ -25,9 +54,6 @@ unittest
 
         // A simple valid SIN that becomes invalid if reversed
         assert(valid("59"));
-
-        // A valid Canadian SIN
-        assert(valid("055 444 285"));
 
         // Invalid Canadian SIN
         assert(!valid("055 444 286"));

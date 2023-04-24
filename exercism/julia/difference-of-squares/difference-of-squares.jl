@@ -1,7 +1,6 @@
 "Square the sum of the first `n` positive integers"
 function square_of_sum(n)
-    sum = div((1 + n) * n, 2)
-    sum * sum
+    ((1 + n) * n ÷ 2) ^ 2
 end
 
 "Sum the squares of the first `n` positive integers"

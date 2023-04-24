@@ -11,7 +11,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - XML as first class (literals, manipulation)
 - JSON & CSV functions & types built-in
 - Exhaustive error handling (errors are values)
-- Union types
+- Union types, structural typing
 - Light thread
 - Allow use of keyword as name when quoted `'keyword`
 - No silent overflow of number arithmetics (throw runtime exception)
@@ -43,6 +43,9 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - Code coverage
 - Properties `a.name()` => `a.name`
 - Default parameters for functions
+- Import aliasing `import std.stdio : say = writeln;`
+- Built-in `deprecated` keyword
+- Built-in `version` keyword for dealing with variability in compilation
 
 ### Elixir
 
@@ -73,6 +76,11 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 - Arbitrary integer precision
 
+### Raku
+- Gradual typing
+- Contract programming with constraints
+- Rationals
+
 ### Rust
 
 - Macros
@@ -90,6 +98,11 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - https://stackoverflow.com/questions/29143667/whats-the-best-way-to-convert-an-int-to-a-char-in-julia#29146061
 - https://stackoverflow.com/questions/40520131/convert-float-to-int-in-julia-lang#40539387
 - https://stackoverflow.com/questions/35042458/how-to-fill-an-array-by-row-in-julia#35042583
+
+
+
+If there is one thing that decades of computing have taught us, it must be that
+discipline-oriented programming does not scale.
 
 
 
