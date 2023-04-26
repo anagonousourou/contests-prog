@@ -13,3 +13,5 @@ build
 *elm-stuff
 .cpcache
 *.lein-failures
+*.exe
+*.pdb
