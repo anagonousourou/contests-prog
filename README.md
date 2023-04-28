@@ -47,6 +47,9 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - Built-in `deprecated` keyword
 - Built-in `version` keyword for dealing with variability in compilation
 
+#### Links
+- https://github.com/dlang-community/awesome-d
+
 ### Elixir
 
 - Pipe operator `|>`
@@ -84,6 +87,9 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 ### Rust
 
 - Macros
+
+#### Links
+- https://github.com/rust-unofficial/awesome-rust
 
 ### Scala
 
