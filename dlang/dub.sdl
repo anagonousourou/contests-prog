@@ -1,0 +1,5 @@
+name "dlang"
+description "Exercises for Dlang"
+authors "panagonou"
+copyright "Copyright © 2023, panagonou"
+license "proprietary"
