@@ -115,7 +115,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 
 
-
+### Software characteristic
 
 - maintainability
 - resource efficiency (memory & CPU)
@@ -154,6 +154,15 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 ## JavaScript alternatives
 
+### ReasonML
+
+### ReScript
+
+### ClojureScript
+
+### CoffeeScript
+
+### PureScript
 
 ## Dynamism vs immutability for runtime environments
 Application servers like Tomcat and TomEE enable you to add and remove capabilities to your running service by updating jars on the fly.
