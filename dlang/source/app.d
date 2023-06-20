@@ -208,3 +208,155 @@ unittest
 	dotest("sumsum", &sumsum, 8, BigInt(576));
 	dotest("sumsum", &sumsum, 730, BigInt(389_549_900));
 }
+
+export uint[] primeFactors(uint n)
+{
+	uint i = 2;
+	uint[] factors = [];
+	while (n > 1)
+	{
+		if (n % i == 0)
+		{
+			factors ~= i;
+			n /= i;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return factors;
+}
+
+@("Basic tests")
+unittest
+{
+
+	void dotest(uint n, uint[] expected)
+	{
+		assert(primeFactors(n) == expected); //because("n = %d".format(n));
+	}
+
+	dotest(1, []);
+	dotest(4, [2, 2]);
+	dotest(8, [2, 2, 2]);
+	dotest(9, [3, 3]);
+	dotest(12, [2, 2, 3]);
+	dotest(11_020_332, [2, 2, 3, 918_361]);
+	dotest(429_496_7295, [3, 5, 17, 257, 65_537]);
+	dotest(0, []);
+}
+
+export string contamination(string text, string character)
+{
+	import std.algorithm : map;
+	import std.array : array;
+	import std.range : empty;
+
+	if (text.empty || character.empty)
+	{
+		return "";
+	}
+	return text.map!(c => character[0]).array;
+}
+
+void dotest(string text, string character, string expected)
+{
+	assert(contamination(text, character) == expected);
+}
+
+@("Basic tests")
+unittest
+{
+	dotest("abc", "z", "zzz");
+	dotest("", "z", "");
+	dotest("abc", "", "");
+	dotest("_3ebzgh4", "&", "&&&&&&&&");
+	dotest("//case", " ", "      ");
+}
+
+export string addBinary(uint a, uint b)
+{
+	import std.format : format;
+
+	return format("%b", a + b);
+}
+
+void dotest(uint a, uint b, string expected)
+{
+	assert(addBinary(a, b) == expected);
+}
+
+@("Basic tests")
+unittest
+{
+	dotest(1, 1, "10");
+	dotest(0, 1, "1");
+	dotest(1, 0, "1");
+	dotest(2, 2, "100");
+	dotest(51, 12, "111111");
+}
+
+export string accum(string s)
+{
+	import std.range : repeat, take;
+	import std.array : join, array;
+	import std.string : capitalize;
+
+	string[] parts = [];
+	foreach (i, ch; s)
+	{
+		parts ~= ch.repeat.take(i + 1).array.capitalize;
+	}
+	return parts.join("-");
+}
+
+@("fixed tests")
+unittest
+{
+	assert(
+		accum(
+			"ZpglnRxqenU") == "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+	assert(
+		accum(
+			"NyffsGeyylB") == "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
+	assert(
+		accum(
+			"MjtkuBovqrU") == "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
+	assert(
+		accum(
+			"EvidjUnokmM") == "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
+
+}
+
+export uint sequenceSum(uint start, uint end, uint step)
+{
+	if (start > end)
+	{
+		return 0;
+	}
+
+	uint actualEnd = end;
+	while ((actualEnd - start) % step != 0)
+	{
+		actualEnd--;
+	}
+
+	int nbElts = ((actualEnd - start) / step) + 1;
+	return (start + actualEnd) * nbElts / 2;
+}
+
+@("Basic tests")
+unittest
+{
+	assert(sequenceSum(2, 6, 2) == 12);
+	assert(sequenceSum(1, 5, 1) == 15);
+	assert(sequenceSum(1, 5, 3) == 5);
+	assert(sequenceSum(0, 15, 3) == 45);
+	assert(sequenceSum(16, 15, 3) == 0);
+	assert(sequenceSum(2, 24, 22) == 26);
+	assert(sequenceSum(2, 2, 2) == 2);
+	assert(sequenceSum(2, 2, 1) == 2);
+	assert(sequenceSum(1, 15, 3) == 35);
+	assert(sequenceSum(15, 1, 3) == 0);
+}
