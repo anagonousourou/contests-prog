@@ -1,0 +1,25 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "gabrielperales"
+  ],
+  "contributors": [
+    "naartjie",
+    "ohana54",
+    "spencerwi",
+    "stevejb71",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/WordCount.re"
+    ],
+    "test": [
+      "__tests__/WordCount_test.re"
+    ],
+    "example": [
+      ".meta/src/Example.re"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

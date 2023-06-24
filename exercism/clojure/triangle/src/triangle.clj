@@ -1,6 +1,6 @@
 (ns triangle)
 
-(defn is-valid? [a b c] ;; <- arglist goes here
+(defn is-valid? [a b c]
   (cond 
     (not-every? (fn [n] (> n 0)) [a b c] ) false
     (< (+ a b) c) false
@@ -10,14 +10,14 @@
     )
   )
 
-(defn equilateral? [a b c] ;; <- arglist goes here
+(defn equilateral? [a b c]
   (and (is-valid? a b c) (= a b c))
 )
 
-(defn isosceles? [a b c] ;; <- arglist goes here
+(defn isosceles? [a b c]
   (and (is-valid? a b c) (>= 2 (count (set [a b c]))))
 )
 
-(defn scalene? [a b c] ;; <- arglist goes here
+(defn scalene? [a b c]
   (if (is-valid? a b c) (not (isosceles? a b c)) false)
 )

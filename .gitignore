@@ -15,3 +15,9 @@ build
 *.lein-failures
 *.exe
 *.pdb
+.dart_tool
+node_modules
+.merlin
+**/lib/bs
+pubspec.lock
+**/*.bs.js
