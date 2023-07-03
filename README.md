@@ -169,10 +169,3 @@ Application servers like Tomcat and TomEE enable you to add and remove capabilit
 Similar dynamism is possible with DLLs and Shared libraries.
 On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability. 
 The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application.
-
-
-
-
-
-
-

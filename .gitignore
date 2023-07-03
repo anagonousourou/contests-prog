@@ -21,3 +21,4 @@ node_modules
 **/lib/bs
 pubspec.lock
 **/*.bs.js
+*.iml
