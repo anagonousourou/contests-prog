@@ -152,17 +152,23 @@ https://github.com/coalton-lang/coalton
 
 
 
-## JavaScript alternatives
+## JavaScript comparison with its alternatives
+
+### JavaScript
+- array, objects, regex literals
+- string interpolation
+
+### ClojureScript
+
+### PureScript
 
 ### ReasonML
 
 ### ReScript
 
-### ClojureScript
+### Elm
 
 ### CoffeeScript
-
-### PureScript
 
 ## Dynamism vs immutability for runtime environments
 Application servers like Tomcat and TomEE enable you to add and remove capabilities to your running service by updating jars on the fly.
