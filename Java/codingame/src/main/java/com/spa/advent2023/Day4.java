@@ -15,6 +15,7 @@ public class Day4 {
         private final int nbMatchingNumbers;
 
         private int nbCopies = 1;
+
         Card(int id, int nbMatchingNumbers) {
             this.id = id;
             this.nbMatchingNumbers = nbMatchingNumbers;
@@ -46,11 +47,11 @@ public class Day4 {
         public String toString() {
             return "Card[" +
                 "id=" + id + ", " +
-                "nbMatchingNumbers=" + nbMatchingNumbers + ",nbCopies="+ nbCopies + ']';
+                "nbMatchingNumbers=" + nbMatchingNumbers + ",nbCopies=" + nbCopies + ']';
         }
     }
 
-    private static int processPart2(List<String> lines){
+    private static int processPart2(List<String> lines) {
         var cards = IntStream.range(0, lines.size()).mapToObj(i -> {
             var line = lines.get(i);
             String[] numbers = line.split(":")[1].split("\\|");
@@ -63,7 +64,7 @@ public class Day4 {
                 .filter(n -> winningNumbers.stream().anyMatch(m -> Objects.equals(m, n)))
                 .count();
 
-            return new Card(i+1, (int) nbWinningNumbersObtained);
+            return new Card(i + 1, (int) nbWinningNumbersObtained);
         }).toList();
 
         for (int i = 0; i < cards.size(); i++) {
@@ -72,8 +73,6 @@ public class Day4 {
                 cards.get(j).nbCopies += cards.get(i).nbCopies;
             }
         }
-
-        System.out.println(cards);
         return cards.stream().mapToInt(card -> card.nbCopies).sum();
     }
 

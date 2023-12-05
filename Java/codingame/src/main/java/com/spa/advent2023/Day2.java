@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 
 public class Day2 {
 
-    static Pattern DIGIT = Pattern.compile("\\d+");
-    static Map<String, Integer> LIMITS = Map.of("red", 12, "blue", 14, "green", 13);
+    private static Pattern DIGIT = Pattern.compile("\\d+");
+    private static Map<String, Integer> LIMITS = Map.of("red", 12, "blue", 14, "green", 13);
 
     static
     record Game(int id, List<Map<String, Integer>> gameTurnResults) {

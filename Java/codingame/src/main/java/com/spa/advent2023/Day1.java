@@ -10,20 +10,20 @@ import java.util.regex.Pattern;
 
 public class Day1 {
 
-    static Pattern pattern = Pattern.compile("one|two|three|four|five|six|seven|eight|nine|\\d");
+    private static final Pattern DIGIT_PATTERN = Pattern.compile("one|two|three|four|five|six|seven|eight|nine|\\d");
 
-    static Map<String, String> DIGIT_SPELLING = Map.ofEntries(Map.entry("one", "1"), Map.entry("two", "2"),
+    private static final Map<String, String> DIGIT_SPELLING = Map.ofEntries(Map.entry("one", "1"), Map.entry("two", "2"),
         Map.entry("three", "3"), Map.entry("four", "4"), Map.entry("five", "5"), Map.entry("six", "6"),
         Map.entry("seven", "7"), Map.entry("eight", "8"), Map.entry("nine", "9"));
 
 
-    static int sumCalibrationValues(List<String> lines) {
+    private static int sumCalibrationValues(List<String> lines) {
         return lines.stream().map(line -> line.chars().filter(Character::isDigit).mapToObj(i -> (char) i).toList())
             .map(characters -> String.valueOf(characters.get(0)) + String.valueOf(characters.get(characters.size() - 1)))
             .mapToInt(Integer::valueOf).sum();
     }
 
-    static int sumCalibrationValuesPart2(List<String> lines) {
+    private static int sumCalibrationValuesPart2(List<String> lines) {
         return lines.stream().map(Day1::getDigits)
             .map(digits -> digits.get(0) + digits.get(digits.size() - 1))
             .mapToInt(Integer::valueOf).sum();
@@ -37,19 +37,18 @@ public class Day1 {
         getDigits("xcntwone4633sixmkm1nine");
     }
 
-    static List<String> getDigits(String line) {
-        Matcher matcher = pattern.matcher(line);
+    private static List<String> getDigits(String line) {
+        Matcher matcher = DIGIT_PATTERN.matcher(line);
         List<String> digits = new ArrayList<>();
         int startAt = 0;
         while (matcher.find(startAt)) {
             startAt = matcher.start() + 1;
             digits.add(DIGIT_SPELLING.getOrDefault(matcher.group(), matcher.group()));
         }
-        System.out.println(digits);
         return digits;
     }
 
-    static <K, V> V getOrDefault(Map<K, V> map, K key, Supplier<V> defaultExpression) {
+    private static <K, V> V getOrDefault(Map<K, V> map, K key, Supplier<V> defaultExpression) {
         return (map.containsKey(key)) ? map.get(key) : defaultExpression.get();
     }
 }
