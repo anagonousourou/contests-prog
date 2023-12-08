@@ -31,43 +31,43 @@ public class Day7Part2 {
             }
 
             if (occurrences.size() == 5) {
-                if(occurrences.containsKey(CardValue.J)){
+                if (occurrences.containsKey(CardValue.J)) {
                     return HandType.ONE_PAIR;
                 }
                 return HandType.HIGH_CARD;
             }
 
             if (occurrences.size() == 2 && occurrences.containsValue(4L)) {
-                if(occurrences.containsKey(CardValue.J)){
+                if (occurrences.containsKey(CardValue.J)) {
                     return HandType.FIVE;
                 }
                 return HandType.FOUR;
             }
             if (occurrences.size() == 2 && occurrences.containsValue(3L)) {
-                if(occurrences.containsKey(CardValue.J)){
+                if (occurrences.containsKey(CardValue.J)) {
                     return HandType.FIVE;
                 }
                 return HandType.FULL_HOUSE;
             }
 
             if (occurrences.size() == 3 && occurrences.containsValue(3L)) {
-                if(occurrences.containsKey(CardValue.J)){
+                if (occurrences.containsKey(CardValue.J)) {
                     return HandType.FOUR;
                 }
                 return HandType.THREE;
             }
             if (occurrences.size() == 3 && occurrences.containsValue(2L)) {
-                if(occurrences.containsKey(CardValue.J) && occurrences.get(CardValue.J) == 1){
+                if (occurrences.containsKey(CardValue.J) && occurrences.get(CardValue.J) == 1) {
                     return HandType.FULL_HOUSE;
                 }
-                if(occurrences.containsKey(CardValue.J) && occurrences.get(CardValue.J) == 2){
+                if (occurrences.containsKey(CardValue.J) && occurrences.get(CardValue.J) == 2) {
                     return HandType.FOUR;
                 }
                 return HandType.TWO_PAIR;
             }
 
             if (occurrences.size() == 4) {
-                if(occurrences.containsKey(CardValue.J)){
+                if (occurrences.containsKey(CardValue.J)) {
                     return HandType.THREE;
                 }
                 return HandType.ONE_PAIR;

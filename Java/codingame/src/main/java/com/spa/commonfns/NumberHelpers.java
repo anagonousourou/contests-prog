@@ -1,10 +1,6 @@
 package com.spa.commonfns;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -46,16 +42,16 @@ public class NumberHelpers {
         }
     }
 
-    public static boolean isEven(int n){
+    public static boolean isEven(int n) {
         return n % 2 == 0;
     }
 
-    public static boolean isOdd(int n){
+    public static boolean isOdd(int n) {
         return n % 2 != 0;
     }
 
     public static boolean isPrime(long n) {
-        if(n == 1){
+        if (n == 1) {
             return false;
         }
         int limit = (int) Math.sqrt(n);
@@ -139,6 +135,17 @@ public class NumberHelpers {
             }
         }
         return divisors;
+    }
+
+    public static long gcd(long a, long b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    public static long lcm(long a, long b) {
+        return (a * b) / gcd(a, b);
     }
 
     public static boolean isArmstrongNumber(int numberToCheck) {

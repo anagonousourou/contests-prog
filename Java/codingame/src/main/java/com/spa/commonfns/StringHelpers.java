@@ -4,15 +4,7 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,24 +15,22 @@ public final class StringHelpers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();
-        while (scanner.hasNextLine()){
-           short op = scanner.nextShort();
-           int num = scanner.nextInt();
-           switch (op){
-               case 1:
+        while (scanner.hasNextLine()) {
+            short op = scanner.nextShort();
+            int num = scanner.nextInt();
+            switch (op) {
+                case 1:
 
-                   break;
-               case 2:
-                   break;
-               case 3:
-                   break;
-           }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
         }
 
 
-
     }
-
 
 
     public static boolean areAnagrams(List<String> candidates) {
@@ -90,9 +80,11 @@ public final class StringHelpers {
     public static char first(String input) {
         return input.charAt(0);
     }
+
     public static <A> A first(List<A> input) {
         return input.get(0);
     }
+
     public static <A> List<A> rest(List<A> input) {
         if (input.size() <= 1) {
             return List.of();
@@ -123,18 +115,17 @@ public final class StringHelpers {
         return subs;
     }
 
-    public static String randomAlphabetic(int count, Random random){
+    public static String randomAlphabetic(int count, Random random) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < count; i++) {
-            stringBuilder.append((char)random.nextInt(97, 122));
+            stringBuilder.append((char) random.nextInt(97, 122));
         }
-        return  stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
     /**
-     *
      * @param originalMap a map where the values are collections
-     * @param <KeyType> type parameter of the key in the result
+     * @param <KeyType>   type parameter of the key in the result
      * @param <ValueType> type parameter of the value in the result
      * @return a map where the elements of the collections are now the keys
      */
@@ -170,7 +161,7 @@ public final class StringHelpers {
         }
     }
 
-    public static String md5(String input){
+    public static String md5(String input) {
         try {
             byte[] bytesOfMessage = input.getBytes(StandardCharsets.UTF_8);
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -181,7 +172,7 @@ public final class StringHelpers {
         }
     }
 
-    public static String sha256(String input){
+    public static String sha256(String input) {
         try {
             byte[] bytesOfMessage = input.getBytes(StandardCharsets.UTF_8);
             MessageDigest md = MessageDigest.getInstance("SHA-256");
