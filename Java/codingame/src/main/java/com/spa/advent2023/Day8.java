@@ -17,7 +17,7 @@ public class Day8 {
     private record Node(String name, String left, String right) {
     }
 
-    static List<Node> getNodes(List<String> inputLines) {
+    private static List<Node> getNodes(List<String> inputLines) {
         return inputLines.stream().map(line -> {
             var names = StringHelpers.reSeq(NODE_NAME_PATTERN, line).stream().toList();
             return new Node(names.get(0), names.get(1), names.get(2));
@@ -35,7 +35,7 @@ public class Day8 {
         int i = 0;
         int count = 0;
 
-        while (true) {
+        while (!"ZZZ".equals(currentNode.name)) {
             if (sequences.charAt(i) == 'L') {
                 currentNode = nodesMap.get(currentNode.left);
             } else {
@@ -43,10 +43,8 @@ public class Day8 {
             }
             i = (i + 1) % sequences.length();
             count++;
-            if ("ZZZ".equals(currentNode.name)) {
-                return count;
-            }
         }
+        return count;
     }
 
     private static int process(java.util.Map<String, Day8.Node> nodesMap, String sequences, String startingNode) {

@@ -13,7 +13,7 @@ public class NumberHelpers {
      * solution
      * https://exercism.org/profiles/ephultman
      */
-    private static Predicate<List<Double>> legalTriangle = l -> {
+    private static final Predicate<List<Double>> legalTriangle = l -> {
         double sum = l.stream()
             .mapToDouble(Double::doubleValue)
             .sum();
@@ -67,8 +67,12 @@ public class NumberHelpers {
         return StringHelpers.isPalindrome(String.valueOf(n));
     }
 
+    //https://leetcode.com/problems/power-of-two/
     public static boolean isPowerOf2(int num) {
-        return (num & num - 1) == 0;
+        if (num <= 0) {
+            return false;
+        }
+        return (num & (num - 1)) == 0;
     }
 
     /**
@@ -135,6 +139,28 @@ public class NumberHelpers {
             }
         }
         return divisors;
+    }
+
+    /**
+     * get all the prime factors of the input,
+     * the prime factor appears as many times as needed to get the number
+     * ie product(result) == b
+     * @param n
+     * @return
+     */
+    public static List<Long> primeFactors(long n) {
+        long i = 2;
+        List<Long> factors = new ArrayList<>();
+        while (n != 1) {
+            if (n % i == 0) {
+                factors.add(i);
+                n = n / i;
+            } else {
+                i += 1;
+            }
+        }
+
+        return factors;
     }
 
     public static long gcd(long a, long b) {
