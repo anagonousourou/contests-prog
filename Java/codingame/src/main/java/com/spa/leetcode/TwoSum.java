@@ -1,7 +1,8 @@
 package com.spa.leetcode;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class TwoSum {
 
@@ -10,7 +11,7 @@ public class TwoSum {
         var remsList = numsList.stream().map(n -> target - n).toList();
         List<Integer> solutions = new ArrayList<>(2);
         for (int i = 0; i < numsList.size(); i++) {
-            if(numsList.contains(remsList.get(i)) && hasMatch(numsList, i + 1, remsList.get(i))) {
+            if (numsList.contains(remsList.get(i)) && hasMatch(numsList, i + 1, remsList.get(i))) {
                 solutions.add(i);
                 solutions.add(getMatchIndex(numsList, i + 1, remsList.get(i)));
                 break;
@@ -19,13 +20,13 @@ public class TwoSum {
         return solutions.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    boolean hasMatch(List<Integer> integers, int start, int needle){
+    boolean hasMatch(List<Integer> integers, int start, int needle) {
         return integers.subList(start, integers.size()).stream().anyMatch(n -> n == needle);
     }
 
-    int getMatchIndex(List<Integer> integers, int start, int needle){
+    int getMatchIndex(List<Integer> integers, int start, int needle) {
         for (int i = start; i < integers.size(); i++) {
-            if(integers.get(i) == needle){
+            if (integers.get(i) == needle) {
                 return i;
             }
         }

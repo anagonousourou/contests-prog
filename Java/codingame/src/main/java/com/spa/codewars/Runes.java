@@ -2,15 +2,8 @@ package com.spa.codewars;
 
 import com.spa.commonfns.StringHelpers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Runes {
 
@@ -31,7 +24,7 @@ public class Runes {
             String operator = expressionMap.get("OPERATOR");
             int result = Integer.parseInt(expressionMap.get("RESULT").replace("?", possibleValue));
 
-            switch(operator) {
+            switch (operator) {
                 case "+":
                     if (op1 + op2 == result) {
                         return Integer.parseInt(possibleValue);
@@ -76,7 +69,7 @@ public class Runes {
     public static List<String> possibleValues(final String expression, Map<String, String> expressionMap) {
         List<String> candidates = new ArrayList<>(List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"));
         boolean cantBeZero = expressionMap.values().stream().anyMatch((String op) ->
-            op.replace("-", ""). indexOf('?') == 0 && op.replace("-", "").length() > 1
+            op.replace("-", "").indexOf('?') == 0 && op.replace("-", "").length() > 1
         );
 
         if (cantBeZero) {

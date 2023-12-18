@@ -9,7 +9,7 @@ public class DeadFish {
         int v = 0;
         List<Integer> values = new ArrayList<>();
         for (int i = 0; i < data.length(); i++) {
-            switch (data.charAt(i)){
+            switch (data.charAt(i)) {
                 case 'i':
                     v++;
                     break;
@@ -17,13 +17,13 @@ public class DeadFish {
                     v--;
                     break;
                 case 's':
-                    v = v*v;
+                    v = v * v;
                     break;
                 case 'o':
                     values.add(v);
                     break;
             }
         }
-        return  values.stream().mapToInt(Integer::intValue).toArray();
+        return values.stream().mapToInt(Integer::intValue).toArray();
     }
 }

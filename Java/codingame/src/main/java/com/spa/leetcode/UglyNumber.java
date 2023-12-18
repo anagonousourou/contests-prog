@@ -3,7 +3,7 @@ package com.spa.leetcode;
 //https://leetcode.com/problems/ugly-number/
 public class UglyNumber {
     public boolean isUgly(int input) {
-        if(input <=0){
+        if (input <= 0) {
             return false;
         }
 

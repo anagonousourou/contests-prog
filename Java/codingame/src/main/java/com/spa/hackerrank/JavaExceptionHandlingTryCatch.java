@@ -13,14 +13,14 @@ public class JavaExceptionHandlingTryCatch {
             int c = a / b;
             System.out.println(c);
 
-        }catch (RuntimeException runtimeException){
-            if(runtimeException instanceof InputMismatchException){
+        } catch (RuntimeException runtimeException) {
+            if (runtimeException instanceof InputMismatchException) {
                 System.out.println(runtimeException.getClass().getCanonicalName());
-            }else{
+            } else {
                 System.out.println(runtimeException);
             }
 
-        }finally {
+        } finally {
             scanner.close();
         }
 

@@ -1,10 +1,12 @@
 package com.spa.hackerrank;
 
-import java.util.*;
-import java.security.*;
+import java.security.Permission;
+import java.util.Scanner;
+
 interface Food {
     public String getType();
 }
+
 class Pizza implements Food {
     public String getType() {
         return "Someone ordered a Fast Food!";
@@ -17,11 +19,12 @@ class Cake implements Food {
         return "Someone ordered a Dessert!";
     }
 }
+
 class FoodFactory {
     public Food getFood(String order) {
-        if("pizza".equals(order)){
+        if ("pizza".equals(order)) {
             return new Pizza();
-        }else{
+        } else {
             return new Cake();
         }
     }//End of getFood method
@@ -30,12 +33,12 @@ class FoodFactory {
 
 public class JavaFactoryPattern {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         Do_Not_Terminate.forbidExit();
 
-        try{
+        try {
 
-            Scanner sc=new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
             //creating the factory
             FoodFactory foodFactory = new FoodFactory();
 
@@ -43,15 +46,15 @@ public class JavaFactoryPattern {
             Food food = foodFactory.getFood(sc.nextLine());
 
 
-            System.out.println("The factory returned "+food.getClass());
+            System.out.println("The factory returned " + food.getClass());
             System.out.println(food.getType());
-        }
-        catch (Do_Not_Terminate.ExitTrappedException e) {
+        } catch (Do_Not_Terminate.ExitTrappedException e) {
             System.out.println("Unsuccessful Termination!!");
         }
     }
 
 }
+
 class Do_Not_Terminate {
 
     public static class ExitTrappedException extends SecurityException {

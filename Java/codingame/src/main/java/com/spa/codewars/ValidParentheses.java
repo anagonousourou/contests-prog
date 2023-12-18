@@ -2,17 +2,16 @@ package com.spa.codewars;
 
 public class ValidParentheses {
 
-    public static boolean validParentheses(String parens)
-    {
+    public static boolean validParentheses(String parens) {
         int count = 0;
-        for(char ch :parens.toCharArray()){
-            if( ch == '('){
+        for (char ch : parens.toCharArray()) {
+            if (ch == '(') {
                 count++;
             }
-            if(ch == ')'){
+            if (ch == ')') {
                 count--;
             }
-            if(count < 0){
+            if (count < 0) {
                 return false;
             }
         }

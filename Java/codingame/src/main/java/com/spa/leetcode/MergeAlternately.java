@@ -7,10 +7,10 @@ public class MergeAlternately {
     }
 
     public String mergeAlternately(String word1, String word2, String result) {
-        if(word2.isEmpty()){
+        if (word2.isEmpty()) {
             return result + word1;
         }
-        if(word1.isEmpty()){
+        if (word1.isEmpty()) {
             return result + word2;
         }
         return mergeAlternately(word1.substring(1), word2.substring(1),

@@ -19,7 +19,7 @@ public class JavaArraylist {
         scanner.nextLine();
         while (scanner.hasNext()) {
             int line = scanner.nextInt() - 1;
-            int position = scanner.nextInt() -1;
+            int position = scanner.nextInt() - 1;
             try {
                 System.out.println(lines.get(line).get(position));
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {

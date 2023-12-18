@@ -8,6 +8,7 @@ public class WordPattern {
 
     /**
      * https://leetcode.com/problems/word-pattern/
+     *
      * @param pattern
      * @param s
      * @return
@@ -18,24 +19,20 @@ public class WordPattern {
 
     private boolean wordPattern(String pattern, String[] words, Map<Character, String> matches) {
 
-        if(!pattern.isEmpty() && words.length > 0){
+        if (!pattern.isEmpty() && words.length > 0) {
             char currentChar = pattern.charAt(0);
-            if(matches.containsKey(currentChar) && !matches.get(currentChar).equals(words[0])){
+            if (matches.containsKey(currentChar) && !matches.get(currentChar).equals(words[0])) {
                 return false;
-            }
-            else if(!matches.containsKey(currentChar) && matches.containsValue(words[0])){
+            } else if (!matches.containsKey(currentChar) && matches.containsValue(words[0])) {
                 return false;
-            }
-            else if(matches.containsKey(currentChar) && matches.containsValue(words[0])){
-                return wordPattern(pattern.substring(1), Arrays.copyOfRange(words,1, words.length), matches);
-            }
-            else if(!matches.containsKey(currentChar) && !matches.containsValue(words[0])){
+            } else if (matches.containsKey(currentChar) && matches.containsValue(words[0])) {
+                return wordPattern(pattern.substring(1), Arrays.copyOfRange(words, 1, words.length), matches);
+            } else if (!matches.containsKey(currentChar) && !matches.containsValue(words[0])) {
                 matches.put(currentChar, words[0]);
-                return wordPattern(pattern.substring(1), Arrays.copyOfRange(words,1, words.length), matches);
+                return wordPattern(pattern.substring(1), Arrays.copyOfRange(words, 1, words.length), matches);
             }
 
-        }
-        else if(pattern.isEmpty() && words.length == 0){
+        } else if (pattern.isEmpty() && words.length == 0) {
             return true;
         }
         return false;

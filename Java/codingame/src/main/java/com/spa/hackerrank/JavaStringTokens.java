@@ -1,8 +1,6 @@
 package com.spa.hackerrank;
 
-import java.security.Permission;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 class Add {

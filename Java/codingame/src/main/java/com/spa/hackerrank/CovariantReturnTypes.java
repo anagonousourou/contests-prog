@@ -1,4 +1,5 @@
 package com.spa.hackerrank;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,14 +9,14 @@ abstract class Flower {
     abstract String whatsYourName();
 }
 
-class Jasmine extends Flower{
+class Jasmine extends Flower {
     @Override
     String whatsYourName() {
         return "Jasmine";
     }
 }
 
-class Lily extends Flower{
+class Lily extends Flower {
     @Override
     String whatsYourName() {
         return "Lily";
@@ -26,14 +27,14 @@ abstract class Region {
     abstract Flower yourNationalFlower();
 }
 
-class WestBengal extends Region{
+class WestBengal extends Region {
     @Override
     Flower yourNationalFlower() {
         return new Jasmine();
     }
 }
 
-class AndhraPradesh extends Region{
+class AndhraPradesh extends Region {
     @Override
     Flower yourNationalFlower() {
         return new Lily();

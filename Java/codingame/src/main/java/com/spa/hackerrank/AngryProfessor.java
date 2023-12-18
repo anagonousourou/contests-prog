@@ -1,8 +1,10 @@
 package com.spa.hackerrank;
 
-import java.util.List;
 import java.io.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.toList;
 
 

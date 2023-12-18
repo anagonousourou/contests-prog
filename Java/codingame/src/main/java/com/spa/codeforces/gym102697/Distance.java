@@ -10,7 +10,7 @@ public class Distance {
         int x2 = in.nextInt();
         int y2 = in.nextInt();
 
-        System.out.println(Math.sqrt((x1 - x2) * (double)(x1 - x2) + (y1 - y2) * (y1 - y2)));
+        System.out.println(Math.sqrt((x1 - x2) * (double) (x1 - x2) + (y1 - y2) * (y1 - y2)));
 
         in.close();
     }

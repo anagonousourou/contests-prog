@@ -15,7 +15,7 @@ class Prime {
     }
 
     public static boolean isPrime(long n) {
-        if(n == 1){
+        if (n == 1) {
             return false;
         }
         int limit = (int) Math.sqrt(n);

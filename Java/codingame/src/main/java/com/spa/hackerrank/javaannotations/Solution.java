@@ -1,18 +1,22 @@
 package com.spa.hackerrank.javaannotations;
 
-import java.lang.annotation.*;
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Method;
+import java.util.Scanner;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @interface FamilyBudget {
     String userRole() default "GUEST";
-	int budget() default 0;
+
+    int budget() default 0;
 }
 
 class FamilyMember {
-	@FamilyBudget(userRole = "SENIOR", budget = 100)
+    @FamilyBudget(userRole = "SENIOR", budget = 100)
     public void seniorMember(int budget, int moneySpend) {
         System.out.println("Senior Member");
         System.out.println("Spend: " + moneySpend);
@@ -44,10 +48,10 @@ public class Solution {
                         String userRole = family.userRole();
                         int budgetLimit = family.budget();
                         if (userRole.equals(role)) {
-                            if(budgetLimit >= spend){
+                            if (budgetLimit >= spend) {
                                 method.invoke(FamilyMember.class.newInstance(),
                                     budgetLimit, spend);
-                            }else{
+                            } else {
                                 System.out.println("Budget Limit Over");
                             }
                         }

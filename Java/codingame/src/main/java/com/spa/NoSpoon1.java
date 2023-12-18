@@ -12,7 +12,7 @@ public class NoSpoon1 {
 
     /**
      * Cell
-     * 
+     * <p>
      * public record Cell(int i, int j) {
      * }
      */

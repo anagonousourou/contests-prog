@@ -1,12 +1,6 @@
 package com.spa.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -47,7 +41,9 @@ public class SolutionLeetCode {
         }
     }
 
-    /** Definition for a binary tree node. */
+    /**
+     * Definition for a binary tree node.
+     */
     public class TreeNode {
         int val;
         TreeNode left;
@@ -79,7 +75,7 @@ public class SolutionLeetCode {
 
     public int climbStairs2(int n) {
         Map<Integer, Set<String>> known = new HashMap<>(
-                Map.of(1, Set.of("1"), 2, Set.of("11", "2"), 3, Set.of("111", "21", "12")));
+            Map.of(1, Set.of("1"), 2, Set.of("11", "2"), 3, Set.of("111", "21", "12")));
         climbStairs1Utils(n, 4, known);
         return known.get(n).size();
     }
@@ -231,7 +227,7 @@ public class SolutionLeetCode {
         String currentTLetter = t.substring(0, 1);
 
         if (transformations.containsKey(currentSLetter)
-                && !transformations.get(currentSLetter).equals(currentTLetter)) {
+            && !transformations.get(currentSLetter).equals(currentTLetter)) {
             return false;
         }
 
@@ -273,7 +269,7 @@ public class SolutionLeetCode {
     }
 
     public ListNode mergeTwoListsImpl(ListNode list1, ListNode list2, ListNode currentNodeInResult,
-            ListNode resultHead) {
+                                      ListNode resultHead) {
         if (list1 == null && list2 == null) {
             return resultHead;
         }
@@ -349,7 +345,7 @@ public class SolutionLeetCode {
 
     /**
      * https://medium.com/@tuvo1106/the-tortoise-and-the-hare-floyds-algorithm-87badf5f7d41
-     * 
+     *
      * @param head
      * @return
      */
@@ -402,7 +398,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-     * 
+     *
      * @param prices
      * @return
      */
@@ -426,7 +422,7 @@ public class SolutionLeetCode {
 
     public int longestPalindrome(String s) {
         var lettersCount = s.chars().<String>mapToObj(Character::toString)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         long l = 0;
         int rest = 0;
         for (var letterCount : lettersCount.entrySet()) {
@@ -501,7 +497,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/first-bad-version/
-     * 
+     *
      * @param n
      * @return
      */
@@ -540,7 +536,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/validate-binary-search-tree/
-     * 
+     *
      * @param root
      * @return
      */
@@ -568,7 +564,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
-     * 
+     *
      * @param root
      * @param p
      * @param q
@@ -604,7 +600,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/flood-fill/
-     * 
+     *
      * @param image
      * @param sr
      * @param sc
@@ -695,7 +691,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/climbing-stairs/
-     * 
+     *
      * @param n
      * @return
      */
@@ -721,6 +717,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/unique-paths/
+     *
      * @param m
      * @param n
      * @return
@@ -738,7 +735,7 @@ public class SolutionLeetCode {
                 }
             }
         }
-        return grid[m-1][n-1];
+        return grid[m - 1][n - 1];
     }
 
 }

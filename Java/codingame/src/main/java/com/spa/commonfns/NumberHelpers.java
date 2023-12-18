@@ -145,6 +145,7 @@ public class NumberHelpers {
      * get all the prime factors of the input,
      * the prime factor appears as many times as needed to get the number
      * ie product(result) == b
+     *
      * @param n
      * @return
      */

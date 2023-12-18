@@ -10,7 +10,7 @@ public class JavaStack {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             var line = scanner.nextLine();
             System.out.println(StringHelpers.isPairedRecursive(line, new Stack<>()));
         }

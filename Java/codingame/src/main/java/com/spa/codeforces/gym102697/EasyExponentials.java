@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class EasyExponentials {
     public static void main(String[] args) {
-        Scanner in  = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         long n = in.nextLong();
         int k = in.nextInt();
-        System.out.println((long)Math.pow(n, k));
+        System.out.println((long) Math.pow(n, k));
         in.close();
     }
 }

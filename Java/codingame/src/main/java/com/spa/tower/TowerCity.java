@@ -11,14 +11,14 @@ public class TowerCity {
         int height;
         boolean relativeHeight;
         Tower relativeTo;
-        
+
         public Tower(String name, int height, boolean relativeHeight) {
             this.name = name;
             this.height = height;
             this.relativeHeight = relativeHeight;
         }
 
-        
+
         public Tower(String name, int height, boolean relativeHeight, Tower relativeTo) {
             this.name = name;
             this.height = height;
@@ -54,9 +54,6 @@ public class TowerCity {
         }
 
 
-    
-
-        
     }
 
     public Tower solve(Tower tower, Set<Tower> visited) throws CycleException {

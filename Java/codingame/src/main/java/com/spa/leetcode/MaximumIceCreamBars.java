@@ -8,11 +8,10 @@ public class MaximumIceCreamBars {
         Arrays.sort(costs);
         int nbIceCreams = 0;
         for (int i = 0; i < costs.length; i++) {
-            if(costs[i] <= coins){
+            if (costs[i] <= coins) {
                 nbIceCreams += 1;
                 coins -= costs[i];
-            }
-            else{
+            } else {
                 return nbIceCreams;
             }
         }

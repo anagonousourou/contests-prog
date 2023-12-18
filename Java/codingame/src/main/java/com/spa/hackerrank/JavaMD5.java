@@ -16,10 +16,11 @@ public class JavaMD5 {
 
     /**
      * https://stackoverflow.com/questions/415953/how-can-i-generate-an-md5-hash-in-java
+     *
      * @param input
      * @return
      */
-    public static String md5(String input){
+    public static String md5(String input) {
         try {
             byte[] bytesOfMessage = input.getBytes(StandardCharsets.UTF_8);
             MessageDigest md = MessageDigest.getInstance("MD5");

@@ -11,7 +11,7 @@ public class MostFrequentlyUsedWordsInText {
 
     public static List<String> top3(String s) {
         return StringHelpers.frequencies(
-            StringHelpers.reSeq(Pattern.compile("\\p{Alpha}+'+\\p{Alpha}+|'*\\p{Alpha}+'*"), s.toLowerCase())
+                StringHelpers.reSeq(Pattern.compile("\\p{Alpha}+'+\\p{Alpha}+|'*\\p{Alpha}+'*"), s.toLowerCase())
             )
             .entrySet().stream().sorted(Comparator.comparingLong(e -> -e.getValue())).limit(3).map(Map.Entry::getKey)
             .toList();

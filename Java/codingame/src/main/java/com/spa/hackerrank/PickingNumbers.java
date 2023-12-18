@@ -1,8 +1,9 @@
 package com.spa.hackerrank;
 
 import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.util.List;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.toList;
 
 
@@ -40,15 +41,14 @@ public class PickingNumbers {
         int maxLength = 1;
         int currentLength;
         var sortedList = a.stream().sorted().collect(toList());
-        while(higher < sortedList.size()){
-            if(Math.abs(sortedList.get(lower) - sortedList.get(higher)) <= 1){
+        while (higher < sortedList.size()) {
+            if (Math.abs(sortedList.get(lower) - sortedList.get(higher)) <= 1) {
                 currentLength = (higher - lower) + 1;
                 higher++;
                 maxLength = Math.max(currentLength, maxLength);
-            }
-            else{
+            } else {
                 lower++;
-                if(lower == higher){
+                if (lower == higher) {
                     higher++;
                 }
             }

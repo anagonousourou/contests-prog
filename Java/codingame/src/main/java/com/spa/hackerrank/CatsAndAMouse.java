@@ -1,12 +1,15 @@
 package com.spa.hackerrank;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class CatsAndAMouse {
 
     /**
      * https://www.hackerrank.com/challenges/cats-and-a-mouse/problem?isFullScreen=true
+     *
      * @param x
      * @param y
      * @param z

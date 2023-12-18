@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 public class JavaBigDecimal {
 
-    public static class MyNumber{
+    public static class MyNumber {
         final String input;
         final BigDecimal value;
-        public MyNumber(String input, BigDecimal value){
+
+        public MyNumber(String input, BigDecimal value) {
             this.input = input;
             this.value = value;
         }
@@ -29,7 +30,7 @@ public class JavaBigDecimal {
         List<MyNumber> numberList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();//ignore
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             numberList.add(new MyNumber(line, new BigDecimal(line)));
         }

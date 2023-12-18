@@ -1,10 +1,6 @@
 package com.spa.isograd;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class DecodageTemporel {
 
@@ -34,7 +30,7 @@ public class DecodageTemporel {
     }
 
     private static Map<String, String> intersectMatches(Map<String, Set<String>> matches1,
-            Map<String, Set<String>> matches2) {
+                                                        Map<String, Set<String>> matches2) {
         Map<String, String> matchesIntersection = new HashMap<>();
 
         matches1.forEach((key, value) -> {
@@ -47,7 +43,7 @@ public class DecodageTemporel {
     }
 
     private static void getPossibleMatches(String digitSequence, String codeSequence,
-            Map<String, Set<String>> digitMatches) {
+                                           Map<String, Set<String>> digitMatches) {
         if (digitSequence.isBlank()) {
             return;
         }

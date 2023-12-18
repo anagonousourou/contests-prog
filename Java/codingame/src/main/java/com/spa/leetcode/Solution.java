@@ -3,7 +3,6 @@ package com.spa.leetcode;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class Solution {
     public String longestCommonPrefix(String[] strs) {
@@ -86,13 +85,13 @@ public class Solution {
 
     public int romanToInt(String s) {
         Map<String, Integer> bases = Map.ofEntries(
-                Map.entry("X", 10), Map.entry("I", 1), Map.entry("V", 5), Map.entry("L", 50), Map.entry("C", 100),
-                Map.entry("D", 500),
-                Map.entry("M", 1000),
-                Map.entry("IV", 4),
-                Map.entry("IX", 9),
-                Map.entry("XL", 40),
-                Map.entry("XC", 90), Map.entry("CD", 400), Map.entry("CM", 900));
+            Map.entry("X", 10), Map.entry("I", 1), Map.entry("V", 5), Map.entry("L", 50), Map.entry("C", 100),
+            Map.entry("D", 500),
+            Map.entry("M", 1000),
+            Map.entry("IV", 4),
+            Map.entry("IX", 9),
+            Map.entry("XL", 40),
+            Map.entry("XC", 90), Map.entry("CD", 400), Map.entry("CM", 900));
 
         int total = 0;
         while (!s.isEmpty()) {
@@ -112,7 +111,7 @@ public class Solution {
 
     /**
      * https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
-     * 
+     *
      * @param mat
      * @param k
      * @return
@@ -131,7 +130,7 @@ public class Solution {
         }
 
         Arrays.sort(rows,
-                Comparator.<Row>comparingInt(row -> row.numberOfSoldiers).thenComparingInt(row -> row.rowIndex));
+            Comparator.<Row>comparingInt(row -> row.numberOfSoldiers).thenComparingInt(row -> row.rowIndex));
 
         for (int index = 0; index < k; index++) {
             result[index] = rows[index].rowIndex;

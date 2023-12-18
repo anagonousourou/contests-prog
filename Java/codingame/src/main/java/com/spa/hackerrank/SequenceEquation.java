@@ -1,11 +1,15 @@
 package com.spa.hackerrank;
 
-import java.util.List;
 import java.io.*;
-import java.util.*;
-import java.util.stream.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+
 public class SequenceEquation {
 
     /*
@@ -22,7 +26,7 @@ public class SequenceEquation {
         }
 
         return IntStream.rangeClosed(1, p.size()).map(valuesMapping::get).map(valuesMapping::get)
-                        .boxed().collect(toList());
+            .boxed().collect(toList());
 
     }
 

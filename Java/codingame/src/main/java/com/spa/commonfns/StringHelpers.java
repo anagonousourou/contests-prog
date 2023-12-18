@@ -32,6 +32,13 @@ public final class StringHelpers {
 
     }
 
+    public static List<String> slices(String input, int sliceLength) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i + sliceLength <= input.length(); i++) {
+            result.add(input.substring(i, i + sliceLength));
+        }
+        return result;
+    }
 
     public static boolean areAnagrams(List<String> candidates) {
         return candidates.stream().map(StringHelpers::frequencies).collect(Collectors.toSet()).size() == 1;

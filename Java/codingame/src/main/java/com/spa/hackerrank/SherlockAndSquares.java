@@ -1,6 +1,7 @@
 package com.spa.hackerrank;
+
 import java.io.*;
-import java.util.stream.*;
+import java.util.stream.IntStream;
 
 
 public class SherlockAndSquares {
@@ -43,7 +44,7 @@ public class SherlockAndSquares {
      */
 
     public static int squares(int a, int b) {
-        int lowerBound =  (int) Math.ceil( Math.sqrt(a));
+        int lowerBound = (int) Math.ceil(Math.sqrt(a));
         int higherBound = (int) Math.floor(Math.sqrt(b));
         return higherBound - lowerBound + 1;
     }

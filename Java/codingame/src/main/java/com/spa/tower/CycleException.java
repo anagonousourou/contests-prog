@@ -1,5 +1,5 @@
 package com.spa.tower;
 
-public class CycleException extends Exception{
-    
+public class CycleException extends Exception {
+
 }

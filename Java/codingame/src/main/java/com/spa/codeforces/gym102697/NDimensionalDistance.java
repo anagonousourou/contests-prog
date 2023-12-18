@@ -1,6 +1,5 @@
 package com.spa.codeforces.gym102697;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class NDimensionalDistance {
@@ -10,7 +9,7 @@ public class NDimensionalDistance {
 
         int sum = 0;
         for (int i = 0; i < n; i++) {
-            sum += Math.pow((in.nextInt() - in.nextInt()),2);
+            sum += Math.pow((in.nextInt() - in.nextInt()), 2);
         }
         System.out.println(Math.sqrt(sum));
 

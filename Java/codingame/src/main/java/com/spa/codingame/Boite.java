@@ -18,7 +18,7 @@ public class Boite {
                     break;
                 }
             }
-            if(toReduceIndex == -1){
+            if (toReduceIndex == -1) {
                 for (int i = 0; i < boxes.length; i++) {
                     if (boxes[i] > nbBoxPerPlace) {
                         toReduceIndex = i;
@@ -36,8 +36,7 @@ public class Boite {
             }
 
 
-        }
-        else{
+        } else {
             int toIncreaseIndex = 0;
             for (int i = 0; i < boxes.length; i++) {
                 if (boxes[i] < nbBoxPerPlace) {

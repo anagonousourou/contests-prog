@@ -1,14 +1,12 @@
 package com.spa;
 
-import java.util.Scanner;
-
 public class RandonneVelo {
     public static void main(String[] args) {
         String line;
         // Scanner sc = new Scanner(System.in);
         // while (sc.hasNextLine()) {
         // line = sc.nextLine();
-        var result = compute(new int[] { 1, 2, 2, 3, 5, 7, 3, 1, 1, 4, 3, 6 });
+        var result = compute(new int[]{1, 2, 2, 3, 5, 7, 3, 1, 1, 4, 3, 6});
         System.out.println(result.nbMontantes + " " + result.nbDescendantes);
         /* Lisez les données et effectuez votre traitement */
         // }
@@ -35,25 +33,25 @@ public class RandonneVelo {
         boolean down = (current - previous) < 0;
         int nbMontantes = up ? 1 : 0;
         int nbDescendantes = down ? 1 : 0;
-        System.err.println("Hello"+ nbMontantes +" "+nbDescendantes);
+        System.err.println("Hello" + nbMontantes + " " + nbDescendantes);
         for (int index = 2; index < parcours.length; index++) {
             boolean newUp = (parcours[index] - parcours[index - 1]) > 0;
             boolean newDown = (parcours[index] - parcours[index - 1]) < 0;
             if (newUp && !up) {
                 up = newUp;
-                System.err.println("Montantes "+ parcours[index] +" "+ parcours[index - 1]);
+                System.err.println("Montantes " + parcours[index] + " " + parcours[index - 1]);
                 nbMontantes++;
             }
-            if(up && !newUp){
+            if (up && !newUp) {
                 up = false;
             }
-            
+
             if (newDown && !down) {
                 down = newDown;
                 nbDescendantes++;
             }
 
-            if(down && !newDown){
+            if (down && !newDown) {
                 down = false;
             }
         }

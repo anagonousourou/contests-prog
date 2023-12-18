@@ -9,12 +9,13 @@ public class AddingBigNumbers {
     /**
      * Add two positive (big) integers represented as string
      * In this exercise we cannot use BigInteger
+     *
      * @param a first integer
      * @param b second integer
      * @return the sum of a and b
      */
     public static String add(String a, String b) {
-        if("0".equals(a) && a.equals(b)){
+        if ("0".equals(a) && a.equals(b)) {
             return a;
         }
         int maxLength = Math.max(b.length(), a.length()) + 1;

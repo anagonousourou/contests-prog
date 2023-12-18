@@ -1,7 +1,6 @@
 package com.spa.codewars;
 
 
-
 import com.spa.commonfns.StringHelpers;
 
 import java.util.Comparator;
@@ -10,9 +9,12 @@ import java.util.stream.Collectors;
 
 public class WeightForWeight {
 
-    record Weight(String weight, int key){}
+    record Weight(String weight, int key) {
+    }
+
     /**
      * https://www.codewars.com/kata/55c6126177c9441a570000cc/train/java
+     *
      * @param strng
      * @return
      */
