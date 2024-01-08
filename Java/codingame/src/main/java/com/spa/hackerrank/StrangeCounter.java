@@ -38,6 +38,6 @@ public class StrangeCounter {
 
     public static long strangeCounter(long t) {
         // Write your code here
-
+        return 0;
     }
 }
