@@ -10,7 +10,8 @@ public class FirstUniqueCharacterInAString {
     private class CharacterInfo {
         private int occ = 1;
         private int index = 0;
-        CharacterInfo(int index){
+
+        CharacterInfo(int index) {
             this.index = index;
         }
 
@@ -23,9 +24,9 @@ public class FirstUniqueCharacterInAString {
         char[] schars = s.toCharArray();
         Map<Character, CharacterInfo> characterInfoMap = new HashMap<>();
         for (int i = 0; i < schars.length; i++) {
-            if(characterInfoMap.containsKey(schars[i])){
+            if (characterInfoMap.containsKey(schars[i])) {
                 characterInfoMap.get(schars[i]).occ += 1;
-            }else{
+            } else {
                 characterInfoMap.put(schars[i], new CharacterInfo(i));
             }
         }

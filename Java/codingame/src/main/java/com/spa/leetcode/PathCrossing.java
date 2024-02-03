@@ -5,9 +5,9 @@ import java.util.Set;
 
 public class PathCrossing {
 
-    private record Point(int x, int y){
-        Point move(char direction){
-            return switch (direction){
+    private record Point(int x, int y) {
+        Point move(char direction) {
+            return switch (direction) {
                 case 'N' -> new Point(this.x, this.y + 1);
                 case 'S' -> new Point(this.x, this.y - 1);
                 case 'E' -> new Point(this.x + 1, this.y);
@@ -19,13 +19,13 @@ public class PathCrossing {
 
     public boolean isPathCrossing(String path) {
         Set<Point> seen = new HashSet<>();
-        Point current = new Point(0,0);
+        Point current = new Point(0, 0);
         seen.add(current);
         for (int i = 0; i < path.length(); i++) {
             current = current.move(path.charAt(i));
-            if(seen.contains(current)){
+            if (seen.contains(current)) {
                 return true;
-            }else{
+            } else {
                 seen.add(current);
             }
         }

@@ -10,7 +10,7 @@ public class NumberOfLaserBeamsInBank {
     public int numberOfBeams(String[] bank) {
 
         List<String> rowsWithDevices = Arrays.stream(bank).filter(s -> s.contains("1")).toList();
-        if(rowsWithDevices.isEmpty()){
+        if (rowsWithDevices.isEmpty()) {
             return 0;
         }
 
@@ -24,8 +24,8 @@ public class NumberOfLaserBeamsInBank {
         return nbLasers;
     }
 
-    private int nbDeviceInRow(String row){
-        return (int) row.chars().mapToObj(c -> (char)c).filter(c -> c == '1')
+    private int nbDeviceInRow(String row) {
+        return (int) row.chars().mapToObj(c -> (char) c).filter(c -> c == '1')
             .count();
     }
 }

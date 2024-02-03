@@ -6,11 +6,12 @@ public class SumOfLeftLeaves {
     public int sumOfLeftLeaves(TreeNode root) {
         return sumOfLeftLeaves(root, true);
     }
+
     public int sumOfLeftLeaves(TreeNode root, boolean left) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
-        if(left && root.right == root.left && root.right == null){
+        if (left && root.right == root.left && root.right == null) {
             return root.val;
         }
 

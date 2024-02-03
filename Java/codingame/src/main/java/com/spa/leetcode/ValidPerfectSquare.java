@@ -5,27 +5,26 @@ public class ValidPerfectSquare {
 
     public static boolean isPerfectSquare(int num) {
 
-        if(num <= 1){
+        if (num <= 1) {
             return true;
         }
 
         long l = 0;
         long r = num;
-        while (l <= r){
+        while (l <= r) {
 
             long middle = (l + r) / 2;
-            System.out.println(String.format("l = %d, r = %d, middle = %d", l,r, middle));
-            if(middle * middle == num){
+            System.out.println(String.format("l = %d, r = %d, middle = %d", l, r, middle));
+            if (middle * middle == num) {
                 return true;
             }
-            if(l == middle && r == middle){
+            if (l == middle && r == middle) {
                 break;
             }
 
-            if(middle * middle < num && l != middle){
+            if (middle * middle < num && l != middle) {
                 l = middle;
-            }
-            else {
+            } else {
                 r = middle;
             }
         }
@@ -45,10 +44,10 @@ public class ValidPerfectSquare {
     public boolean isPerfectSquare2(int num) {
 
         for (int i = 1; i <= num; i++) {
-            if(i * i == num){
+            if (i * i == num) {
                 return true;
             }
-            if(i * i > num){
+            if (i * i > num) {
                 break;
             }
         }

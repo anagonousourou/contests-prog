@@ -8,9 +8,9 @@ public class MinimumTimeVisitingAllPoints {
         for (int i = 0; i < points.length - 1; i++) {
             int xvec = points[i + 1][0] - points[i][0];
             int yvec = points[i + 1][1] - points[i][1];
-            if(Math.abs(xvec) == Math.abs(yvec)){
+            if (Math.abs(xvec) == Math.abs(yvec)) {
                 time += Math.abs(xvec);
-            }else{
+            } else {
                 time += Math.min(Math.abs(xvec), Math.abs(yvec));
                 time += Math.max(Math.abs(xvec), Math.abs(yvec)) - Math.min(Math.abs(xvec), Math.abs(yvec));
             }

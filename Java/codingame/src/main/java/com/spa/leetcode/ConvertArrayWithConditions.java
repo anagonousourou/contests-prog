@@ -11,20 +11,19 @@ public class ConvertArrayWithConditions {
 
         Arrays.sort(nums);
 
-        while (true){
+        while (true) {
             List<Integer> row = new ArrayList<>();
             for (int i = 0; i < nums.length; i++) {
-                if(nums[i] == 0 || (!row.isEmpty() && nums[i] == row.get(row.size() - 1))){
+                if (nums[i] == 0 || (!row.isEmpty() && nums[i] == row.get(row.size() - 1))) {
                     continue;
-                } else{
+                } else {
                     row.add(nums[i]);
                     nums[i] = 0;
                 }
             }
-            if(row.isEmpty()){
+            if (row.isEmpty()) {
                 break;
-            }
-            else{
+            } else {
                 result.add(row);
             }
         }

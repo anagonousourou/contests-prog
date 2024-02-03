@@ -9,7 +9,7 @@ public class SortColors {
     public void sortColors(int[] nums) {
         int[] colorsCount = new int[3];
 
-        for (var n: nums) {
+        for (var n : nums) {
             colorsCount[n] += 1;
         }
 

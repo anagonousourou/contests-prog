@@ -10,12 +10,12 @@ public class ThirdMaximumNumber {
     public int thirdMax(int[] nums) {
         Arrays.sort(nums);
         int count = 1;
-        for (int i = nums.length - 1; i >= 0 ; i--) {
-            if(count == 2 && nums[i + 1] != nums[i]){
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (count == 2 && nums[i + 1] != nums[i]) {
                 return nums[i];
             }
-            if(i + 1 < nums.length && nums[i + 1] != nums[i]){
-               count++;
+            if (i + 1 < nums.length && nums[i + 1] != nums[i]) {
+                count++;
             }
         }
         return nums[nums.length - 1];

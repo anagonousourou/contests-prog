@@ -164,6 +164,11 @@ public class NumberHelpers {
         return factors;
     }
 
+    public static IntStream getDigits(int n){
+        return String.valueOf(n).chars().mapToObj(c -> (char)c)
+            .mapToInt(Character::getNumericValue);
+    }
+
     public static long gcd(long a, long b) {
         if (b == 0) {
             return a;

@@ -32,6 +32,12 @@ public final class StringHelpers {
 
     }
 
+    //https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+    //WARNING: has to be adapted depending on the input space
+    public boolean isPangram(String sentence) {
+        return sentence.chars().distinct().count() == 26;
+    }
+
     public static List<String> slices(String input, int sliceLength) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i + sliceLength <= input.length(); i++) {

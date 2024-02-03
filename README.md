@@ -52,6 +52,9 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 #### Links
 - https://github.com/dlang-community/awesome-d
+- https://github.com/blachlylab/dlang-static-docker
+- https://github.com/adamdruppe?tab=repositories
+- https://github.com/jacob-carlborg/dvm
 
 ### Elixir
 
@@ -175,3 +178,16 @@ Application servers like Tomcat and TomEE enable you to add and remove capabilit
 Similar dynamism is possible with DLLs and Shared libraries.
 On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability. 
 The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application.
+
+### Watchlist
+
+- https://www.youtube.com/watch?v=57jKNEKSNWA
+- https://www.youtube.com/watch?v=ufx_3_wcPuc
+- https://www.youtube.com/watch?v=pdHvC8fDC5E
+- https://www.youtube.com/watch?v=SqU8TZDnFFA
+- https://www.youtube.com/@CurryOn
+- https://www.youtube.com/watch?v=pGF2UFG7n6Y
+- [Testing Lua - Roberto Ierusalimschy](https://www.youtube.com/watch?v=yU5QNKpATxk)
+- [Nix + Docker, a match made in heaven](https://www.youtube.com/watch?v=WP_oAmV6C2U)
+- https://www.youtube.com/@elmonlinemeetup/videos
+- [All About Regular Expressions](https://www.youtube.com/watch?v=S1pseKYYd4c&list=PLcGKfGEEONaDO2dvGEdodnqG5cSnZ96W1&index=12)
