@@ -1,11 +1,7 @@
 package com.spa.leetcode;
 
-import java.util.Deque;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
@@ -14,14 +10,14 @@ public class LongestSubstringWithoutRepeatingCharacters {
         Map<Integer, Character> latestPositions = new HashMap<>();
         int maxLength = 0;
         for (int i = 0; i < s.length(); i++) {
-            if(latestCharacters.containsKey(s.charAt(i))){
+            if (latestCharacters.containsKey(s.charAt(i))) {
                 int dupPos = latestCharacters.get(s.charAt(i));
 
-                for (int j = dupPos; j >= 0 ; j--) {
+                for (int j = dupPos; j >= 0; j--) {
                     Character deleted = latestPositions.remove(j);
-                    if(deleted == null){
+                    if (deleted == null) {
                         break;
-                    }else{
+                    } else {
                         latestCharacters.remove(deleted);
                     }
                 }
@@ -36,9 +32,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        System.out.println(" lengthOfLongestSubstring pwwkew " + lengthOfLongestSubstring("pwwkew") );
-        System.out.println(" lengthOfLongestSubstring bbbbb " + lengthOfLongestSubstring("bbbbb") );
-        System.out.println(" lengthOfLongestSubstring '' " + lengthOfLongestSubstring("") );
-        System.out.println(" lengthOfLongestSubstring abcabcbb " + lengthOfLongestSubstring("abcabcbb") );
+        System.out.println(" lengthOfLongestSubstring pwwkew " + lengthOfLongestSubstring("pwwkew"));
+        System.out.println(" lengthOfLongestSubstring bbbbb " + lengthOfLongestSubstring("bbbbb"));
+        System.out.println(" lengthOfLongestSubstring '' " + lengthOfLongestSubstring(""));
+        System.out.println(" lengthOfLongestSubstring abcabcbb " + lengthOfLongestSubstring("abcabcbb"));
     }
 }

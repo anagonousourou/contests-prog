@@ -58,9 +58,9 @@ public class DeleteNodeInBST {
             root.right = root.right.right;
 
             var current = root.right;
-            if(current == null){
+            if (current == null) {
                 root.right = leftLeft;
-            }else{
+            } else {
                 while (current.left != null) {
                     current = current.left;
                 }

@@ -7,7 +7,6 @@ import java.util.Set;
 public class LinkedListCycle {
 
 
-
     //https://en.wikipedia.org/wiki/Cycle_detection
     //https://leetcode.com/problems/linked-list-cycle/
     //with hare & tortoise algorithm
@@ -33,13 +32,14 @@ public class LinkedListCycle {
 
     /**
      * With obvious solution O(n) memory
+     *
      * @param head
      * @return
      */
     public boolean hasCycleV1(ListNode head) {
         Set<ListNode> encountered = new HashSet<>();
         ListNode current = head;
-        while (current != null && !encountered.contains(current)){
+        while (current != null && !encountered.contains(current)) {
             encountered.add(current);
             current = current.next;
         }

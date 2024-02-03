@@ -3,17 +3,17 @@ package com.spa.leetcode;
 public class MinimumDepthOfBinaryTree {
 
     public int minDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
-        if(root.right == null && root.left == null){
+        if (root.right == null && root.left == null) {
             return 1;
         }
-        if(root.left == null){
+        if (root.left == null) {
             return minDepth(root.right) + 1;
         }
 
-        if(root.right == null){
+        if (root.right == null) {
             return minDepth(root.left) + 1;
         }
 

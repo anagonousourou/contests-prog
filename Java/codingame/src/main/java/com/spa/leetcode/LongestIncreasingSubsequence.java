@@ -7,13 +7,14 @@ import java.util.List;
 //TODO
 public class LongestIncreasingSubsequence {
 
-    static class Subsequence{
+    static class Subsequence {
         int latestElement;
         int count;
     }
+
     public int lengthOfLIS(int[] nums) {
         List<Subsequence> subsequenceList = new ArrayList<>();
-        for (int n:nums) {
+        for (int n : nums) {
 
         }
         return 0;

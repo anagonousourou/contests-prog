@@ -18,15 +18,15 @@ public class MaximumAverageSubarrayI {
     }
 
     public static void main(String[] args) {
-        System.out.println("Result = "+findMaxAverage(new int[]{1,2,3,4,5,6}, 3));
+        System.out.println("Result = " + findMaxAverage(new int[]{1, 2, 3, 4, 5, 6}, 3));
     }
 
     public double findMaxAverage2(int[] nums, int k) {
 
-        if(k == 1){
-           return Arrays.stream(nums).max().getAsInt();
+        if (k == 1) {
+            return Arrays.stream(nums).max().getAsInt();
         }
-        if(k == nums.length){
+        if (k == nums.length) {
             return Arrays.stream(nums).average().getAsDouble();
         }
         double maxAverage = Double.MIN_VALUE;
@@ -34,7 +34,7 @@ public class MaximumAverageSubarrayI {
 
         prefixSum[0] = nums[0];
         for (int i = 1; i < nums.length; i++) {
-            prefixSum[i] = nums[i] + prefixSum[i-1];
+            prefixSum[i] = nums[i] + prefixSum[i - 1];
         }
 
         for (int i = k; i < nums.length; i++) {

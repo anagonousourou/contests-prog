@@ -10,26 +10,26 @@ public class MaxScoreSplitingString {
 
         nbZeros[0] = 0;
         for (int i = 1; i < s.length(); i++) {
-            if(s.charAt(i - 1) == '0'){
+            if (s.charAt(i - 1) == '0') {
                 nbZeros[i] = nbZeros[i - 1] + 1;
-            }else{
+            } else {
                 nbZeros[i] = nbZeros[i - 1];
             }
         }
 
         nbOnes[s.length() - 1] = 0;
-        for (int i = s.length() - 2 ;  i >= 0; i--) {
-            if(s.charAt(i + 1) == '1'){
+        for (int i = s.length() - 2; i >= 0; i--) {
+            if (s.charAt(i + 1) == '1') {
                 nbOnes[i] = nbOnes[i + 1] + 1;
-            }else{
+            } else {
                 nbOnes[i] = nbOnes[i + 1];
             }
         }
 
-        System.out.println("NB_ZEROS = "+ Arrays.toString(nbZeros));
-        System.out.println("NB_ONES = "+ Arrays.toString(nbOnes));
+        System.out.println("NB_ZEROS = " + Arrays.toString(nbZeros));
+        System.out.println("NB_ONES = " + Arrays.toString(nbOnes));
         int maxScore = 0;
-        for (int i = 1; i <= s.length() - 1 ; i++) {
+        for (int i = 1; i <= s.length() - 1; i++) {
             maxScore = Math.max(maxScore, nbZeros[i] + nbOnes[i - 1]);
         }
 
