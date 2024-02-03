@@ -5,6 +5,21 @@ discipline-oriented programming does not scale.`
 
 This repository is for trying out languages and algorithms...
 
+
+## Problem solving notes
+
+Strategies to solve problems:
+- sort input
+- binary search
+- translate into graph problem
+- sliding window
+- prefix/suffix arrays
+- 
+
+### Algorithms
+- Evaluate Reverse Polish Notation
+
+
 ## Languages notable features
 
 To simplify what is an interesting feature worth noting, let's use `Java 17` as our baseline. We will essentially list notable features that are not available in the standard library / not the default or are harder to get in Java 17. **It is not meant to be thorough or a X vs Y comparison**. Objectives include: better understand the programming languages by writing down what I learn, summarise the tradeoffs made by each language, get an idea of what they are very good, good, bad, very bad at.
