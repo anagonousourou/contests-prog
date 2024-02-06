@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 
 public final class StringHelpers {
 
+    public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();
@@ -156,7 +158,7 @@ public final class StringHelpers {
     private static final Set<String> CLOSING_BRACKETS = Set.of(")", "}", "]");
     private static final Map<String, String> MATCHING_BRACKETS = Map.of("(", ")", "{", "}", "[", "]");
 
-    public static boolean isPairedRecursive(String brackets, Stack<String> bracketsStacks) {
+    public static boolean isPairedRecursive(String brackets, Deque<String> bracketsStacks) {
         String first = brackets.isEmpty() ? "" : brackets.substring(0, 1);
         String rest = brackets.isEmpty() ? "" : brackets.substring(1);
         if (brackets.isEmpty()) {
