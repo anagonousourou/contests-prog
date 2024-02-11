@@ -13,4 +13,14 @@ public class ReverseWords {
         Collections.reverse(words);
         return String.join(" ", words);
     }
+
+    public String reverseWordsIII(String s) {
+        return Arrays.stream(s.trim().split("\\s+")).filter(Predicate.not(String::isBlank))
+            .map(word -> new StringBuilder().append(word).reverse().toString())
+            .collect(Collectors.joining(" "));
+    }
+
+    //https://leetcode.com/problems/reverse-string-ii/description/
+
+
 }

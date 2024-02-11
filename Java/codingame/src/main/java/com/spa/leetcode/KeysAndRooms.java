@@ -1,10 +1,8 @@
 package com.spa.leetcode;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
@@ -16,11 +14,11 @@ public class KeysAndRooms {
         Set<Integer> encountered = new HashSet<>();
         queue.add(0);
         encountered.add(0);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             var v = queue.poll();
 
-            for(var neighbor : rooms.get(v)){
-                if(!encountered.contains(neighbor)){
+            for (var neighbor : rooms.get(v)) {
+                if (!encountered.contains(neighbor)) {
                     encountered.add(neighbor);
                     queue.add(neighbor);
                 }

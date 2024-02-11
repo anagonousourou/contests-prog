@@ -8,13 +8,11 @@ public class CountAsterisks {
 
         int nbAsterisks = 0;
         for (int i = 0; i < s.length(); i++) {
-            if(!insidePair && s.charAt(i) == '*'){
+            if (!insidePair && s.charAt(i) == '*') {
                 nbAsterisks++;
-            }
-            else if(!insidePair && s.charAt(i) == '|'){
+            } else if (!insidePair && s.charAt(i) == '|') {
                 insidePair = true;
-            }
-            else if(insidePair && s.charAt(i) == '|'){
+            } else if (insidePair && s.charAt(i) == '|') {
                 insidePair = false;
             }
         }
