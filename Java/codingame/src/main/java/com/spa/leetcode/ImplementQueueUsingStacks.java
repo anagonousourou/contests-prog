@@ -11,6 +11,7 @@ public class ImplementQueueUsingStacks {
 
         Deque<Integer> pushStack = new LinkedList<>();
         Deque<Integer> peekStack = new LinkedList<>();
+
         public MyQueue() {
 
         }
@@ -20,8 +21,8 @@ public class ImplementQueueUsingStacks {
         }
 
         public int pop() {
-            if(peekStack.isEmpty()){
-                while (!pushStack.isEmpty()){
+            if (peekStack.isEmpty()) {
+                while (!pushStack.isEmpty()) {
                     peekStack.add(pushStack.pop());
                 }
             }
@@ -29,8 +30,8 @@ public class ImplementQueueUsingStacks {
         }
 
         public int peek() {
-            if(peekStack.isEmpty()){
-                while (!pushStack.isEmpty()){
+            if (peekStack.isEmpty()) {
+                while (!pushStack.isEmpty()) {
                     peekStack.add(pushStack.pop());
                 }
             }

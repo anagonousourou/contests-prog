@@ -3,6 +3,7 @@ package com.spa.hackerrank;
 
 import com.spa.commonfns.StringHelpers;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -12,7 +13,7 @@ public class JavaStack {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextLine()) {
             var line = scanner.nextLine();
-            System.out.println(StringHelpers.isPairedRecursive(line, new Stack<>()));
+            System.out.println(StringHelpers.isPairedRecursive(line, new LinkedList<>()));
         }
         scanner.close();
     }

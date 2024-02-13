@@ -1,6 +1,11 @@
 package com.spa.leetcode;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 //https://leetcode.com/problems/design-a-food-rating-system
 public class FoodRatings {
