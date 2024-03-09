@@ -9,7 +9,8 @@ public class SortThePeople {
 
 
     //https://leetcode.com/problems/sort-the-people/
-    private record Person(String name, int height){}
+    private record Person(String name, int height) {
+    }
 
     public String[] sortPeople(String[] names, int[] heights) {
         List<Person> people = new ArrayList<>(names.length);

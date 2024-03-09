@@ -1,7 +1,5 @@
 package com.spa.leetcode;
 
-import java.util.Comparator;
-
 public class SecondLargestDigitInString {
 
 
@@ -12,7 +10,7 @@ public class SecondLargestDigitInString {
             .sorted()
             .toArray();
 
-        if(digits.length >= 2){
+        if (digits.length >= 2) {
             return digits[digits.length - 2];
         }
         return -1;

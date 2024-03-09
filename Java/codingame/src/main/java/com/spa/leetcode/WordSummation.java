@@ -9,7 +9,7 @@ public class WordSummation {
         return wordValue(firstWord) + wordValue(secondWord) == wordValue(targetWord);
     }
 
-    private static int wordValue(String word){
+    private static int wordValue(String word) {
         return Integer.parseInt(word.chars().map(c -> c - 'a').mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 }
