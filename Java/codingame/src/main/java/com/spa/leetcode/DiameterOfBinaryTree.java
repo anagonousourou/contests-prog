@@ -10,6 +10,36 @@ import java.util.Set;
 
 public class DiameterOfBinaryTree {
 
+    //https://leetcode.com/problems/diameter-of-binary-tree/submissions/1188031188/
+    public int diameterOfBinaryTreeV2(TreeNode root) {
+        height(root);
+        return findMaxVal(root);
+    }
+
+    private int findMaxVal(TreeNode root){
+        if(root.left == null && root.right == null){
+            return root.val;
+        }
+        if(root.left == null){
+            return Math.max(root.val, findMaxVal(root.right));
+        }
+
+        if(root.right == null){
+            return Math.max(root.val, findMaxVal(root.left));
+        }
+        return Math.max(findMaxVal(root.right), Math.max(root.val, findMaxVal(root.left)));
+    }
+
+    private int height(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        root.val = leftHeight + rightHeight;
+        return  1 + Math.max(leftHeight, rightHeight);
+    }
+
     public int diameterOfBinaryTree(TreeNode root) {
         Map<TreeNode, Set<TreeNode>> graph = new HashMap<>();
         buildGraph(root, graph);

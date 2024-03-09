@@ -5,7 +5,18 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class EvaluateReversePolishNotation {
+
+    //The typical solution is to have two stacks one for the tokens
+    //and the other one for the results / numbers
+    //We push the numbers systematically onto the resultStack
+    //When we encounter an operator in the inputStack,
+    //We take the two numbers at the top of the resultStack, apply the operator
+    //And put the result back to the resultStack.
+
+    //The following implemented solution is not the typical algorithm and was coded through trial and error
+
     private static final Set<String> OPERATORS = Set.of("+", "-", "*", "/");
+
 
     //https://leetcode.com/problems/evaluate-reverse-polish-notation/?envType=daily-question&envId=2024-01-30
     public static int evalRPN(String[] tokens) {
