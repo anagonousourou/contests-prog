@@ -7,7 +7,7 @@ import java.util.Set;
 //https://leetcode.com/problems/reverse-vowels-of-a-string/
 public class ReverseVowels {
 
-    private static final Set<Character> VOWELS = Set.of('a', 'e', 'i', 'o', 'u');
+    static final Set<Character> VOWELS = Set.of('a', 'e', 'i', 'o', 'u');
 
     public String reverseVowels(String s) {
         List<Character> vowels = new ArrayList<>(s.length());

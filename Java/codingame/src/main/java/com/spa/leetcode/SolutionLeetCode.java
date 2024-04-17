@@ -192,7 +192,7 @@ public class SolutionLeetCode {
 
     /**
      * https://leetcode.com/problems/find-pivot-index/
-     *
+     * https://leetcode.com/problems/find-the-middle-index-in-array/submissions/1200368390/
      * @param nums
      * @return
      */
