@@ -61,7 +61,7 @@ fn pangrams(s: &str) -> String {
 }
 
 // Define a generic function that takes a reference to a vector of strings and returns a hash map of strings and usize values
-fn frequencies(elements: &[String]) -> HashMap<String, usize> {
+pub(crate) fn frequencies(elements: &[String]) -> HashMap<String, usize> {
     // Create an iterator from the vector reference
     elements
         .iter()

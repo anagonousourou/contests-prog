@@ -2,6 +2,7 @@
 
 `If there is one thing that decades of computing have taught us, it must be that
 discipline-oriented programming does not scale.`
+Andrei Alexandrescu
 
 This repository is for trying out languages and algorithms...
 
@@ -43,7 +44,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - Macros
 - Immutability
 - No silent overflow of number arithmetics (throw runtime exception)
-- Transactional memory
+- Software Transactional Memory buit-in
 - Operators like `+`, `*`, ... are functions
 - Threading macros `->`, `->>` (aka pipe operators)
 - Rationals
@@ -112,6 +113,8 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 ### Rust
 
 - Macros
+- Result(Ok, Err) and Option(Some, None) built-in
+
 
 #### Links
 - https://github.com/rust-unofficial/awesome-rust
@@ -192,7 +195,8 @@ https://github.com/coalton-lang/coalton
 Application servers like Tomcat and TomEE enable you to add and remove capabilities to your running service by updating jars on the fly.
 Similar dynamism is possible with DLLs and Shared libraries.
 On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability. 
-The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application.
+The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application ?
+- https://blog.frankel.ch/monkeypatching-java/
 
 ### Watchlist
 
@@ -206,3 +210,14 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [Nix + Docker, a match made in heaven](https://www.youtube.com/watch?v=WP_oAmV6C2U)
 - https://www.youtube.com/@elmonlinemeetup/videos
 - [All About Regular Expressions](https://www.youtube.com/watch?v=S1pseKYYd4c&list=PLcGKfGEEONaDO2dvGEdodnqG5cSnZ96W1&index=12)
+- https://www.youtube.com/watch?v=ucTfG6nLr7Y
+- [So You Think You Know Git](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
+- [So You Think You Know Git 2](https://www.youtube.com/watch?v=Md44rcw13k4)
+- [The next big Thing - Andrei Alexandrescu](https://youtube.com/watch?v=tcyb1lpEHm0)
+
+
+### Readlist 
+
+
+### Tools list
+- https://devdocs.io/
