@@ -1,4 +1,5 @@
 mod adventofcode2017;
+mod adventofcode2018;
 mod codewars;
 mod leetcode1;
 mod plusminus;
@@ -11,7 +12,7 @@ use std::path::Path;
 
 fn main() -> io::Result<()>{
     // Specify the file path here
-    let path = Path::new("adventofcode-inputs/2017/day2.txt");
+    let path = Path::new("adventofcode-inputs/2018/day2.txt");
 
     // Open the file in read-only mode
     let file = File::open(&path)?;
@@ -21,7 +22,7 @@ fn main() -> io::Result<()>{
 
     let lines = reader.lines().map(|l| l.unwrap()).collect::<Vec<String>>();
     
-    println!("Result = {}", adventofcode2017::checksum_part2(lines));
+    println!("Result = {}", adventofcode2018::checksum_part1(lines));
 
     Ok(())
 }

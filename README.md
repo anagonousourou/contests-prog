@@ -214,10 +214,27 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [So You Think You Know Git](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
 - [So You Think You Know Git 2](https://www.youtube.com/watch?v=Md44rcw13k4)
 - [The next big Thing - Andrei Alexandrescu](https://youtube.com/watch?v=tcyb1lpEHm0)
+- [Better Code Reviews FTW! - Tess Ferrandez-Norlander - NDC London 2024](https://www.youtube.com/watch?v=VuG4QhA89es)
+- [Things I learned after a decade of writing code generators](https://www.youtube.com/watch?v=TQXmmBiB2bk)
+- [](https://www.youtube.com/watch?v=FahSLxZrsCs)
+- [Backwards Compatible- Lessons from a Quarter Century in Software - Anjuan Simmons](https://www.youtube.com/watch?v=ucTfG6nLr7Y)
+- [CppCon 2015: Andrei Alexandrescu “Declarative Control Flow"](https://www.youtube.com/watch?v=WjTrfoiB0MQ&t=2s)
+- [Types are like the Weather, Type Systems are like Weathermen - Matthias Felleisen](https://www.youtube.com/watch?v=XTl7Jn_kmio)
+- [Java's Hidden Gems: Tools and Libraries by Johan Janssen](https://www.youtube.com/watch?v=ABm0KhsZJ0c)
+- [11 Crazy Things I Didn't Know You Could Do With Java Until I Got My Java 11 Certification](https://www.youtube.com/watch?v=J3dqRwNQONE)
+- [](https://www.youtube.com/watch?v=BaUrpq_7KMk)
+- [Seven Ways to Fail at Microservices](https://www.youtube.com/watch?v=nEO4eAr2AGE)
+- [Full Stack Dart](https://www.youtube.com/watch?v=tkmpt28UhyY)
+- [Why Distributed Systems Are Hard](https://www.youtube.com/watch?v=w9GP7MNbaRc)
+- [Design Patterns Revisited in Modern Java by Venkat Subramaniam](https://www.youtube.com/watch?v=V7iW27F9oog)
 
 
-### Readlist 
+### Readlist
+- https://planetscale.com/blog/the-problem-with-using-a-uuid-primary-key-in-mysql
+- https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing
 
 
 ### Tools list
 - https://devdocs.io/
+- https://cyberchef.org
+- https://www.emathhelp.net/en/calculators/discrete-mathematics/boolean-algebra-calculator/
