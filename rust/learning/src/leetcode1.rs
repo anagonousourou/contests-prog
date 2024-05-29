@@ -1,4 +1,4 @@
-use std::{collections::HashMap, slice::RSplit};
+use std::collections::{HashMap, HashSet};
 
 use crate::plusminus;
 
@@ -184,4 +184,93 @@ pub fn sort_array_by_parity(nums: Vec<i32>) -> Vec<i32> {
     let mut mynums = nums.clone();
     mynums.sort_by_key(|k| if k % 2 == 0 { 0 } else { 1 });
     return mynums;
+}
+
+// https://leetcode.com/problems/count-largest-group/
+// https://leetcode.com/problems/count-largest-group/submissions/1268728015/
+pub fn count_largest_group(n: i32) -> i32 {
+    let mut groups: HashMap<u32, Vec<i32>> = HashMap::new();
+    for i in 1..=n {
+        let digits_sum = i
+            .to_string()
+            .chars()
+            .map(|c| c.to_digit(10).unwrap())
+            .sum::<u32>();
+        groups.entry(digits_sum).or_insert_with(Vec::new).push(i);
+    }
+    let largest_size = groups.values().map(|g| g.len()).max().unwrap();
+    return groups.values().filter(|g| g.len() == largest_size).count() as i32;
+}
+
+// https://leetcode.com/problems/capitalize-the-title/
+// https://leetcode.com/problems/capitalize-the-title/submissions/1268741874/
+pub fn capitalize_title(title: String) -> String {
+    return title
+        .split_ascii_whitespace()
+        .map(|word| {
+            if word.len() <= 2 {
+                return word.to_lowercase();
+            }
+            let (first, last) = word.split_at(1);
+            return format!("{}{}", first.to_uppercase(), last.to_lowercase());
+        })
+        .collect::<Vec<String>>()
+        .join(" ");
+}
+
+// https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
+// https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/submissions/1268748815/
+pub fn average(salary: Vec<i32>) -> f64 {
+    let mut salary_copy = salary.clone();
+    salary_copy.sort();
+    return salary_copy
+        .into_iter()
+        .skip(1)
+        .take(salary.len() - 2)
+        .map(|x| x as i64)
+        .sum::<i64>() as f64
+        / (salary.len() - 2) as f64;
+}
+
+// https://leetcode.com/problems/count-the-number-of-special-characters-i/
+pub fn number_of_special_chars(word: String) -> i32 {
+    let mut seen = HashSet::new();
+    let mut count = 0;
+    for letter in word.chars() {
+        if !seen.contains(&letter) {
+            seen.insert(letter);
+            if letter.is_ascii_lowercase() && seen.contains(&letter.to_ascii_uppercase()) {
+                count += 1;
+            } else if letter.is_ascii_uppercase() && seen.contains(&letter.to_ascii_lowercase()) {
+                count += 1;
+            }
+        }
+    }
+    return count;
+}
+
+// https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/
+pub fn count_k_difference(nums: Vec<i32>, k: i32) -> i32 {
+    let mut count = 0;
+    for i in 0..nums.len() {
+        for j in i + 1..nums.len() {
+            if (nums[i] - nums[j]).abs() == k {
+                count += 1;
+            }
+        }
+    }
+    return count;
+}
+
+// https://leetcode.com/problems/average-value-of-even-numbers-that-are-divisible-by-three/submissions/1268778868/
+pub fn average_value(nums: Vec<i32>) -> i32 {
+    let result = nums
+        .into_iter()
+        .filter(|x| x % 6 == 0)
+        .fold((0, 0), |acc, e| (acc.0 + e, acc.1 + 1));
+    return if result.1 == 0 {
+        0
+    } else {
+        result.0 / result.1
+    };
 }

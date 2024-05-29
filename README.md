@@ -215,8 +215,9 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [So You Think You Know Git 2](https://www.youtube.com/watch?v=Md44rcw13k4)
 - [The next big Thing - Andrei Alexandrescu](https://youtube.com/watch?v=tcyb1lpEHm0)
 - [Better Code Reviews FTW! - Tess Ferrandez-Norlander - NDC London 2024](https://www.youtube.com/watch?v=VuG4QhA89es)
+- [Code Review, you said? - Venkat Subramaniam](https://www.youtube.com/watch?v=OLp4yecQp2Y)
 - [Things I learned after a decade of writing code generators](https://www.youtube.com/watch?v=TQXmmBiB2bk)
-- [](https://www.youtube.com/watch?v=FahSLxZrsCs)
+- [Flow: the worst software development approach in history by Sander Hoogendoorn & Kim Van Wilgen](https://www.youtube.com/watch?v=FahSLxZrsCs)
 - [Backwards Compatible- Lessons from a Quarter Century in Software - Anjuan Simmons](https://www.youtube.com/watch?v=ucTfG6nLr7Y)
 - [CppCon 2015: Andrei Alexandrescu “Declarative Control Flow"](https://www.youtube.com/watch?v=WjTrfoiB0MQ&t=2s)
 - [Types are like the Weather, Type Systems are like Weathermen - Matthias Felleisen](https://www.youtube.com/watch?v=XTl7Jn_kmio)
@@ -227,6 +228,19 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [Full Stack Dart](https://www.youtube.com/watch?v=tkmpt28UhyY)
 - [Why Distributed Systems Are Hard](https://www.youtube.com/watch?v=w9GP7MNbaRc)
 - [Design Patterns Revisited in Modern Java by Venkat Subramaniam](https://www.youtube.com/watch?v=V7iW27F9oog)
+- [Programming with ServiceLoader API in Java - Venkat Subramaniam](https://www.youtube.com/watch?v=4mT7qPMLkYE)
+- [Designing Applications with Functional Programming Constructs - Venkat Subramaniam](https://www.youtube.com/watch?v=FROze1XrBb4)
+- [The Power and Practicality of Immutability by Venkat Subramaniam](https://www.youtube.com/watch?v=FQERMVABRrQ)
+- [How to Approach Refactoring - Venkat Subramaniam](https://www.youtube.com/watch?v=oZ6LLooOoqE)
+- [Optional - The Mother of All Bikesheds by Stuart Marks](https://www.youtube.com/watch?v=Ej0sss6cq14)
+- [10,000 Java performance tips over 15 years - what did I learn? by Jack Shirazi](https://www.youtube.com/watch?v=OYpTn0nWKR4)
+- [JUnit 5's Best Features by Kenneth Kousen](https://www.youtube.com/watch?v=vwtAiawChho)
+- [“Wouldn’t it be cool…” and other bad design approaches - Billy Hollis - NDC London 2023](https://www.youtube.com/watch?v=GGUqyb6mzDw)
+- [Don’t Build a Distributed Monolith - Jonathan "J." Tower - NDC London 2023](https://www.youtube.com/watch?v=p2GlRToY5HI)
+- [Autonomous microservices don't share data. Period. - Dennis van der Stelt - NDC Porto 2023](https://www.youtube.com/watch?v=_UN50hNZlx4)
+- [Six Little Lines of Fail - Jimmy Bogard](https://www.youtube.com/watch?v=VvUdvte1V3s)
+- [Lies Developers Tell Themselves - Billy Hollis - NDC Porto 2023](https://www.youtube.com/watch?v=rySTB112z6w)
+
 
 
 ### Readlist
