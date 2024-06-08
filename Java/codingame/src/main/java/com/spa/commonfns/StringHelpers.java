@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -46,6 +47,37 @@ public final class StringHelpers {
             result.add(input.substring(i, i + sliceLength));
         }
         return result;
+    }
+
+    /**
+     * write a generic Java function that allows to upsert in a List using two additional parameters :
+     * first parameter is a function that take two objects and return a boolean that indicates if those two objects are the same (in terms of domain specific identity),
+     * second parameter is a function that checks if two objects have the same content
+     * If the element to insert is already present and has the same content then no change should be done
+     * if the element is not present it should be added in the list
+     * the function must return a boolean indicating if the upsert happens.
+     * @param list
+     * @param element
+     * @param isSameIdentity
+     * @param isSameContent
+     * @return
+     * @param <T>
+     */
+    public static <T> boolean upsert(List<T> list, T element,
+                                     BiPredicate<T, T> isSameIdentity,
+                                     BiPredicate<T, T> isSameContent) {
+        for (int i = 0; i < list.size(); i++) {
+            T currentElement = list.get(i);
+            if (isSameIdentity.test(currentElement, element)) {
+                if (!isSameContent.test(currentElement, element)) {
+                    list.set(i, element);
+                    return true; // Upsert happened due to content difference.
+                }
+                return false; // No upsert happened due to same content.
+            }
+        }
+        list.add(element); // Element not present, added to the list.
+        return true; // Upsert happened due to new element addition.
     }
 
     public static boolean areAnagrams(List<String> candidates) {

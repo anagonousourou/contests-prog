@@ -274,3 +274,108 @@ pub fn average_value(nums: Vec<i32>) -> i32 {
         result.0 / result.1
     };
 }
+
+//https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/submissions/1280297992/?envType=daily-question&envId=2024-05-27
+pub fn special_array(nums: Vec<i32>) -> i32 {
+    for x in 0..nums.len() + 1 {
+        if x == nums.iter().filter(|i| **i as usize >= x).count() {
+            return x as i32;
+        }
+    }
+    return -1;
+}
+
+// https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/submissions/1280361977/
+pub fn is_possible_divide(nums: Vec<i32>, k: i32) -> bool {
+    if (nums.len() as i32) % k != 0 {
+        return false;
+    }
+    let mut nums_copy = nums.clone();
+    nums_copy.sort();
+
+    let mut i = 0;
+    let mut current = 0;
+    let mut current_group_size = 0;
+    loop {
+        println!("nums {:?}", nums_copy);
+        while i < nums_copy.len()
+            && (nums_copy[i] == 0 || (current != 0 && nums_copy[i] == current))
+        {
+            i += 1;
+        }
+        if i == nums_copy.len() && current_group_size > 0 && current_group_size < k {
+            //pas assez pour un groupe
+            println!("pas assez pour un group");
+            return false;
+        } else if nums_copy.len() == i && current_group_size == 0 {
+            // on a atteint la find sans rien ajouter au groupe
+            return true;
+        } else if current_group_size != k
+            && nums_copy.len() > i
+            && current != 0
+            && current + 1 != nums_copy[i]
+        {
+            // pas consecutif
+            println!(
+                "pas consecutif current={}, group_size={}, i ={}",
+                current, current_group_size, i
+            );
+            return false;
+        } else if nums_copy.len() > i && current_group_size < k {
+            // on ajoute un element au groupe
+            current = nums_copy[i];
+            nums_copy[i] = 0;
+            current_group_size += 1;
+        } else if current_group_size == k {
+            // on a fini de former un groupe
+            i = 0;
+            current = 0;
+            current_group_size = 0;
+        } else {
+            println!("Cas non géré {} {} {}", current, current_group_size, i);
+        }
+    }
+}
+
+// https://leetcode.com/problems/continuous-subarray-sum/?envType=daily-question&envId=2024-06-08
+// this version timeout
+pub fn check_subarray_sum(nums: Vec<i32>, k: i32) -> bool {
+    let mut prefix_sums = vec![0; nums.len() + 1];
+
+    for i in 1..prefix_sums.len() {
+        prefix_sums[i] = prefix_sums[i - 1] + nums[i - 1];
+    }
+
+    for i in 0..prefix_sums.len() {
+        for j in i + 2..prefix_sums.len() {
+            if j < prefix_sums.len() && (j - i >= 2) && (prefix_sums[j] - prefix_sums[i]) % k == 0 {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+// https://leetcode.com/problems/continuous-subarray-sum/submissions/1281300259/?envType=daily-question&envId=2024-06-08
+// Copilot version
+pub fn check_subarray_sum_faster(nums: Vec<i32>, k: i32) -> bool {
+    let mut map = HashMap::new();
+    map.insert(0, -1);
+    let mut sum = 0;
+
+    for (i, &num) in nums.iter().enumerate() {
+        sum += num;
+        let modulus =  sum % k;
+
+        if let Some(&index) = map.get(&modulus) {
+            if i as i32 - index >= 2 {
+                return true;
+            }
+        } else {
+            map.insert(modulus, i as i32);
+        }
+    }
+
+    false
+}
