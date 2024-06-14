@@ -366,7 +366,7 @@ pub fn check_subarray_sum_faster(nums: Vec<i32>, k: i32) -> bool {
 
     for (i, &num) in nums.iter().enumerate() {
         sum += num;
-        let modulus =  sum % k;
+        let modulus = sum % k;
 
         if let Some(&index) = map.get(&modulus) {
             if i as i32 - index >= 2 {
@@ -378,4 +378,42 @@ pub fn check_subarray_sum_faster(nums: Vec<i32>, k: i32) -> bool {
     }
 
     false
+}
+
+// https://leetcode.com/problems/subarray-sums-divisible-by-k/submissions/1282526394/
+pub fn subarrays_div_by_k(nums: Vec<i32>, k: i32) -> i32 {
+    let mut prefix_sums = vec![0; nums.len() + 1];
+
+    for i in 1..prefix_sums.len() {
+        prefix_sums[i] = prefix_sums[i - 1] + nums[i - 1];
+    }
+
+    for i in 0..prefix_sums.len() {
+        prefix_sums[i] = modulo(prefix_sums[i], k);
+    }
+
+    let modulus_frequencies = prefix_sums.iter().fold(HashMap::new(), |mut acc, e| {
+        *acc.entry(e.clone()).or_insert(0) += 1;
+        acc
+    });
+
+    //[0, -1 , 1, 10]
+
+    return modulus_frequencies
+        .values()
+        .filter(|v| **v >= 2)
+        .map(|v| (v * (v - 1)) / 2)
+        .sum();
+}
+
+fn modulo(a: i32, b: i32) -> i32 {
+    // assume b is positive
+    let mut r = a % b;
+    if r >= 0 {
+        return r;
+    }
+    while r < 0 {
+        r += b;
+    }
+    return r;
 }
