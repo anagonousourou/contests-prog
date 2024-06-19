@@ -417,3 +417,17 @@ fn modulo(a: i32, b: i32) -> i32 {
     }
     return r;
 }
+
+// https://leetcode.com/problems/sum-of-square-numbers/submissions/1290928629/
+pub fn judge_square_sum(c: i32) -> bool {
+    let sqrt_c = f64::sqrt(c as f64) as i32;
+    for i in 0..=sqrt_c {
+        if is_square(c - (i * i)) {
+            return true;
+        }
+    }
+    return false;
+}
+fn is_square(c: i32) -> bool {
+    return f64::sqrt(c as f64).fract() == 0.0;
+}

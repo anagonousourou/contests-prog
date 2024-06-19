@@ -4,6 +4,9 @@
 discipline-oriented programming does not scale.`
 Andrei Alexandrescu
 
+`Civilization advances by extending the number of important operations which we can perform without thinking about them`
+Alfred North Whitehead
+
 This repository is for trying out languages and algorithms...
 
 
@@ -135,6 +138,10 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 https://github.com/coalton-lang/coalton
 
+### Roc-lang
+- https://www.roc-lang.org
+- [Introduction to Roc Programming Language by Richard Feldman](https://www.youtube.com/watch?v=7R204VUlzGc)
+
 
 ### Software characteristic
 
@@ -240,6 +247,17 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [Autonomous microservices don't share data. Period. - Dennis van der Stelt - NDC Porto 2023](https://www.youtube.com/watch?v=_UN50hNZlx4)
 - [Six Little Lines of Fail - Jimmy Bogard](https://www.youtube.com/watch?v=VvUdvte1V3s)
 - [Lies Developers Tell Themselves - Billy Hollis - NDC Porto 2023](https://www.youtube.com/watch?v=rySTB112z6w)
+- ["The Mess We're In" by Joe Armstrong](https://www.youtube.com/watch?v=lKXe3HUG2l4)
+- [Domain Modeling Made Functional - Scott Wlaschin - KanDDDinsky 2019](https://www.youtube.com/watch?v=2JB1_e5wZmU)
+- [Refactoring to Immutability - Kevlin Henney](https://www.youtube.com/watch?v=APUCMSPiNh4)
+- [Keynote: Gang of None? Design Patterns in Elixir - José Valim | ElixirConf EU 2024](https://www.youtube.com/watch?v=agkXUp0hCW8)
+- [Scott Wlaschin — Railway oriented programming](https://www.youtube.com/watch?v=fYo3LN9Vf_M)
+- [Scott Wlaschin - Coding Like Frankenstein](https://www.youtube.com/watch?v=d2yLsBn_Lz0)
+- [Reinventing the Transaction Script - Scott Wlaschin](https://www.youtube.com/watch?v=USSkidmaS6w)
+- [Four Languages from Forty Years Ago - Scott Wlaschin](https://www.youtube.com/watch?v=mRwHZTNGdoY)
+- [The Functional Programmer's Toolkit - Scott Wlaschin](https://www.youtube.com/watch?v=Nrp_LZ-XGsY)
+- [How Netflix Really Uses Java](https://www.youtube.com/watch?v=BaUrpq_7KMk)
+- [Livebook & Elixir: Where AI, Web & Concurrency Meet • José Valim • YOW! 2023](https://www.youtube.com/watch?v=pas9WdWIBHs)
 
 
 
@@ -249,6 +267,8 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 
 
 ### Tools list
+- https://witeboard.com/
 - https://devdocs.io/
 - https://cyberchef.org
 - https://www.emathhelp.net/en/calculators/discrete-mathematics/boolean-algebra-calculator/
+- https://calculis.net/combinaison

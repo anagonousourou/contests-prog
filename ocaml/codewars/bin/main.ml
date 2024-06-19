@@ -120,5 +120,102 @@ let rec nodups l =
 let remove_consecutive_duplicates (str : string) : string =
     String.split_on_char  ' ' str |> nodups |> String.concat " "
   
+(* https://www.codewars.com/kata/59daf400beec9780a9000045/train/ocaml *)
+
+(* return whether needle is a subsequence of haystack *)
+let rec is_subsequence (haystack : string) (needle : string) : bool =
+  if String.empty = needle then
+    true
+  else if String.empty = haystack && String.empty != needle then
+    false
+  else if  String.lowercase_ascii (String.sub haystack 0 1) = String.lowercase_ascii (String.sub needle 0 1) then
+    is_subsequence (String.sub haystack 1 ((String.length haystack) - 1)) (String.sub needle 1 ((String.length needle) - 1))
+  else
+    is_subsequence (String.sub haystack 1 ((String.length haystack) - 1)) needle
+
+(* https://www.codewars.com/kata/52756e5ad454534f220001ef *)
+
+let lcs (s1: 'a list) (s2: 'a list) = []
+  (* Your code here *)
+  
+(* https://www.codewars.com/kata/5616868c81a0f281e500005c/train/ocaml *)
+
+type participant = {
+  firstname: string;
+  winningNumber : int;
+  weight : int;
+}
+(* https://batsov.com/articles/2022/10/24/ocaml-tips-converting-a-string-to-a-list-of-characters/ *)
+
+
+let explode_string s = List.init (String.length s) (String.get s);;
+let computeWinningNumber name = 
+  (String.length name) + ((List.map (fun x -> (Char.code x) - (Char.code 'a') + 1) (explode_string (String.lowercase_ascii name))) |> List.fold_left ( + ) 0)
+
+let rank (st: string) (we: int array) (n: int): string =
+  let names = (String.split_on_char ',' st) in
+  let nbParticipants = List.length names in
+    if st = String.empty then
+      "No participants"
+    else if n > nbParticipants then
+      "Not enough participants"
+    else
+      let selected_participant = List.map2 (fun name weight -> {
+          firstname = name;
+          winningNumber = (computeWinningNumber name) * weight;
+          weight = weight;
+        }) names (Array.to_list (Array.sub we 0 nbParticipants))
+        |> List.sort (fun p1 p2 -> if (compare p1.winningNumber p2.winningNumber) = 0 then compare p1.firstname p2.firstname else -(compare p1.winningNumber p2.winningNumber)) in
+        (List.nth selected_participant (n - 1)).firstname
+
+
+(* https://www.codewars.com/kata/5552101f47fc5178b1000050/ocaml *)
+let rec pow a = function
+        | 0 -> 1
+        | 1 -> a
+        | n -> 
+          let b = pow a (n / 2) in
+          b * b * (if n mod 2 = 0 then 1 else a)
+
+let dig_pow (n: int) (p: int): int =
+  let nstr = string_of_int n in
+  let digits = (explode_string nstr) |> List.map (fun x -> (int_of_char x) - (int_of_char '0')) in
+  let powers = List.init (String.length nstr) (fun x -> x + p) in 
+  let digitsum = List.map2 (fun x y -> pow x y ) digits powers |> List.fold_left ( + ) 0 in
+  if digitsum mod n = 0 then digitsum / n else -1
+
+
+(* https://www.codewars.com/kata/55a29405bc7d2efaff00007c/train/ocaml *)
+
+(* this first version gives the wrong answer for n >= 23 because of an integer overflow *)
+
+let rec factorial_inner result n  = 
+  if n <= 1 then result else factorial_inner (result * n)  ( n - 1 ) 
+
+let factorial = factorial_inner 1 
+
+let rec going_inner result counter currentfact = 
+  if currentfact <= 1 then
+    result +. 1.
+  else 
+    going_inner (result +. (1. /. float_of_int(currentfact))) (succ counter) (currentfact / (succ counter))
+
+
+let going (n: int) =
+  let nfact = factorial n in
+  going_inner 0.0 1 nfact
+
+
+(* second version *)
+
+let rec going_inner result counter current = 
+  if counter = 1 then
+    result +. 1.
+  else 
+    going_inner (result +. (current /. (float_of_int counter))) (pred counter) (current /. (float_of_int counter) )
+
+
+let going (n: int) =
+  going_inner 0. n 1.
 
 let () = print_endline "Hello, World!"
