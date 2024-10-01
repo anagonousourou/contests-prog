@@ -1,7 +1,7 @@
 import java.util.Map;
 
 class ResistorColorTrio {
-  static Map<String, Integer> matches = Map.of(
+  private static final Map<String, Integer> matches = Map.of(
           "black", 0,
           "brown", 1,
           "red", 2,
@@ -18,15 +18,13 @@ class ResistorColorTrio {
     String result = matches.get(colors[0]).toString() + matches.get(colors[1]).toString()
             + "0".repeat(matches.get(colors[2]));
     long value = Long.parseLong(result);
-    if(value != 0 && result.endsWith("0".repeat(9))){
-      return "%d gigaohms".formatted(value/ 1_000_000_000);
-    }
-    else if(value != 0 && result.endsWith("0".repeat(6))){
-      return "%d megaohms".formatted(value/ 1_000_000);
-    }
-    else if(value != 0 && result.endsWith("0".repeat(3))){
-      return "%d kiloohms".formatted(value/ 1_000);
-    }else{
+    if (value != 0 && result.endsWith("0".repeat(9))) {
+      return "%d gigaohms".formatted(value / 1_000_000_000);
+    } else if (value != 0 && result.endsWith("0".repeat(6))) {
+      return "%d megaohms".formatted(value / 1_000_000);
+    } else if (value != 0 && result.endsWith("0".repeat(3))) {
+      return "%d kiloohms".formatted(value / 1_000);
+    } else {
       return "%d ohms".formatted(value);
     }
   }
