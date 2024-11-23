@@ -83,8 +83,15 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 - Pipe operators: `|>`, `<|`
 
+#### Links
+- [Elm and finding your right path, with Evan Czaplicki](https://www.youtube.com/watch?v=qtoeLN3nrTg)
+- [Elm: Build Elegant UIs the Functional Way](https://www.youtube.com/watch?v=_Hq8bofP5jY)
+
 
 ### Java
+
+#### Links
+- [97 Things Every Java Prog. Should Know](https://www.youtube.com/watch?v=YAXGU2J7XjM)
 
 ### Javascript
 
@@ -126,6 +133,13 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 
 ## Links
+
+## Interesting Technologies
+- DuckDB
+- Splunk
+- Grafana
+- Kubernetes
+- [OpenTelemetry](https://www.youtube.com/watch?v=jC1icupHlMs)
 
 ### Julia
 
@@ -196,6 +210,8 @@ https://github.com/coalton-lang/coalton
 
 ### Elm
 
+- [Rapid Web Productivity in Elm - Single Page Apps & More • Christopher Biggs • YOW! 2019](https://www.youtube.com/watch?v=Vp9oy1OYT4U)
+
 ### CoffeeScript
 
 ## Dynamism vs immutability for runtime environments
@@ -258,6 +274,7 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [The Functional Programmer's Toolkit - Scott Wlaschin](https://www.youtube.com/watch?v=Nrp_LZ-XGsY)
 - [How Netflix Really Uses Java](https://www.youtube.com/watch?v=BaUrpq_7KMk)
 - [Livebook & Elixir: Where AI, Web & Concurrency Meet • José Valim • YOW! 2023](https://www.youtube.com/watch?v=pas9WdWIBHs)
+- [FPGA Microservices: Ultra-Low Latency with Off-The-Shelf Hardware • Conrad Parker • YOW! 2016](https://www.youtube.com/watch?v=8MW0RN1IsWY)
 
 
 
