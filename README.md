@@ -7,7 +7,19 @@ Andrei Alexandrescu
 `Civilization advances by extending the number of important operations which we can perform without thinking about them`
 Alfred North Whitehead
 
-This repository is for trying out languages and algorithms...
+This repository is for trying out languages, algorithms and writing down notes on what I learn.
+
+## Fun moments
+- [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
+
+## Lessons/things learnt
+- difference between `product` & `project`
+- difference between `easy` & `simple`
+- using `ObjectMapper::convertValue` to serialize a mongodb bson `Document` into a POJO.
+- pay attention to ordering of internal list elements when comparing objects
+- run mvn unit test in parallel https://www.baeldung.com/maven-junit-parallel-tests
+- `assert` keyword in Java : not enabled by default : https://www.baeldung.com/java-assert
+
 
 
 ## Problem solving notes
@@ -92,6 +104,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 #### Links
 - [97 Things Every Java Prog. Should Know](https://www.youtube.com/watch?v=YAXGU2J7XjM)
+- [Awaitility](https://github.com/awaitility/awaitility/wiki/Usage)
 
 ### Javascript
 
@@ -275,6 +288,8 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [How Netflix Really Uses Java](https://www.youtube.com/watch?v=BaUrpq_7KMk)
 - [Livebook & Elixir: Where AI, Web & Concurrency Meet • José Valim • YOW! 2023](https://www.youtube.com/watch?v=pas9WdWIBHs)
 - [FPGA Microservices: Ultra-Low Latency with Off-The-Shelf Hardware • Conrad Parker • YOW! 2016](https://www.youtube.com/watch?v=8MW0RN1IsWY)
+- [How to Deliver Quality Software Against All Odds • Daniel Terhorst-North & Julian Wood • GOTO 2024](https://www.youtube.com/watch?v=klqo1oPdbpM)
+- [Elm and finding your right path, with Evan Czaplicki](https://www.youtube.com/watch?v=qtoeLN3nrTg) **interesting**
 
 
 
@@ -289,3 +304,7 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - https://cyberchef.org
 - https://www.emathhelp.net/en/calculators/discrete-mathematics/boolean-algebra-calculator/
 - https://calculis.net/combinaison
+
+### Bugs I have encountered
+- mongodb database slowdown after adding new fields to query even though the new fields were not used in this environment because of indexes not being created for the new fields
+- wrong type of date field when reading data from mongo db : string vs Dates
