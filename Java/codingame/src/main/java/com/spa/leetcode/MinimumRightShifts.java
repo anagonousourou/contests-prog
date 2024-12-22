@@ -9,7 +9,7 @@ public class MinimumRightShifts {
         int minimumIndex = 0;
         boolean sorted = true;
 
-        int currentMin = nums.getFirst();
+        int currentMin = nums.get(0);
         for (int i = 1; i < nums.size(); i++) {
             if (nums.get(i) < currentMin) {
                 currentMin = nums.get(i);
