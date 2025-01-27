@@ -178,5 +178,21 @@ toString b =
         "False"
 
 
+-- https://www.codewars.com/kata/5592e3bd57b64d00f3000047/train/elm
+findNb : Int -> Int
+findNb m = 
+    findNbInner m 0
+
+
+findNbInner m n = 
+    if m == 0 then  
+        n
+    else if m < 0 then
+        -1 
+    else
+        findNbInner (m -  (n + 1) ^ 3) (n + 1)
+    
+
+
 main =
     text (toString (checkForFactor 8 2))

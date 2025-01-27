@@ -218,4 +218,13 @@ let rec going_inner result counter current =
 let going (n: int) =
   going_inner 0. n 1.
 
+
+(* https://www.codewars.com/kata/53d3173cf4eb7605c10001a8 *)
+(* https://en.wikipedia.org/wiki/Power_set *)
+
+
+(* https://www.codewars.com/kata/573182c405d14db0da00064e *)
+
+
+
 let () = print_endline "Hello, World!"
