@@ -36,13 +36,13 @@ pub fn judge_circle(moves: String) -> bool {
     let movesMap = moves
         .split("")
         .map(|x| String::from(x))
-     // Fold the iterator into a hash map of frequencies
-     .fold(HashMap::new(), |mut acc, e| {
-         // Insert or update the element and its count in the hash map
-         *acc.entry(e.clone()).or_insert(0) += 1;
-         // Return the updated hash map
-         acc
-     });
+        // Fold the iterator into a hash map of frequencies
+        .fold(HashMap::new(), |mut acc, e| {
+            // Insert or update the element and its count in the hash map
+            *acc.entry(e.clone()).or_insert(0) += 1;
+            // Return the updated hash map
+            acc
+        });
     return movesMap.get(&"U".to_string()).copied().unwrap_or(0)
         == movesMap.get(&"D".to_string()).copied().unwrap_or(0)
         && movesMap.get(&"L".to_string()).copied().unwrap_or(0)
@@ -77,7 +77,7 @@ pub fn find_max_k(nums: Vec<i32>) -> i32 {
             return mynums[i].abs();
         }
     }
-    return -1;      
+    return -1;
 }
 
 // https://leetcode.com/problems/add-digits/description/
@@ -418,6 +418,49 @@ fn modulo(a: i32, b: i32) -> i32 {
     return r;
 }
 
+
+// https://leetcode.com/problems/number-of-senior-citizens/
+pub fn count_seniors(details: Vec<String>) -> i32 {
+    return details
+        .iter()
+        .filter(|person| ((*person).as_str()[11..13]).parse::<i32>().unwrap() > 60)
+        .count() as i32;
+}
+
+// https://leetcode.com/problems/letter-tile-possibilities/
+
+pub fn num_tile_possibilities(tiles: String) -> i32 {
+    let occurences = tiles
+        .chars()
+        // Fold the iterator into a hash map of frequencies
+        .fold(HashMap::new(), |mut acc, e| {
+            // Insert or update the element and its count in the hash map
+            *acc.entry(e.clone()).or_insert(0) += 1;
+            // Return the updated hash map
+            acc
+        });
+
+    let mut result = 0;
+    // sequences of 1
+    result += occurences.len();
+
+    // sequences of 2
+
+    // homogeneous
+    for entry in &occurences {
+        if *entry.1 > 2 {
+            result += 1;
+        }
+    }
+
+    // heterogeneous
+    result += occurences.len() * (occurences.len() - 1);
+
+    //
+
+    return result as i32;
+}
+
 // https://leetcode.com/problems/sum-of-square-numbers/submissions/1290928629/
 pub fn judge_square_sum(c: i32) -> bool {
     let sqrt_c = f64::sqrt(c as f64) as i32;
@@ -430,4 +473,51 @@ pub fn judge_square_sum(c: i32) -> bool {
 }
 fn is_square(c: i32) -> bool {
     return f64::sqrt(c as f64).fract() == 0.0;
+}
+
+// https://leetcode.com/problems/sort-even-and-odd-indices-independently/description/
+// https://leetcode.com/problems/largest-number-after-digit-swaps-by-parity/description/
+// https://leetcode.com/problems/sort-array-by-parity-ii/description/
+// https://leetcode.com/problems/unique-email-addresses/description/
+// https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/description/
+// https://leetcode.com/problems/find-lucky-integer-in-an-array/description/
+// https://leetcode.com/problems/find-common-characters/?envType=daily-question&envId=2024-06-05
+// https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/description/
+// https://leetcode.com/problems/last-visited-integers/description/
+// https://leetcode.com/problems/number-of-good-ways-to-split-a-string/description/
+// https://leetcode.com/problems/matrix-cells-in-distance-order/description/
+// https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
+
+// UNFINISHED https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
+pub fn max_consecutive_answers(answer_key: String, k: i32) -> i32 {
+    let mut nbTs = 0;
+    let mut nbFs = 0;
+    let mut currentNbFs = 0;
+    let mut currentNbTs = 0;
+    let answer_chars: Vec<char> = answer_key.chars().collect();
+    for i in 0..answer_chars.len() {
+        if i > 0 && answer_chars[i] != answer_chars[i - 1] {
+            if answer_chars[i - 1] == 'T' {
+                nbTs = i32::max(currentNbTs, nbTs);
+            } else {
+                nbFs = i32::max(currentNbFs, nbFs);
+            }
+            currentNbTs = 0;
+            currentNbFs = 0;
+        }
+
+        if i > 0 && answer_chars[i] == answer_chars[i - 1] {
+            if answer_chars[i] == 'T' {
+                currentNbTs += 1;
+            } else {
+                currentNbFs += 1;
+            }
+        } else if answer_chars[i] == 'T' {
+            currentNbTs += 1;
+        } else if answer_chars[i] == 'F' {
+            currentNbFs += 1
+        }
+    }
+    let greatest = i32::max(nbFs, nbTs);
+    return greatest + i32::min(k, answer_chars.len() as i32 - greatest);
 }

@@ -2,9 +2,9 @@ package com.spa.leetcode;
 
 public class SumOfLeftLeaves {
 
-    //https://leetcode.com/problems/sum-of-left-leaves/
+    //https://leetcode.com/problems/sum-of-left-leaves/submissions/1232120293/?envType=daily-question&envId=2024-04-14
     public int sumOfLeftLeaves(TreeNode root) {
-        return sumOfLeftLeaves(root, true);
+        return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
     }
 
     public int sumOfLeftLeaves(TreeNode root, boolean left) {

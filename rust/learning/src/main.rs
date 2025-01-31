@@ -5,7 +5,6 @@ mod leetcode1;
 mod plusminus;
 mod week2;
 
-use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, Write};
 use std::path::Path;
@@ -23,6 +22,6 @@ fn main() -> io::Result<()>{
     let lines = reader.lines().map(|l| l.unwrap()).collect::<Vec<String>>();
     
     println!("Result = {}", adventofcode2018::checksum_part1(lines));
-
+    println!("modulo {}", -1i32.rem_euclid(2));
     Ok(())
 }
