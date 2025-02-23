@@ -4,6 +4,9 @@
 discipline-oriented programming does not scale.`
 Andrei Alexandrescu
 
+`Make illegal states unrepresentable`
+Yaron Minsky
+
 `Civilization advances by extending the number of important operations which we can perform without thinking about them`
 Alfred North Whitehead
 
@@ -94,6 +97,10 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 ### Elm
 
 - Pipe operators: `|>`, `<|`
+- partial function applications
+
+#### Links
+- https://www.youtube.com/playlist?list=PLuGpJqnV9DXq_ItwwUoJOGk_uCr72Yvzb
 
 #### Links
 - [Elm and finding your right path, with Evan Czaplicki](https://www.youtube.com/watch?v=qtoeLN3nrTg)
@@ -101,6 +108,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 
 ### Java
+- annotation processor
 
 #### Links
 - [97 Things Every Java Prog. Should Know](https://www.youtube.com/watch?v=YAXGU2J7XjM)
@@ -121,7 +129,22 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 - https://cheatsheet.juliadocs.org/
 
 ### OCaml
-- Sum types
+- immutability
+- first class functions
+- type inference
+- algebraic datatypes and pattern matching
+- partial application
+- pipeline operator : |>
+- record copy : {e with fieldA = newValue}
+- function
+- retrieve first element of a pair `fst`
+- retrieve second element of a pair `snd`
+
+- standard library is a bit poor :eg : no String.contains(string, string) -> bool
+- https://www.youtube.com/playlist?list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU
+
+eval `opam config env`  # may not be needed
+utop
 
 ### Python
 
@@ -141,6 +164,7 @@ To simplify what is an interesting feature worth noting, let's use `Java 17` as 
 
 #### Links
 - https://github.com/rust-unofficial/awesome-rust
+- https://github.com/mainmatter/100-exercises-to-learn-rust/tree/main
 
 ### Scala
 
@@ -236,6 +260,25 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 
 ### Watchlist
 
+
+- [Why Everybody Hates Agile • Jesper Boeg • GOTO 2023](https://www.youtube.com/watch?v=Gt9ZuHGpKbI)
+#### General
+
+- [Don't Walk Away from Complexity, Run • Venkat Subramaniam • GOTO 2018](https://www.youtube.com/watch?v=4MEKu2TcEHM)
+
+#### Java
+
+- [Why We Hate Java Serialization And What We're Doing About It by Brian Goetz & Stuart Marks](https://www.youtube.com/watch?v=dOgfWXw9VrI)
+- [Let’s Set the Records Straight](https://www.youtube.com/watch?v=2EL9lUfd9tI)
+- [Design Patterns Revisited in Modern Java by Venkat Subramaniam](https://www.youtube.com/watch?v=V7iW27F9oog)
+- [Optional - The Mother of All Bikesheds by Stuart Marks](https://www.youtube.com/watch?v=Ej0sss6cq14)
+- [10,000 Java performance tips over 15 years - what did I learn? by Jack Shirazi](https://www.youtube.com/watch?v=OYpTn0nWKR4)
+- [JUnit 5's Best Features by Kenneth Kousen](https://www.youtube.com/watch?v=vwtAiawChho)
+- [Programming with ServiceLoader API in Java - Venkat Subramaniam](https://www.youtube.com/watch?v=4mT7qPMLkYE)
+- [Java's Hidden Gems: Tools and Libraries by Johan Janssen](https://www.youtube.com/watch?v=ABm0KhsZJ0c)
+- [11 Crazy Things I Didn't Know You Could Do With Java Until I Got My Java 11 Certification](https://www.youtube.com/watch?v=J3dqRwNQONE)
+- [The Power and Practicality of Immutability by Venkat Subramaniam](https://www.youtube.com/watch?v=FQERMVABRrQ)
+
 - https://www.youtube.com/watch?v=57jKNEKSNWA
 - https://www.youtube.com/watch?v=ufx_3_wcPuc
 - https://www.youtube.com/watch?v=pdHvC8fDC5E
@@ -257,20 +300,14 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [Backwards Compatible- Lessons from a Quarter Century in Software - Anjuan Simmons](https://www.youtube.com/watch?v=ucTfG6nLr7Y)
 - [CppCon 2015: Andrei Alexandrescu “Declarative Control Flow"](https://www.youtube.com/watch?v=WjTrfoiB0MQ&t=2s)
 - [Types are like the Weather, Type Systems are like Weathermen - Matthias Felleisen](https://www.youtube.com/watch?v=XTl7Jn_kmio)
-- [Java's Hidden Gems: Tools and Libraries by Johan Janssen](https://www.youtube.com/watch?v=ABm0KhsZJ0c)
-- [11 Crazy Things I Didn't Know You Could Do With Java Until I Got My Java 11 Certification](https://www.youtube.com/watch?v=J3dqRwNQONE)
 - [](https://www.youtube.com/watch?v=BaUrpq_7KMk)
 - [Seven Ways to Fail at Microservices](https://www.youtube.com/watch?v=nEO4eAr2AGE)
 - [Full Stack Dart](https://www.youtube.com/watch?v=tkmpt28UhyY)
 - [Why Distributed Systems Are Hard](https://www.youtube.com/watch?v=w9GP7MNbaRc)
-- [Design Patterns Revisited in Modern Java by Venkat Subramaniam](https://www.youtube.com/watch?v=V7iW27F9oog)
-- [Programming with ServiceLoader API in Java - Venkat Subramaniam](https://www.youtube.com/watch?v=4mT7qPMLkYE)
+- [Qualities of a Highly Effective Architect Keynote by Venkat Subramaniam](https://www.youtube.com/watch?v=QeKheNfO3Yg)
 - [Designing Applications with Functional Programming Constructs - Venkat Subramaniam](https://www.youtube.com/watch?v=FROze1XrBb4)
-- [The Power and Practicality of Immutability by Venkat Subramaniam](https://www.youtube.com/watch?v=FQERMVABRrQ)
+
 - [How to Approach Refactoring - Venkat Subramaniam](https://www.youtube.com/watch?v=oZ6LLooOoqE)
-- [Optional - The Mother of All Bikesheds by Stuart Marks](https://www.youtube.com/watch?v=Ej0sss6cq14)
-- [10,000 Java performance tips over 15 years - what did I learn? by Jack Shirazi](https://www.youtube.com/watch?v=OYpTn0nWKR4)
-- [JUnit 5's Best Features by Kenneth Kousen](https://www.youtube.com/watch?v=vwtAiawChho)
 - [“Wouldn’t it be cool…” and other bad design approaches - Billy Hollis - NDC London 2023](https://www.youtube.com/watch?v=GGUqyb6mzDw)
 - [Don’t Build a Distributed Monolith - Jonathan "J." Tower - NDC London 2023](https://www.youtube.com/watch?v=p2GlRToY5HI)
 - [Autonomous microservices don't share data. Period. - Dennis van der Stelt - NDC Porto 2023](https://www.youtube.com/watch?v=_UN50hNZlx4)

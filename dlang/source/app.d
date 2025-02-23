@@ -360,3 +360,90 @@ unittest
 	assert(sequenceSum(1, 15, 3) == 35);
 	assert(sequenceSum(15, 1, 3) == 0);
 }
+
+export uint zeros(uint n)
+{
+	import std.algorithm : min;
+
+	auto factors = primeFactorsFor2And5(n);
+	debug
+	{
+		import std.stdio : writeln;
+
+		try
+		{
+			writeln("factors = ", factors);
+		}
+		catch (Exception)
+		{
+		}
+	}
+	return min(factors.get(2, 0), factors.get(5, 0));
+}
+
+uint[uint] primeFactorsFor2And5(uint upperbound)
+{
+
+	uint[uint] factors;
+	foreach (n; 2 .. upperbound + 1)
+	{
+		if (n == 7 || n == 13 || n == 3 || n == 17)
+		{
+			continue;
+		}
+		uint i = 2;
+		while (n > 1 && i < 6)
+		{
+			if (i == 3 || i == 4)
+			{
+				i++;
+				continue;
+			}
+
+			if (n % i == 0)
+			{
+				factors[i] = factors.get(i, 0) + 1;
+				n /= i;
+			}
+			else
+			{
+				i++;
+			}
+		}
+	}
+
+	return factors;
+}
+
+@("Number of trailing zeros of N!")
+unittest
+{
+	assert(zeros(0) == 0);
+	debug
+	{
+		import std.stdio : writeln;
+
+		try
+		{
+			writeln(zeros(6));
+		}
+		catch (Exception)
+		{
+		}
+	}
+	assert(zeros(6) == 1);
+	assert(zeros(12) == 2);
+	debug
+	{
+		import std.stdio : writeln;
+
+		try
+		{
+			writeln("nbzeros = ", zeros(30));
+		}
+		catch (Exception)
+		{
+		}
+	}
+	assert(zeros(30) == 7);
+}

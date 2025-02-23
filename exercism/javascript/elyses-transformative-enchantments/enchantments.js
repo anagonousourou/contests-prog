@@ -50,8 +50,7 @@ export function middleTwo(deck) {
 
 export function sandwichTrick(deck) {
 
-  return [deck.slice(1,5), deck[0], deck[deck.length - 1], deck.slice(5, 9) ]
-  throw new Error('Implement the sandwichTrick function');
+  return [deck.slice(1, deck.length / 2), deck[deck.length - 1], deck[0], deck.slice(deck.length / 2, deck.length - 1)].flat();
 }
 
 /**
@@ -62,7 +61,7 @@ export function sandwichTrick(deck) {
  * @returns {number[]} deck with only 2s
  */
 export function twoIsSpecial(deck) {
-  throw new Error('Implement the twoIsSpecial function');
+  return deck.filter(e => e === 2);
 }
 
 /**
@@ -73,7 +72,7 @@ export function twoIsSpecial(deck) {
  * @returns {number[]} ordered deck
  */
 export function perfectlyOrdered(deck) {
-  throw new Error('Implement the perfectlyOrdered function');
+  return deck.sort((a, b) => a - b);
 }
 
 /**
@@ -84,5 +83,5 @@ export function perfectlyOrdered(deck) {
  * @returns {number[]} reordered deck
  */
 export function reorder(deck) {
-  throw new Error('Implement the reorder function');
+  return deck.reverse();
 }
