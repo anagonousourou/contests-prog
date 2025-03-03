@@ -23,4 +23,5 @@ pubspec.lock
 **/*.bs.js
 *.iml
 _build
+.vscode
 private-readme.md
