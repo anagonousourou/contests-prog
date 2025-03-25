@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class FindBottomLeftTreeValue {
 
     //https://leetcode.com/problems/find-bottom-left-tree-value/description/
