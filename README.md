@@ -12,7 +12,14 @@ Alfred North Whitehead
 
 This repository is for trying out languages, algorithms and writing down notes on what I learn.
 
-## Fun moments
+## Workflow engines
+- [Kogito](https://kogito.kie.org)
+- [Temporal](https://temporal.io)
+
+## Git notes
+- Add tracked files to current commit : git commit --amend --no-edit
+
+## Funny
 - [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
 
 ## Lessons/things learnt
@@ -33,7 +40,7 @@ Strategies to solve problems:
 - translate into graph problem
 - sliding window
 - prefix/suffix arrays
-- 
+-
 
 ### Algorithms
 - Evaluate Reverse Polish Notation
@@ -150,7 +157,7 @@ utop
 
 - Arbitrary integer precision
 
-### Lua 
+### Lua
 ### Raku
 - Gradual typing
 - Contract programming with constraints
@@ -254,7 +261,7 @@ https://github.com/coalton-lang/coalton
 ## Dynamism vs immutability for runtime environments
 Application servers like Tomcat and TomEE enable you to add and remove capabilities to your running service by updating jars on the fly.
 Similar dynamism is possible with DLLs and Shared libraries.
-On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability. 
+On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability.
 The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application ?
 - https://blog.frankel.ch/monkeypatching-java/
 
