@@ -72,3 +72,25 @@ SELECT class
 FROM Courses
 GROUP BY class
 HAVING COUNT(student) >= 5;
+
+-- https://leetcode.com/problems/monthly-transactions-i/submissions/1832693578/?envType=problem-list-v2&envId=db-db2-filtering-aggregation
+
+
+SELECT
+    DATE_FORMAT(trans_date, '%Y-%m')          AS month,
+  country,
+    COUNT(*)                                AS trans_count,
+    SUM(CASE WHEN state = 'approved' THEN 1 ELSE 0 END) AS approved_count,
+    SUM(amount)                          AS trans_total_amount,
+    SUM(CASE WHEN state = 'approved' THEN amount ELSE 0 END) AS approved_total_amount
+FROM Transactions
+GROUP BY
+    DATE_FORMAT(trans_date, '%Y-%m'),
+    country;
+
+
+-- https://leetcode.com/problems/user-activity-for-the-past-30-days-i/submissions/1832702410/?envType=problem-list-v2&envId=db-db2-filtering-aggregation
+
+SELECT activity_date AS day, COUNT(DISTINCT user_id) AS active_users FROM Activity
+WHERE activity_date <= '2019-07-27'AND activity_date >= DATE_SUB("2019-07-27", INTERVAL 29 DAY);
+GROUP BY activity_date ORDER BY activity_date;

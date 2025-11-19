@@ -17,7 +17,8 @@ This repository is for trying out languages, algorithms and writing down notes o
 - [Temporal](https://temporal.io)
 
 ## Git notes
-- Add tracked files to current commit : git commit --amend --no-edit
+- Add tracked files to current commit : `git commit --amend --no-edit`
+- Turn the repo to zip : `git archive -o <name>.zip HEAD`
 
 ## Funny
 - [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
