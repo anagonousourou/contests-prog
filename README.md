@@ -22,6 +22,7 @@ This repository is for trying out languages, algorithms and writing down notes o
 
 ## Funny
 - [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
+- ["Design in Practice in Practice" by Alex Miller](https://youtu.be/VBnGhQOyTM4?list=PLZdCLR02grLr4TWUP6qeLxIn4OJLNwKNZ&t=1214)
 
 ## Lessons/things learnt
 - difference between `product` & `project`
@@ -30,6 +31,11 @@ This repository is for trying out languages, algorithms and writing down notes o
 - pay attention to ordering of internal list elements when comparing objects
 - run mvn unit test in parallel https://www.baeldung.com/maven-junit-parallel-tests
 - `assert` keyword in Java : not enabled by default : https://www.baeldung.com/java-assert
+- csp-evaluator.withgoogle.com/
+- Http Strict Transport Security
+
+- resilience = rebound + robustness + graceful extensibility +
+
 
 
 
@@ -335,6 +341,10 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - [FPGA Microservices: Ultra-Low Latency with Off-The-Shelf Hardware • Conrad Parker • YOW! 2016](https://www.youtube.com/watch?v=8MW0RN1IsWY)
 - [How to Deliver Quality Software Against All Odds • Daniel Terhorst-North & Julian Wood • GOTO 2024](https://www.youtube.com/watch?v=klqo1oPdbpM)
 - [Elm and finding your right path, with Evan Czaplicki](https://www.youtube.com/watch?v=qtoeLN3nrTg) **interesting**
+- [Lies, Damned Lies & Timeouts Engineering • Yao Yue • YOW! 2017](https://www.youtube.com/watch?v=ngE8MoWMd3w)
+- [How I solved production issues with OpenTelemetry (and how you can too)](https://www.youtube.com/watch?v=qVnWlOLepnM)
+-  [Elm: Build Elegant UIs the Functional Way](https://www.youtube.com/watch?v=_Hq8bofP5jY)
+
 
 
 
@@ -349,6 +359,7 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 - https://cyberchef.org
 - https://www.emathhelp.net/en/calculators/discrete-mathematics/boolean-algebra-calculator/
 - https://calculis.net/combinaison
+
 
 ### Bugs I have encountered
 - mongodb database slowdown after adding new fields to query even though the new fields were not used in this environment because of indexes not being created for the new fields
@@ -398,3 +409,5 @@ public class ReplaceError {
     }
 }
 ```
+
+-

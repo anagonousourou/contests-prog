@@ -24,7 +24,9 @@
     "eslint": "^8.42.0",
     "jest": "^29.5.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@exercism/javascript-elyses-transformative-enchantments": "file:"
+  },
   "scripts": {
     "test": "jest ./*",
     "watch": "jest --watch ./*",
