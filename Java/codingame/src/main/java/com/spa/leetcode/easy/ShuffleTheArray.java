@@ -1,8 +1,8 @@
-package com.spa.leetcode;
+package com.spa.leetcode.easy;
 
 public class ShuffleTheArray {
 
-    //https://leetcode.com/problems/shuffle-the-array/
+    // https://leetcode.com/problems/shuffle-the-array/submissions/1834537802/?envType=problem-list-v2&envId=dsa-linear-shoal-array-i
     public int[] shuffle(int[] nums, int n) {
         int[] result = nums.clone();
         int k = 0;

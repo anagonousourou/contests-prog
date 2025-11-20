@@ -1,4 +1,4 @@
-package com.spa.leetcode;
+package com.spa.leetcode.easy;
 
 public class MaxConsecutiveOnes {
 

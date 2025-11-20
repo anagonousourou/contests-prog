@@ -12,7 +12,15 @@ Alfred North Whitehead
 
 This repository is for trying out languages, algorithms and writing down notes on what I learn.
 
-## Fun moments
+## Workflow engines
+- [Kogito](https://kogito.kie.org)
+- [Temporal](https://temporal.io)
+
+## Git notes
+- Add tracked files to current commit : `git commit --amend --no-edit`
+- Turn the repo to zip : `git archive -o <name>.zip HEAD`
+
+## Funny
 - [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
 
 ## Lessons/things learnt
@@ -33,7 +41,7 @@ Strategies to solve problems:
 - translate into graph problem
 - sliding window
 - prefix/suffix arrays
-- 
+-
 
 ### Algorithms
 - Evaluate Reverse Polish Notation
@@ -150,7 +158,7 @@ utop
 
 - Arbitrary integer precision
 
-### Lua 
+### Lua
 ### Raku
 - Gradual typing
 - Contract programming with constraints
@@ -254,7 +262,7 @@ https://github.com/coalton-lang/coalton
 ## Dynamism vs immutability for runtime environments
 Application servers like Tomcat and TomEE enable you to add and remove capabilities to your running service by updating jars on the fly.
 Similar dynamism is possible with DLLs and Shared libraries.
-On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability. 
+On the other hand images/containers let you build and immutable application and the only (proper/safe) way to add capabilities is to shutdown the old container and start a new container based on the new image with the added capability.
 The questions that comes to mind is what are the tradeoffs for each of those ways of updating a running application ?
 - https://blog.frankel.ch/monkeypatching-java/
 
@@ -345,3 +353,48 @@ The questions that comes to mind is what are the tradeoffs for each of those way
 ### Bugs I have encountered
 - mongodb database slowdown after adding new fields to query even though the new fields were not used in this environment because of indexes not being created for the new fields
 - wrong type of date field when reading data from mongo db : string vs Dates
+
+### MongoDB
+
+Snippets to simulate a mongoDB error due to concurrent updates of the same documents
+
+```java
+public class ReplaceError {
+    public static void main(String[] args) {
+        JsonWriterSettings prettyPrint = JsonWriterSettings.builder().indent(true).build();
+        Random random = new Random();
+        try (MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017")) {
+            MongoDB sampleTrainingDB = mongoClient.getDatabase(databaseName: "sample_training");
+            MongoCollection<Document> collection = sampleTrainingDB.getCollection(collectionName: "grades");
+
+            // Step 1: Create initial document (say Thread1)
+            String id = "AY105DD84P097" + random.nextLong();
+            Document initialDoc = new Document("_id", id)
+                    .append("version", 1)
+                    .append("name", "test");
+            collection.insertOne(initialDoc);
+            System.out.println("Inserted: " + initialDoc.toJson());
+
+            // Step 2: Update and bump version (say Thread2)
+            collection.updateOne(new Document("_id", id),
+                    new Document("$set", new Document("version", 2)));
+            System.out.println("Updated version to 2");
+
+            // Step 3: Replace with old version using upsert (say Thread1)
+            Document oldVersionDoc = new Document("_id", id)
+                    .append("version", 1)
+                    .append("name", "test-old");
+            ReplaceOptions options = new ReplaceOptions().upsert(true);
+
+            // This fails with
+            // Write operation error on server localhost:27017. Write error: WriteError{code=11000, message='E11000 duplicate key error'
+            collection.replaceOne(new Document("_id", id).append("version", 1), oldVersionDoc, options);
+            System.out.println("Attempted replace with old version: " + oldVersionDoc.toJson());
+
+            // Check final state
+            Document finalDoc = collection.find(new Document("_id", id)).first();
+            System.out.println("Final document: " + finalDoc.toJson());
+        }
+    }
+}
+```
