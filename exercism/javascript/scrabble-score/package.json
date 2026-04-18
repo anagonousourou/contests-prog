@@ -20,7 +20,9 @@
     "eslint": "^8.47.0",
     "jest": "^29.6.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@exercism/javascript-scrabble-score": "file:"
+  },
   "scripts": {
     "test": "jest ./*",
     "watch": "jest --watch ./*",

@@ -1,4 +1,5 @@
 target
+**/obj
 .clj-kondo
 .lsp
 .gradle
@@ -8,7 +9,7 @@ bin
 *.bin
 *.class
 *.pyc
-*catch.hpp 
+*catch.hpp
 build
 *elm-stuff
 .cpcache
@@ -25,3 +26,6 @@ pubspec.lock
 _build
 .vscode
 private-readme.md
+.classpath
+.project
+.settings
