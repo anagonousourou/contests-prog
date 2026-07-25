@@ -1,7 +1,7 @@
 package com.spa.leetcode.easy;
 
 
-import com.spa.leetcode.Node;
+//import com.spa.leetcode.Node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 public class NAryPostOrder {
 
     // https://leetcode.com/problems/n-ary-tree-postorder-traversal/submissions/1549746018/
-    public List<Integer> postorder(Node root) {
+    /*public List<Integer> postorder(Node root) {
         List<Integer> content = new ArrayList<>();
         postorderTraversal(root, content);
         return content;
@@ -26,5 +26,5 @@ public class NAryPostOrder {
             }
         }
         content.add(root.val);
-    }
+    }*/
 }

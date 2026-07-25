@@ -16,23 +16,19 @@ public final class StringHelpers {
     public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
     public static void main(String[] args) {
+
+        System.out.println(StringHelpers.isPalindrome("Olive"));
+        System.out.println(StringHelpers.isPalindrome("Apouke"));
+        System.out.println(StringHelpers.isPalindrome("sonos"));
+        System.out.printf("sonos =  %s\n", StringHelpers.isPalindrome("sonos"));
+        System.err.printf("sonos =  %s\n", StringHelpers.isPalindrome("sonos"));
+
         Scanner scanner = new Scanner(System.in);
-        int k = scanner.nextInt();
-        while (scanner.hasNextLine()) {
-            short op = scanner.nextShort();
-            int num = scanner.nextInt();
-            switch (op) {
-                case 1:
 
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-            }
-        }
+        String hello = scanner.nextLine();
 
-
+        System.out.println("Vous avez entré " + hello);
+        scanner.close();
     }
 
     //https://leetcode.com/problems/check-if-the-sentence-is-pangram/
@@ -56,12 +52,13 @@ public final class StringHelpers {
      * If the element to insert is already present and has the same content then no change should be done
      * if the element is not present it should be added in the list
      * the function must return a boolean indicating if the upsert happens.
+     *
      * @param list
      * @param element
      * @param isSameIdentity
      * @param isSameContent
-     * @return
      * @param <T>
+     * @return
      */
     public static <T> boolean upsert(List<T> list, T element,
                                      BiPredicate<T, T> isSameIdentity,
