@@ -19,6 +19,7 @@ public class SmallestSubsequenceOfDistinctCharacters {
          charactersIndices.putIfAbsent(s.substring(i, i+1), new ArrayList<>()).add(i);
      }
 
-
+     // TODO
+     return "";
     }
 }
