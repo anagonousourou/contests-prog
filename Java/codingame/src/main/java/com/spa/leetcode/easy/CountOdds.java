@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CountOdds {
 
-    //https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+    //https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/submissions/1849532295/
     public int countOdds(int low, int high) {
         if(low == high){
             return low % 2 == 1 ? 1 : 0;

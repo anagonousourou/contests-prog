@@ -6,6 +6,8 @@ import java.util.List;
 
 public class ConvertArrayWithConditions {
 
+    // https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-conditions/submissions/1134433528/
+
     public List<List<Integer>> findMatrix(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
 

@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class LongestPathWithDifferentAdjacentCharacters {
+    // https://leetcode.com/problems/longest-path-with-different-adjacent-characters/submissions/877669963/
+
     public int longestPath(int[] parent, String s) {
         return 0;
     }

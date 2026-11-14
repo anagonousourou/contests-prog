@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class NeareastValidPoint {
 
-    //https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/
+    //https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/submissions/1168670249/
     public int nearestValidPoint(int x, int y, int[][] points) {
         int minIndex = -1;
         int minDistance = Integer.MAX_VALUE;

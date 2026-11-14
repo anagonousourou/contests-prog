@@ -20,7 +20,7 @@ public class FrequencySort {
     }
 
 
-    //https://leetcode.com/problems/sort-array-by-increasing-frequency/
+    //https://leetcode.com/problems/sort-array-by-increasing-frequency/submissions/1166594561/
     public int[] frequencySort(int[] nums) {
         var freqs = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         return Arrays.stream(nums).boxed().sorted((Integer a, Integer b) -> {

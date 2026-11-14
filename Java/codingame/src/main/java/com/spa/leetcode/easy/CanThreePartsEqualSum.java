@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class CanThreePartsEqualSum {
 
+    // https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/submissions/1425298432/
+
     public boolean canThreePartsEqualSum(int[] arr) {
         int[] prefix = new int[arr.length];
         prefix[0] = arr[0];

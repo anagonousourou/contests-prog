@@ -6,6 +6,8 @@ import java.util.List;
 
 public class TwoSum {
 
+    // https://leetcode.com/problems/two-sum/submissions/1121011106/
+
     public int[] twoSum(int[] nums, int target) {
         var numsList = Arrays.stream(nums).boxed().toList();
         var remsList = numsList.stream().map(n -> target - n).toList();

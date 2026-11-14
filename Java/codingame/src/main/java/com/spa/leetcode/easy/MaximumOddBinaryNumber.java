@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class MaximumOddBinaryNumber {
 
-    //https://leetcode.com/problems/maximum-odd-binary-number/?envType=daily-question&envId=2024-03-01
+    //https://leetcode.com/problems/maximum-odd-binary-number/submissions/1190475312/?envType=daily-question&envId=2024-03-01
     public String maximumOddBinaryNumber(String s) {
         int totalLength = s.length();
         int oneCount = (int) s.chars().filter(c -> (char)c == '1').count();

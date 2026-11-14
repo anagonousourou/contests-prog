@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class DecodeXORedArray {
 
-    //https://leetcode.com/problems/decode-xored-array/
+    //https://leetcode.com/problems/decode-xored-array/submissions/1166823824/
     public int[] decode(int[] encoded, int first) {
         int[] result = new int[encoded.length + 1];
         result[0] = first;

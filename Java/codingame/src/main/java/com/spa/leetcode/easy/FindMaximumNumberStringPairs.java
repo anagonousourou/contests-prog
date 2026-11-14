@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class FindMaximumNumberStringPairs {
 
-    //https://leetcode.com/problems/find-maximum-number-of-string-pairs/
+    //https://leetcode.com/problems/find-maximum-number-of-string-pairs/submissions/1175146188/
     public int maximumNumberOfStringPairs(String[] words) {
         Set<String> wordSet = new HashSet<>();
         int nb = 0;

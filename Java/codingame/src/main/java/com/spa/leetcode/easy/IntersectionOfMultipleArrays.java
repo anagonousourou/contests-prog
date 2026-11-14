@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class IntersectionOfMultipleArrays {
 
-    //https://leetcode.com/problems/intersection-of-multiple-arrays/
+    //https://leetcode.com/problems/intersection-of-multiple-arrays/submissions/1204140883/
     //Since each row has distinct elements, appearing in every row means that the element will have an occurence
     //equals to the number of rows
     public List<Integer> intersection(int[][] nums) {

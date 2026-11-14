@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class BuildArrayFromPermutation {
 
-    //https://leetcode.com/problems/build-array-from-permutation/description/
+    //https://leetcode.com/problems/build-array-from-permutation/submissions/1626758387/description/
     public int[] buildArray(int[] nums) {
         int[] result = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {

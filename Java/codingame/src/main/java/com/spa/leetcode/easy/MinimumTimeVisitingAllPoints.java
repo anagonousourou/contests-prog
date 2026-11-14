@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class MinimumTimeVisitingAllPoints {
 
-    //https://leetcode.com/problems/minimum-time-visiting-all-points/
+    //https://leetcode.com/problems/minimum-time-visiting-all-points/submissions/1136594332/
     public int minTimeToVisitAllPoints(int[][] points) {
         int time = 0;
         for (int i = 0; i < points.length - 1; i++) {

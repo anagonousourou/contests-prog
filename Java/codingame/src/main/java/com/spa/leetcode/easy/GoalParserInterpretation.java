@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//https://leetcode.com/problems/goal-parser-interpretation/
+//https://leetcode.com/problems/goal-parser-interpretation/submissions/1172972243/
 public class GoalParserInterpretation {
 
     private static final Pattern re = Pattern.compile("G|\\(\\)|\\(al\\)");

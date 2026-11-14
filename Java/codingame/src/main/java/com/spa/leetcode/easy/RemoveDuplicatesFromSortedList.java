@@ -4,7 +4,7 @@ import com.spa.leetcode.ListNode;
 
 public class RemoveDuplicatesFromSortedList {
 
-    //https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+    //https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/1134993167/
     public ListNode deleteDuplicates(ListNode head) {
         ListNode current = head;
         while (current != null) {

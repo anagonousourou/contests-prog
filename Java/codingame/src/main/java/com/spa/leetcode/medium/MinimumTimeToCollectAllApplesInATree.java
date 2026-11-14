@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 
 public class MinimumTimeToCollectAllApplesInATree {
 
+    // https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/submissions/876183756/
+
     record Vertex(int number, boolean hasApple) {
     }
 

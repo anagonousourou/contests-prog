@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 import java.util.Arrays;
 import java.util.Comparator;
 
-//https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/
+//https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/submissions/1124931942/
 public class WidestVerticalArea {
 
 

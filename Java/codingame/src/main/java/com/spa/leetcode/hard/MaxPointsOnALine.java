@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MaxPointsOnALine {
+    // https://leetcode.com/problems/max-points-on-a-line/submissions/874106668/
+
     public int maxPoints(int[][] points) {
 
         if (points.length <= 2) {

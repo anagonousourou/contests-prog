@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class KClosestPointsToOrigin {
 
-    //https://leetcode.com/problems/k-closest-points-to-origin/
+    //https://leetcode.com/problems/k-closest-points-to-origin/submissions/1168656093/
     public int[][] kClosest(int[][] points, int k) {
         return Arrays.stream(points).sorted(Comparator.comparingDouble(point -> Math.hypot(point[0], point[1])))
             .limit(k).toArray(int[][]::new);

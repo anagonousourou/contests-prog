@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CheckIfArrayIsSortedAndRotated {
 
-    //https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
+    //https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/submissions/2010883794/
     public boolean check(int[] nums) {
         int[] sortedNums = nums.clone();
         Arrays.sort(sortedNums);

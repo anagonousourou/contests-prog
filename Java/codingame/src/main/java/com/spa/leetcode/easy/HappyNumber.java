@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class HappyNumber {
+    // https://leetcode.com/problems/happy-number/submissions/1190917790/
+
     public boolean isHappy(int n, Set<Integer> results) {
         if(n == 1){
             return true;

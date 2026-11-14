@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 
 public class WordSummation {
 
-    //https://leetcode.com/problems/check-if-word-equals-summation-of-two-words/
+    //https://leetcode.com/problems/check-if-word-equals-summation-of-two-words/submissions/1174237252/
     public boolean isSumEqual(String firstWord, String secondWord, String targetWord) {
         return wordValue(firstWord) + wordValue(secondWord) == wordValue(targetWord);
     }

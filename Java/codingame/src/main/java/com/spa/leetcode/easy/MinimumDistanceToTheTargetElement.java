@@ -2,6 +2,8 @@ package com.spa.leetcode.easy;
 
 public class MinimumDistanceToTheTargetElement {
 
+    // https://leetcode.com/problems/minimum-distance-to-the-target-element/submissions/1200345871/
+
     //https://leetcode.com/problems/minimum-distance-to-the-target-element
     public int getMinDistance(int[] nums, int target, int start) {
         int currentDistance = Integer.MAX_VALUE;

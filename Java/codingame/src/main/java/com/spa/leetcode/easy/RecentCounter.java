@@ -5,6 +5,8 @@ import java.util.LinkedList;
 
 public class RecentCounter {
 
+    // https://leetcode.com/problems/number-of-recent-calls/submissions/1123565763/
+
     private final Deque<Integer> calls = new LinkedList<>();
 
     public RecentCounter() {

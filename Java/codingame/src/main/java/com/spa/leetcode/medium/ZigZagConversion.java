@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class ZigZagConversion {
+    // https://leetcode.com/problems/zigzag-conversion/submissions/1614578929/
+
     public String convert(String s, int numRows) {
 
         if(numRows == 1){

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MinimumNumberGame {
 
-    //https://leetcode.com/problems/minimum-number-game/
+    //https://leetcode.com/problems/minimum-number-game/submissions/1162840036/
     public int[] numberGame(int[] nums) {
         Arrays.sort(nums);
         int tmp;

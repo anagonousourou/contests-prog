@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CountItemsMatchingRule {
 
-    //https://leetcode.com/problems/count-items-matching-a-rule/
+    //https://leetcode.com/problems/count-items-matching-a-rule/submissions/1162824524/
     public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
         return (int) items.stream().filter(item ->
             switch (ruleKey) {

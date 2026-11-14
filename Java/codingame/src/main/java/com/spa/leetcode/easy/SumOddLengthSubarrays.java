@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SumOddLengthSubarrays {
 
-    //https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+    //https://leetcode.com/problems/sum-of-all-odd-length-subarrays/submissions/1206110653/
     public int sumOddLengthSubarrays(int[] arr) {
         int[] prefix = new int[arr.length];
 

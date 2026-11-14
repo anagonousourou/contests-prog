@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class ThirdMaximumNumber {
 
-    //https://leetcode.com/problems/third-maximum-number/
+    //https://leetcode.com/problems/third-maximum-number/submissions/1135630761/
     public int thirdMax(int[] nums) {
         Arrays.sort(nums);
         int count = 1;

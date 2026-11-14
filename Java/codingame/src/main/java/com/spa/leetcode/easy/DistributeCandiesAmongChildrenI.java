@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class DistributeCandiesAmongChildrenI {
 
-    //https://leetcode.com/problems/distribute-candies-among-children-i/
+    //https://leetcode.com/problems/distribute-candies-among-children-i/submissions/1232360384/
     public int distributeCandies(int n, int limit) {
         int count = 0;
         for (int i = 0; i <= limit; i++) {

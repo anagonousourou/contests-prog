@@ -10,6 +10,8 @@ import java.util.TreeSet;
 //https://leetcode.com/problems/design-a-food-rating-system
 public class FoodRatings {
 
+    // https://leetcode.com/problems/design-a-food-rating-system/submissions/1121941658/
+
     record Food(String name, String cuisine, int rating) {
         public Food updateRating(int newRating) {
             return new Food(name, cuisine, newRating);

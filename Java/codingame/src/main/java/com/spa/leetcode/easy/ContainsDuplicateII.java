@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class ContainsDuplicateII {
 
+    // https://leetcode.com/problems/contains-duplicate-ii/submissions/1137918545/
+
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Set<Integer> set = new HashSet<Integer>(k + 1);

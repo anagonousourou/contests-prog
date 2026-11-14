@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class MaxScoreSplitingString {
 
+    // https://leetcode.com/problems/maximum-score-after-splitting-a-string/submissions/1494134081/
+
     public int maxScore(String s) {
         int[] nbZeros = new int[s.length()];
         int[] nbOnes = new int[s.length()];

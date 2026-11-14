@@ -17,7 +17,7 @@ public class BitwiseANDOfNumbersRange {
         return result;
     }
 
-    //https://leetcode.com/problems/bitwise-and-of-numbers-range/solutions/4759869/beat-100-bitwise-operation/
+    //https://leetcode.com/problems/bitwise-and-of-numbers-range/submissions/1181894485/solutions/4759869/beat-100-bitwise-operation/
     public int rangeBitwiseAnd_Correction(int left, int right) {
         int shift = 0;
         while (left < right) {

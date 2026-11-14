@@ -1,7 +1,7 @@
 package com.spa.leetcode.easy;
 
 /**
- * https://leetcode.com/problems/same-tree/
+ * https://leetcode.com/problems/same-tree/submissions/1186808672/
  */
 public class SameTree {
     //Definition for a binary tree node.

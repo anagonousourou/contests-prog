@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class MinMirrorPairDistance {
 
+    // https://leetcode.com/problems/minimum-absolute-distance-between-mirror-pairs/submissions/1981178410/
+
     public int minMirrorPairDistance(int[] nums) {
         Map<Integer, Integer> indicesPair = new HashMap<>();
         Map<Integer, Integer> reverses = new HashMap<>();

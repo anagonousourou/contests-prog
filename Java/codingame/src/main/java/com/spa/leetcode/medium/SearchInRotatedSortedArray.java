@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class SearchInRotatedSortedArray {
 
+    // https://leetcode.com/problems/search-in-rotated-sorted-array/submissions/2010197563/
+
     public int search(int[] nums, int target) {
         if(nums[0] < nums[nums.length - 1]){
             int tmp = Arrays.binarySearch(nums, target);

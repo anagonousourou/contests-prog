@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class ElementAppearingMoreThan25Percent {
 
-    //https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/
+    //https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/submissions/1136606103/
     public int findSpecialInteger(int[] arr) {
         int l = arr.length;
         for (int i = 0; i < arr.length; i++) {

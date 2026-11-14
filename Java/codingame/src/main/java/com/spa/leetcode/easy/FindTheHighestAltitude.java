@@ -3,6 +3,8 @@ package com.spa.leetcode.easy;
 import java.util.Arrays;
 
 public class FindTheHighestAltitude {
+    // https://leetcode.com/problems/find-the-highest-altitude/submissions/1123631354/
+
     public int largestAltitude(int[] gain) {
         int[] points = new int[gain.length + 1];
         points[0] = 0;

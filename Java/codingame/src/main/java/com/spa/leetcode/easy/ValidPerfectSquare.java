@@ -2,6 +2,8 @@ package com.spa.leetcode.easy;
 
 public class ValidPerfectSquare {
 
+    // https://leetcode.com/problems/valid-perfect-square/submissions/1137665655/
+
 
     public static boolean isPerfectSquare(int num) {
 

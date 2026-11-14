@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 public class ReversePrefixOfWord {
 
 
-    //https://leetcode.com/problems/reverse-prefix-of-word/
+    //https://leetcode.com/problems/reverse-prefix-of-word/submissions/1172994972/
     public String reversePrefix(String word, char ch) {
         int chIndex = word.indexOf(ch);
         return new StringBuilder(word.substring(0, chIndex + 1)).reverse().append(word.substring(chIndex + 1)).toString();

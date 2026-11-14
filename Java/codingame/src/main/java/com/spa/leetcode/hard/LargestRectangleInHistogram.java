@@ -6,6 +6,8 @@ import java.util.stream.IntStream;
 
 public class LargestRectangleInHistogram {
 
+    // https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/2040920945/
+
     record Bar(int index, int height) {
     }
 

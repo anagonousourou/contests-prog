@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class LongestHarmoniousSubsequence {
 
-    //https://leetcode.com/problems/longest-harmonious-subsequence/
+    //https://leetcode.com/problems/longest-harmonious-subsequence/submissions/1231389679/
 
     public int findLHS(int[] nums) {
         var occurences = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()

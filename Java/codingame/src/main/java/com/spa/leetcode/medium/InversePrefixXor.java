@@ -1,7 +1,7 @@
 package com.spa.leetcode.medium;
 
 public class InversePrefixXor {
-    //https://leetcode.com/problems/find-the-original-array-of-prefix-xor/
+    //https://leetcode.com/problems/find-the-original-array-of-prefix-xor/submissions/1166828467/
 
     public int[] findArray(int[] pref) {
         int[] result = new int[pref.length];

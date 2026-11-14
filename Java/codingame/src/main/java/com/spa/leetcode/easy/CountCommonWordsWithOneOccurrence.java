@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class CountCommonWordsWithOneOccurrence {
 
-    //https://leetcode.com/problems/count-common-words-with-one-occurrence/
+    //https://leetcode.com/problems/count-common-words-with-one-occurrence/submissions/1199373346/
     public int countWords(String[] words1, String[] words2) {
         var freqs1 = Arrays.stream(words1).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(entry -> entry.getValue() == 1)
             .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));

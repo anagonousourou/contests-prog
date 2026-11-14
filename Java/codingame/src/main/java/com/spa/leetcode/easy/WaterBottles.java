@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class WaterBottles {
 
-    //https://leetcode.com/problems/water-bottles/description/
+    //https://leetcode.com/problems/water-bottles/submissions/1172493110/description/
     public int numWaterBottles(int numBottles, int numExchange) {
         return numBottles + numWaterBottles(numBottles / numExchange, numExchange, numBottles % numExchange);
     }

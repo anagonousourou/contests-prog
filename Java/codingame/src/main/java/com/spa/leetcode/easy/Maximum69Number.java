@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class Maximum69Number {
 
-    //https://leetcode.com/problems/maximum-69-number/
+    //https://leetcode.com/problems/maximum-69-number/submissions/1172426499/
     public int maximum69Number(int num) {
         char[] charArray = String.valueOf(num).toCharArray();
         for (int i = 0; i < charArray.length; i++) {

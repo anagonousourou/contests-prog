@@ -4,6 +4,8 @@ import com.spa.leetcode.TreeNode;
 
 public class DeleteNodeInBST {
 
+    // https://leetcode.com/problems/delete-node-in-a-bst/submissions/1135955510/
+
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
             return null;

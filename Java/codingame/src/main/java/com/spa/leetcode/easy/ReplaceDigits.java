@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class ReplaceDigits {
 
-    //https://leetcode.com/problems/replace-all-digits-with-characters/
+    //https://leetcode.com/problems/replace-all-digits-with-characters/submissions/1175017257/
     public String replaceDigits(String s) {
         char[] array = s.toCharArray();
         for (int i = 1; i < array.length; i += 2) {

@@ -4,6 +4,8 @@ import com.spa.leetcode.TreeNode;
 
 public class MinimumDepthOfBinaryTree {
 
+    // https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/1135554299/
+
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;

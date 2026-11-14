@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class LemonadeChange {
 
+    // https://leetcode.com/problems/lemonade-change/submissions/1235930507/
+
     public boolean lemonadeChange(int[] bills) {
         Map<Integer, Integer> cash = new HashMap<>();
         cash.put(5, 0);

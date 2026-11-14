@@ -1,6 +1,8 @@
 package com.spa.leetcode.easy;
 
 public class DeleteColumnsToMakeSorted {
+    // https://leetcode.com/problems/delete-columns-to-make-sorted/submissions/870442197/
+
     public int minDeletionSize(String[] strs) {
         int nb = 0;
         for (int i = 0; i < strs[0].length(); i++) {

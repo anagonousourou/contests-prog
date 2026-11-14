@@ -2,6 +2,8 @@ package com.spa.leetcode.medium;
 
 public class CountSubArraysMaxK {
 
+    // https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times/submissions/1621454109/
+
     public long countSubarrays(int[] nums, int k) {
         int[] prefix = new int[nums.length + 1];
 

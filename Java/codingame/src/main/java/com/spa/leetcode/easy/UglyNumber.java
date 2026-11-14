@@ -1,6 +1,6 @@
 package com.spa.leetcode.easy;
 
-//https://leetcode.com/problems/ugly-number/
+//https://leetcode.com/problems/ugly-number/submissions/1121232312/
 public class UglyNumber {
     public boolean isUgly(int input) {
         if (input <= 0) {

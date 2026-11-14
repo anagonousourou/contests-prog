@@ -3,6 +3,8 @@ package com.spa.leetcode.easy;
 import com.spa.commonfns.StringHelpers;
 
 public class StringsGCD {
+    // https://leetcode.com/problems/greatest-common-divisor-of-strings/submissions/1121721503/
+
     public String gcdOfStrings(String str1, String str2) {
         int maxLength = Math.min(str2.length(), str1.length());
         String smallerStr = str1.length() > str2.length() ? str2 : str1;

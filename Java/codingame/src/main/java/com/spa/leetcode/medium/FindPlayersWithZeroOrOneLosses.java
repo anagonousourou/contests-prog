@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class FindPlayersWithZeroOrOneLosses {
 
-    //https://leetcode.com/problems/find-players-with-zero-or-one-losses/
+    //https://leetcode.com/problems/find-players-with-zero-or-one-losses/submissions/1146676068/
     public List<List<Integer>> findWinners(int[][] matches) {
         Set<Integer> allPlayers = new HashSet<>();
         Map<Integer, Integer> losers = new HashMap<>();

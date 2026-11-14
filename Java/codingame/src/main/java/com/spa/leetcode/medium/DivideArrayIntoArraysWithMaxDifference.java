@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DivideArrayIntoArraysWithMaxDifference {
 
-    //https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/
+    //https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/submissions/1162787625/
     public int[][] divideArray(int[] nums, int k) {
         Arrays.sort(nums);
         int i = 0;

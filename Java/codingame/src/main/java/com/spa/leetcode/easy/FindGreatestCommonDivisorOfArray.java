@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FindGreatestCommonDivisorOfArray {
 
-    //https://leetcode.com/problems/find-greatest-common-divisor-of-array/
+    //https://leetcode.com/problems/find-greatest-common-divisor-of-array/submissions/2072067320/
     public int findGCD(int[] nums) {
         int min = Arrays.stream(nums).min().getAsInt();
         int max = Arrays.stream(nums).max().getAsInt();

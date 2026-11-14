@@ -2,6 +2,8 @@ package com.spa.leetcode.easy;
 
 public class PowerOfFour {
 
+    // https://leetcode.com/problems/power-of-four/submissions/1140274076/
+
     public boolean isPowerOfFour(int n) {
         if (n <= 0) {
             return false;

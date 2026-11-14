@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class RingsAndRods {
 
-    //https://leetcode.com/problems/rings-and-rods/
+    //https://leetcode.com/problems/rings-and-rods/submissions/1173979585/
     public int countPoints(String rings) {
         int[] rods = new int[10];
 

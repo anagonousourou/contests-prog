@@ -2,7 +2,7 @@ package com.spa.leetcode.medium;
 
 public class IncreasingTripletSubsequence {
 
-    //https://leetcode.com/problems/increasing-triplet-subsequence/
+    //https://leetcode.com/problems/increasing-triplet-subsequence/submissions/1137098365/
     /*
     // if there is a triplet of number x  < y < z with their respective indices being i < j < k
     // then we can represent visualize the array as this

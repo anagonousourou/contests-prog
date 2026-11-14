@@ -1,7 +1,7 @@
 package com.spa.leetcode.easy;
 
 public class XOROperationInArray {
-    //https://leetcode.com/problems/xor-operation-in-an-array/description/
+    //https://leetcode.com/problems/xor-operation-in-an-array/submissions/1162884818/description/
     public int xorOperation(int n, int start) {
         int result = 0;
         for (int i = 0; i < n; i++) {

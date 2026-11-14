@@ -5,7 +5,7 @@ import com.spa.leetcode.TreeNode;
 public class FindCorrespondingNode {
 
 
-    //https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/description/
+    //https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/submissions/1173926936/description/
     public final TreeNode getTargetCopy(final TreeNode original, final TreeNode cloned, final TreeNode target) {
         if (original == target) {
             return cloned;

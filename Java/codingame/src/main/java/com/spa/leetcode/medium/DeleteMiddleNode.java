@@ -4,6 +4,8 @@ import com.spa.leetcode.ListNode;
 
 public class DeleteMiddleNode {
 
+    // https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/submissions/2194813087/
+
     public ListNode deleteMiddle(ListNode head) {
         int size = len(head);
         if(size == 1){

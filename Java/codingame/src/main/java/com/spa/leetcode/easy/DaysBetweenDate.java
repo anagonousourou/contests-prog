@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 
 public class DaysBetweenDate {
+    // https://leetcode.com/problems/number-of-days-between-two-dates/submissions/1201387351/
+
     //https://stackoverflow.com/questions/34440874/duration-ofdays-generates-unsupportedtemporaltypeexception#48732307
     //https://leetcode.com/problems/number-of-days-between-two-dates
     public int daysBetweenDates(String date1, String date2) {

@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CountOfMatchesInTournament {
 
-    //https://leetcode.com/problems/count-of-matches-in-tournament/
+    //https://leetcode.com/problems/count-of-matches-in-tournament/submissions/1162847205/
     public int numberOfMatches(int n) {
         if (n == 1) {
             return 0;

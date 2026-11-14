@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class ShuffleString {
 
-    // https://leetcode.com/problems/shuffle-string/
+    // https://leetcode.com/problems/shuffle-string/submissions/1549484553/
     public String restoreString(String s, int[] indices) {
         var result = new char[s.length()];
 

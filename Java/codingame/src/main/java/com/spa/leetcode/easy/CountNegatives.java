@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CountNegatives {
 
-    //https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
+    //https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/submissions/1175132796/
     public int countNegatives(int[][] grid) {
         int nb = 0;
         for (int i = 0; i < grid.length; i++) {

@@ -1,6 +1,6 @@
 package com.spa.leetcode.easy;
 
-//https://leetcode.com/problems/image-smoother/
+//https://leetcode.com/problems/image-smoother/submissions/1123307404/
 public class ImageSmoother {
 
     public int[][] imageSmoother(int[][] img) {

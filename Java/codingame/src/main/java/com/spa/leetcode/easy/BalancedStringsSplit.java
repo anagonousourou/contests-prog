@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class BalancedStringsSplit {
 
-    //https://leetcode.com/problems/split-a-string-in-balanced-strings/
+    //https://leetcode.com/problems/split-a-string-in-balanced-strings/submissions/1173938530/
     public int balancedStringSplit(String s) {
         int nb = 0;
         int nbL = 0;

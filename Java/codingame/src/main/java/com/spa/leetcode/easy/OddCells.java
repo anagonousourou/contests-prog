@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 public class OddCells {
 
 
-    //https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/
+    //https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/submissions/1175023867/
     public int oddCells(int m, int n, int[][] indices) {
         int[][] matrix = new int[m][n];
 

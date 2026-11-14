@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 //https://leetcode.com/problems/unique-number-of-occurrences
 public class UniqueNumberOfOccurrences {
 
+    // https://leetcode.com/problems/unique-number-of-occurrences/submissions/1148582984/
+
     public boolean uniqueOccurrences(int[] arr) {
         return Arrays.stream(arr).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
             .values().stream().distinct().count() == Arrays.stream(arr).distinct().count();

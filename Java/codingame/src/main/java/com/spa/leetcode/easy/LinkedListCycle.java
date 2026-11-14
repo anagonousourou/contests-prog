@@ -4,12 +4,12 @@ import com.spa.leetcode.ListNode;
 import java.util.HashSet;
 import java.util.Set;
 
-//https://leetcode.com/problems/linked-list-cycle/description/
+//https://leetcode.com/problems/linked-list-cycle/submissions/1195493101/description/
 public class LinkedListCycle {
 
 
     //https://en.wikipedia.org/wiki/Cycle_detection
-    //https://leetcode.com/problems/linked-list-cycle/
+    //https://leetcode.com/problems/linked-list-cycle/submissions/1195493101/
     //with hare & tortoise algorithm
     public boolean hasCycle(ListNode head) {
         ListNode hare = head;

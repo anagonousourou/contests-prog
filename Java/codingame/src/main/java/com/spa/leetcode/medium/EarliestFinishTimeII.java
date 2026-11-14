@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-// https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii/?envType=daily-question&envId=2026-06-03
+// https://leetcode.com/problems/earliest-finish-time-for-land-and-water-rides-ii/submissions/2021684461/?envType=daily-question&envId=2026-06-03
 public class EarliestFinishTimeII {
 
     enum RideType {

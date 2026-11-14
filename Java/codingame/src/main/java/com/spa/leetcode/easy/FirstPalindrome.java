@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FirstPalindrome {
 
-    //https://leetcode.com/problems/find-first-palindromic-string-in-the-array/
+    //https://leetcode.com/problems/find-first-palindromic-string-in-the-array/submissions/1173943430/
     public String firstPalindrome(String[] words) {
         return Arrays.stream(words).filter(word -> word.equals(new StringBuilder(word).reverse().toString()))
             .findFirst().orElse("");

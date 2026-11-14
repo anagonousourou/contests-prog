@@ -7,6 +7,8 @@ import java.util.List;
 
 public class SortVowelsInAString {
 
+    // https://leetcode.com/problems/sort-vowels-in-a-string/submissions/1181982720/
+
     public String sortVowels(String s) {
         char[] originalchars = s.toCharArray();
         List<Character> vowels = new ArrayList<>();

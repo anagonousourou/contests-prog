@@ -7,6 +7,8 @@ import java.util.function.Predicate;
 
 public class MinimumRoundsToCompleteAllTasks {
 
+    // https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/submissions/871266805/
+
     public int minimumRounds(int[] tasks) {
         int highestDifficulty = Arrays.stream(tasks).max().getAsInt();
 

@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class ReverseWordsInAString {
 
-    // https://leetcode.com/problems/reverse-words-in-a-string/
+    // https://leetcode.com/problems/reverse-words-in-a-string/submissions/1123542952/
     public String reverseWords(String s) {
         var words = Arrays.stream(s.trim().split("\\s+")).filter(Predicate.not(String::isBlank))
             .collect(Collectors.toList());

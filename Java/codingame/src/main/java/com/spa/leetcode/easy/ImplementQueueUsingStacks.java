@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class ImplementQueueUsingStacks {
 
 
-    //https://leetcode.com/problems/implement-queue-using-stacks/?envType=daily-question&envId=2024-01-29
+    //https://leetcode.com/problems/implement-queue-using-stacks/submissions/2041087221/?envType=daily-question&envId=2024-01-29
     private static class MyQueue {
 
         Deque<Integer> pushStack = new LinkedList<>();

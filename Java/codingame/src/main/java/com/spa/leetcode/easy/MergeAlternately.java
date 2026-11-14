@@ -2,6 +2,8 @@ package com.spa.leetcode.easy;
 
 public class MergeAlternately {
 
+    // https://leetcode.com/problems/merge-strings-alternately/submissions/1121704344/
+
     public String mergeAlternately(String word1, String word2) {
         return mergeAlternately(word1, word2, "");
     }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ShortestToChar {
 
-    // TODO https://leetcode.com/problems/shortest-distance-to-a-character/
+    // TODO https://leetcode.com/problems/shortest-distance-to-a-character/submissions/1478028181/
     public int[] shortestToChar(String s, char c) {
         List<Integer> cpositions = new ArrayList<>();
 

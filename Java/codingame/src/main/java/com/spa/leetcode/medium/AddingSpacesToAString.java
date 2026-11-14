@@ -2,7 +2,7 @@ package com.spa.leetcode.medium;
 
 public class AddingSpacesToAString {
 
-    //https://leetcode.com/problems/adding-spaces-to-a-string/
+    //https://leetcode.com/problems/adding-spaces-to-a-string/submissions/1180866812/
     public String addSpaces(String s, int[] spaces) {
         StringBuilder stringBuilder = new StringBuilder(s);
 

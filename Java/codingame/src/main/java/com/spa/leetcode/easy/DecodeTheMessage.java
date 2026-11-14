@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 public class DecodeTheMessage {
 
+    // https://leetcode.com/problems/decode-the-message/submissions/1167616220/
+
     public String decodeMessage(String key, String message) {
         List<Character> keys = key.chars().filter(c -> (char) c != ' ').distinct().mapToObj(c -> (char) c).toList();
         Map<Character, Character> mapping = new HashMap<>(26);

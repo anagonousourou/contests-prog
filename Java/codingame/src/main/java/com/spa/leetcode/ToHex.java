@@ -2,7 +2,7 @@ package com.spa.leetcode;
 
 public class ToHex {
 
-    //https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+    //https://leetcode.com/problems/convert-a-number-to-hexadecimal/submissions/1585584590/
     public String toHex(int num) {
         StringBuilder result = new StringBuilder();
 

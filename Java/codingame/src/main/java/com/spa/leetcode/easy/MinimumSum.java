@@ -1,6 +1,6 @@
 package com.spa.leetcode.easy;
 
-//https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/description/
+//https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/submissions/1167624967/description/
 public class MinimumSum {
 
     public int minimumSum(int num) {

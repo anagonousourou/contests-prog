@@ -7,10 +7,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-//https://leetcode.com/problems/determine-if-two-strings-are-close/description/
+//https://leetcode.com/problems/determine-if-two-strings-are-close/submissions/1146693008/description/
 public class DetermineIfTwoStringsAreClose {
 
-    //https://leetcode.com/problems/determine-if-two-strings-are-close/
+    //https://leetcode.com/problems/determine-if-two-strings-are-close/submissions/1146693008/
     public boolean closeStrings(String word1, String word2) {
         Map<Character, Long> word1Freqs = new HashMap<>(StringHelpers.frequencies(word1));
         Map<Character, Long> word2Freqs = new HashMap<>(StringHelpers.frequencies(word2));

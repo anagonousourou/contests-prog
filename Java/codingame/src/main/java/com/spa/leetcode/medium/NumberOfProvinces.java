@@ -5,6 +5,8 @@ import java.util.Queue;
 
 public class NumberOfProvinces {
 
+    // https://leetcode.com/problems/number-of-provinces/submissions/1146732941/
+
     //https://leetcode.com/problems/number-of-provinces
     public int findCircleNum(int[][] isConnected) {
         boolean[] encountered = new boolean[isConnected.length];

@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class LeftAndRightSumDifferences {
 
-    //https://leetcode.com/problems/left-and-right-sum-differences/
+    //https://leetcode.com/problems/left-and-right-sum-differences/submissions/2024615285/
     public int[] leftRightDifference(int[] nums) {
         int[] prefix = new int[nums.length];
         int[] suffix = new int[nums.length];

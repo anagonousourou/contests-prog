@@ -2,7 +2,7 @@ package com.spa.leetcode.medium;
 
 public class StringCompression {
 
-    //https://leetcode.com/problems/string-compression/
+    //https://leetcode.com/problems/string-compression/submissions/1136001098/
     public int compress(char[] chars) {
         int writerPos = 0;
         int readerPos = 0;

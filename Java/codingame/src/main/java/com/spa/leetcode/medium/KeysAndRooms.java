@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class KeysAndRooms {
 
-    //https://leetcode.com/problems/keys-and-rooms/
+    //https://leetcode.com/problems/keys-and-rooms/submissions/1146683147/
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Queue<Integer> queue = new LinkedList<>();
         Set<Integer> encountered = new HashSet<>();

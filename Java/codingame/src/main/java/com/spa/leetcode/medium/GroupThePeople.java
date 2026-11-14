@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class GroupThePeople {
 
-    //https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/
+    //https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/submissions/1179693620/
     public List<List<Integer>> groupThePeople(int[] groupSizes) {
         var peopleByGroupSize = IntStream.range(0, groupSizes.length).boxed()
             .collect(Collectors.groupingBy(i -> groupSizes[i], Collectors.toList()));

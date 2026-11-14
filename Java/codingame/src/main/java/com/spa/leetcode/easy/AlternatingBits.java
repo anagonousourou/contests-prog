@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class AlternatingBits {
 
-    //https://leetcode.com/problems/binary-number-with-alternating-bits/description/
+    //https://leetcode.com/problems/binary-number-with-alternating-bits/submissions/1192760133/description/
     public boolean hasAlternatingBits(int n) {
         String rep = Integer.toBinaryString(n);
 

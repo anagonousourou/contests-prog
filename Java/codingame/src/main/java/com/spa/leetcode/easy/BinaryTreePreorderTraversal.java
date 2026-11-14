@@ -6,6 +6,8 @@ import java.util.List;
 
 public class BinaryTreePreorderTraversal {
 
+    // https://leetcode.com/problems/binary-tree-preorder-traversal/submissions/874693908/
+
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> content = new ArrayList<>();
         preorderTraversal(root, content);

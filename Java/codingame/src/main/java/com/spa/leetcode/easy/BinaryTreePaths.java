@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BinaryTreePaths {
 
-    //https://leetcode.com/problems/binary-tree-paths/
+    //https://leetcode.com/problems/binary-tree-paths/submissions/1230450163/
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<>();
         binaryTreePaths("", root, result);

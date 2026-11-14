@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class ParkingSystem {
 
-    //https://leetcode.com/problems/design-parking-system/
+    //https://leetcode.com/problems/design-parking-system/submissions/1162712865/
     private int big;
     private int medium;
     private int small;

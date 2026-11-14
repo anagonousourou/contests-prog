@@ -4,7 +4,7 @@ import com.spa.commonfns.StringHelpers;
 
 public class MinimumStepsToMakeTwoStringsAnagram {
 
-    //https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+    //https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/submissions/1145161015/
     public int minSteps(String s, String t) {
         var sFreqs = StringHelpers.frequencies(s);
         var tFreqs = StringHelpers.frequencies(t);

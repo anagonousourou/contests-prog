@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class MajorityElement {
 
-    //https://leetcode.com/problems/majority-element/
+    //https://leetcode.com/problems/majority-element/submissions/1172979052/
     public int majorityElement(int[] nums) {
         return Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
             .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();

@@ -8,7 +8,7 @@ import java.util.Objects;
 public class CousinsInBinaryTree {
 
 
-    //https://leetcode.com/problems/cousins-in-binary-tree/description/
+    //https://leetcode.com/problems/cousins-in-binary-tree/submissions/1204130360/description/
     public boolean isCousins(TreeNode root, int x, int y) {
         Map<Integer, TreeNode> parents = new HashMap<>(2);
         Map<Integer, Integer> depths = new HashMap<>(2);

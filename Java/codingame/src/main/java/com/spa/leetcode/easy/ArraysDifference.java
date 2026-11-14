@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-//https://leetcode.com/problems/find-the-difference-of-two-arrays/
+//https://leetcode.com/problems/find-the-difference-of-two-arrays/submissions/1122404902/
 public class ArraysDifference {
 
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {

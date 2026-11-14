@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LargestSubstringBetweenSameCharacters {
-    //https://leetcode.com/problems/largest-substring-between-two-equal-characters/
+    //https://leetcode.com/problems/largest-substring-between-two-equal-characters/submissions/1134455593/
 
     private record Positions(int minPos, int maxPos) {
 

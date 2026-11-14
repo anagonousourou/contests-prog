@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 public class MinimumIndexTwoLists {
 
+    // https://leetcode.com/problems/minimum-index-sum-of-two-lists/submissions/1232109885/
+
     public String[] findRestaurant(String[] list1, String[] list2) {
         Map<String, Integer> indexes = new HashMap<>(list1.length);
 

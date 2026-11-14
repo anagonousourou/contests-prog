@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-//https://leetcode.com/problems/length-of-last-word/
+//https://leetcode.com/problems/length-of-last-word/submissions/1220498731/
 public class LengthOfLastWord {
 
     public int lengthOfLastWord(String s) {

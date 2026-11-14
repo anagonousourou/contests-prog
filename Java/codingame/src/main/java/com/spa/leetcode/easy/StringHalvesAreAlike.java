@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class StringHalvesAreAlike {
 
-    //https://leetcode.com/problems/determine-if-string-halves-are-alike/description/
+    //https://leetcode.com/problems/determine-if-string-halves-are-alike/submissions/1144051818/description/
     static Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
 
     public boolean halvesAreAlike(String s) {

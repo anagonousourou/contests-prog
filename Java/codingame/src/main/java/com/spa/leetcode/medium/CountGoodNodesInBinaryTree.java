@@ -4,7 +4,7 @@ import com.spa.leetcode.TreeNode;
 
 public class CountGoodNodesInBinaryTree {
 
-    //https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+    //https://leetcode.com/problems/count-good-nodes-in-binary-tree/submissions/1135970340/
     public int goodNodes(TreeNode root) {
         return goodNodes(root, Integer.MIN_VALUE);
     }

@@ -1,6 +1,6 @@
 package com.spa.leetcode.easy;
 
-//https://leetcode.com/problems/check-if-matrix-is-x-matrix/
+//https://leetcode.com/problems/check-if-matrix-is-x-matrix/submissions/1168967822/
 public class CheckXMatrix {
 
     public boolean checkXMatrix(int[][] grid) {

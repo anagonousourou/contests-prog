@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class FirstUniqueCharacterInAString {
 
+    // https://leetcode.com/problems/first-unique-character-in-a-string/submissions/1166549369/
+
     //https://leetcode.com/problems/first-unique-character-in-a-string
     private class CharacterInfo {
         private int occ = 1;

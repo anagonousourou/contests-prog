@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 public class NumberOfArithmeticTriplets {
 
 
-    //https://leetcode.com/problems/number-of-arithmetic-triplets/description/
+    //https://leetcode.com/problems/number-of-arithmetic-triplets/submissions/1167714024/description/
     public int arithmeticTriplets(int[] nums, int diff) {
         int nbTriplets = 0;
         for (int i = 0; i < nums.length - 2; i++) {

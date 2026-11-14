@@ -7,7 +7,7 @@ import java.util.Map;
 public class WordPattern {
 
     /**
-     * https://leetcode.com/problems/word-pattern/
+     * https://leetcode.com/problems/word-pattern/submissions/869047400/
      *
      * @param pattern
      * @param s

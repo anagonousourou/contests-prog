@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class DifferenceOfSums {
 
-    //https://leetcode.com/problems/divisible-and-non-divisible-sums-difference/
+    //https://leetcode.com/problems/divisible-and-non-divisible-sums-difference/submissions/1172479405/
     public int differenceOfSums(int n, int m) {
 
         int num2 = 0;

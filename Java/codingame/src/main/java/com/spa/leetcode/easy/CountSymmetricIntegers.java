@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CountSymmetricIntegers {
 
-    //https://leetcode.com/problems/count-symmetric-integers/description/
+    //https://leetcode.com/problems/count-symmetric-integers/submissions/1174251348/description/
     public int countSymmetricIntegers(int low, int high) {
         int nb = 0;
         for (int i = low; i <= high; i++) {

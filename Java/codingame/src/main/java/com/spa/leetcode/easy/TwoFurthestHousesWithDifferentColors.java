@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class TwoFurthestHousesWithDifferentColors {
 
-    //https://leetcode.com/problems/two-furthest-houses-with-different-colors/
+    //https://leetcode.com/problems/two-furthest-houses-with-different-colors/submissions/1199400311/
     public int maxDistance(int[] colors) {
 
         int front = 0;

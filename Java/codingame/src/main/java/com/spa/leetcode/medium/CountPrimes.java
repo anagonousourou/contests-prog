@@ -5,7 +5,7 @@ import java.util.BitSet;
 public class CountPrimes {
 
 
-    //https://leetcode.com/problems/count-primes/
+    //https://leetcode.com/problems/count-primes/submissions/1172989785/
     public int countPrimes(int n) {
         if (n <= 2) {
             return 0;

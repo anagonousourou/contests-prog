@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FinalValueAfterPerformingOperations {
 
-    //https://leetcode.com/problems/final-value-of-variable-after-performing-operations/description/
+    //https://leetcode.com/problems/final-value-of-variable-after-performing-operations/submissions/1806570603/description/
 
     public int finalValueAfterOperations(String[] operations) {
         return Arrays.stream(operations).mapToInt(op ->

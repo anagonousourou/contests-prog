@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 public class RemovingStarsFromAString {
 
+    // https://leetcode.com/problems/removing-stars-from-a-string/submissions/1147696376/
+
     //https://leetcode.com/problems/removing-stars-from-a-string
     public String removeStars(String s) {
         Deque<Character> stack = new LinkedList<>();

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class MaximumProductOfTwoElementsInArray {
 
+    // https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/submissions/2083238555/
+
 
     public int maxProduct(int[] nums) {
         Arrays.sort(nums);

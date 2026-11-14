@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class NumberOfCommonFactors {
 
-    //https://leetcode.com/problems/number-of-common-factors/description/
+    //https://leetcode.com/problems/number-of-common-factors/submissions/1172975555/description/
     public int commonFactors(int a, int b) {
         int g = Math.max(a, b);
         int nb = 0;

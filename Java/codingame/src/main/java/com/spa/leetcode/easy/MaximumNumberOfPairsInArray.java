@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class MaximumNumberOfPairsInArray {
 
-    //https://leetcode.com/problems/maximum-number-of-pairs-in-array/
+    //https://leetcode.com/problems/maximum-number-of-pairs-in-array/submissions/1168641043/
     public int[] numberOfPairs(int[] nums) {
         int[] result = new int[2];
         var frequencies = Arrays.stream(nums).boxed()

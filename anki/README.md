@@ -37,20 +37,20 @@ A problem is included in the deck only if its solution file in
 (`leetcode.com/problems/<slug>/submissions/<id>`), i.e. evidence that a submission was actually
 made — not just a file that exists.
 
+The submission links were verified against the account (`p-sourou`, 740 solved problems): every
+file that had none and whose problem is solved received the real submission URL, so the deck now
+rests on **609 problems** with a genuine accepted submission in the repository.
+
 | | problems |
 |---|---|
-| solution files with a submission link | 375 |
-| files with no submission link (file only) | 192 |
-| **used as the basis of this deck** | **375** |
+| solved in the LeetCode account | 740 |
+| of those, with a Java solution file in the repo | 609 |
+| files with no accepted submission (attempted / stub only) | 45 |
 
-Excluded by that rule (files exist, no submission recorded): for example `TwoSum`,
-`ValidPalindromeII`, `ReverseString`, `ReverseLinkedList`, `LinkedListCycle`,
-`MergeTwoSortedLists`, `LargestRectangleInHistogram`, `EvaluateReversePolishNotation`,
-`MaximumDepthOfBinaryTree`, `BalancedBinaryTree`, `ValidAnagram`, `ReverseInteger`.
-Also excluded: topics never exercised by a confirmed solve — topological sort, Dijkstra /
-shortest paths with weights, interval merging/scheduling, knapsack, Floyd cycle detection,
-RPN evaluation, k-way merge, monotonic deque as a standalone topic is kept only because
-`CountSubarraysWithFixedBounds` is confirmed.
+Topics never exercised by a confirmed solve are excluded from the deck — topological sort,
+Dijkstra / weighted shortest paths, interval merging/scheduling, knapsack, Floyd cycle detection,
+RPN evaluation, k-way merge (monotonic deque is kept only because `CountSubarraysWithFixedBounds`
+is confirmed).
 
 ## Sources
 

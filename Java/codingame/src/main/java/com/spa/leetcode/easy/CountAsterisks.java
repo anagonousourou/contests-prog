@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CountAsterisks {
 
-    //https://leetcode.com/problems/count-asterisks/
+    //https://leetcode.com/problems/count-asterisks/submissions/1167905690/
     public int countAsterisks(String s) {
         boolean insidePair = false;
 

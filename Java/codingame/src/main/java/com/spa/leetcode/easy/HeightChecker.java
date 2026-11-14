@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HeightChecker {
 
-    //https://leetcode.com/problems/height-checker/description/
+    //https://leetcode.com/problems/height-checker/submissions/1283764995/description/
     public int heightChecker(int[] heights) {
         int[] expected = heights.clone();
         Arrays.sort(expected);

@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class UniqueMorseCodeWords {
 
+    // https://leetcode.com/problems/unique-morse-code-words/submissions/1172453815/
+
 
     private static final String[] MORSES = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
 

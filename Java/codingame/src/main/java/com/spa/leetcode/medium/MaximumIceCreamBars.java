@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class MaximumIceCreamBars {
 
+    // https://leetcode.com/problems/maximum-ice-cream-bars/submissions/2040796802/
+
     public int maxIceCream(int[] costs, int coins) {
         Arrays.sort(costs);
         int nbIceCreams = 0;

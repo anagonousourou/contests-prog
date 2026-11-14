@@ -11,7 +11,7 @@ import java.util.Set;
 public class AmountOfTimeForBinaryTreeToBeInfected {
 
 
-    //https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/
+    //https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/submissions/1142384276/
     public int amountOfTime(TreeNode root, int start) {
         Map<Integer, Set<Integer>> graph = new HashMap<>();
         buildGraph(root, graph);

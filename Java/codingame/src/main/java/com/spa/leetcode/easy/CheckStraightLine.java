@@ -3,7 +3,7 @@ package com.spa.leetcode.easy;
 public class CheckStraightLine {
 
 
-    //https://leetcode.com/problems/check-if-it-is-a-straight-line/
+    //https://leetcode.com/problems/check-if-it-is-a-straight-line/submissions/1174978657/
     public boolean checkStraightLine(int[][] coordinates) {
         int ux = coordinates[1][0] - coordinates[0][0];
         int uy = coordinates[1][1] - coordinates[0][1];

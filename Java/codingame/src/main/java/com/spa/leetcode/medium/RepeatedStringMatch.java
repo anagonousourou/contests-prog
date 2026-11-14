@@ -2,7 +2,7 @@ package com.spa.leetcode.medium;
 
 public class RepeatedStringMatch {
 
-    //https://leetcode.com/problems/repeated-string-match/
+    //https://leetcode.com/problems/repeated-string-match/submissions/1171410672/
     public int repeatedStringMatch(String a, String b) {
         StringBuilder repeatedA = new StringBuilder();
         int i = 0;

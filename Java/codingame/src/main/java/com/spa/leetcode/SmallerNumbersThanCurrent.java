@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class SmallerNumbersThanCurrent {
 
+    // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/submissions/1834565465/
+
     public int[] smallerNumbersThanCurrent(int[] nums) {
         return Arrays.stream(nums).map(n -> smallerThan(n, nums)).toArray();
     }

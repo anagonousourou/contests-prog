@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class SmallestEvenMultiple {
 
-    //https://leetcode.com/problems/smallest-even-multiple/
+    //https://leetcode.com/problems/smallest-even-multiple/submissions/1162905335/
     public int smallestEvenMultiple(int n) {
         return n % 2 == 0 ? n : 2 * n;
     }

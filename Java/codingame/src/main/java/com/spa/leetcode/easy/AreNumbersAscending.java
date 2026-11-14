@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class AreNumbersAscending {
 
-    //https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/
+    //https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/submissions/1163879779/
     public boolean areNumbersAscending(String s) {
         var numbers = Arrays.stream(s.split(" ")).filter(w -> {
             try {

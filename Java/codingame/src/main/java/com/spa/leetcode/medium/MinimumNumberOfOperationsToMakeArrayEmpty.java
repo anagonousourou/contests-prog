@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class MinimumNumberOfOperationsToMakeArrayEmpty {
 
-    //https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/
+    //https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/submissions/1136538076/
     public int minOperations(int[] nums) {
         var occurrences = StringHelpers.frequenciesInteger(Arrays.stream(nums).boxed().toList());
 

@@ -132,7 +132,7 @@
   ],
   "fields": {
    "Recto": "<p>Frequency counting: when do you use an <code>int[]</code> instead of a <code>HashMap</code>?</p>",
-   "Verso": "<p>Use an <b><code>int[]</code> bucket array</b> when the key domain is small and bounded (characters: 26 or 128; digits: 10; values 1..n): O(1) access, no boxing, no hashing.</p>\n<p>Use a <b><code>HashMap</code>/<code>HashSet</code></b> when keys are sparse or arbitrary (strings, big ints, coordinates).</p>\n<p>The anagram check is the archetype: two frequency vectors are equal ⟺ the strings are anagrams. Same trick gives &quot;at most k occurrences&quot;, &quot;first unique character&quot;, &quot;most frequent element&quot;, &quot;can we permute into a palindrome&quot; (at most one odd count).</p>\n<p><small><b>From your own solutions:</b> Count Pairs Of Similar Strings (count-pairs-of-similar-strings)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §2.1 &#x27;Anagrams&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §4.5 &#x27;Counting Sort&#x27;, p. 98</em></small></p>"
+   "Verso": "<p>Use an <b><code>int[]</code> bucket array</b> when the key domain is small and bounded (characters: 26 or 128; digits: 10; values 1..n): O(1) access, no boxing, no hashing.</p>\n<p>Use a <b><code>HashMap</code>/<code>HashSet</code></b> when keys are sparse or arbitrary (strings, big ints, coordinates).</p>\n<p>The anagram check is the archetype: two frequency vectors are equal ⟺ the strings are anagrams. Same trick gives &quot;at most k occurrences&quot;, &quot;first unique character&quot;, &quot;most frequent element&quot;, &quot;can we permute into a palindrome&quot; (at most one odd count).</p>\n<p><small><b>From your own solutions:</b> Valid Anagram (valid-anagram), Relative Sort Array (relative-sort-array)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §2.1 &#x27;Anagrams&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §4.5 &#x27;Counting Sort&#x27;, p. 98</em></small></p>"
   }
  },
  {
@@ -146,7 +146,7 @@
   ],
   "fields": {
    "Recto": "<p>The &#x27;complement&#x27; pattern: what is the standard O(n) shape for pair-sum problems?</p>",
-   "Verso": "<p>Walk once and store what you have seen; at each element x ask for the <b>complement</b> (k − x):</p>\n<p>``` for x in a:     if k - x in seen: return true     seen.add(x) ```</p>\n<p>O(n) time, O(n) space, and it needs <b>no sorting</b> — that is its advantage over two pointers. The trade-off: two pointers on a sorted array is O(1) extra space but costs O(n log n) to sort, and it can find <i>all</i> pairs / handle duplicates more naturally.</p>\n<p>Rule: unsorted + &quot;does a pair exist&quot; → hash; sorted (or sortable and you also need order/extremes) → two pointers.</p>\n<p><small><b>From your own solutions:</b> Count Pairs Whose Sum is Less than Target (count-pairs-whose-sum-is-less-than-target)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §11.4 &#x27;The k-sum Problem&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.3.3, p. 96</em></small></p>"
+   "Verso": "<p>Walk once and store what you have seen; at each element x ask for the <b>complement</b> (k − x):</p>\n<p>``` for x in a:     if k - x in seen: return true     seen.add(x) ```</p>\n<p>O(n) time, O(n) space, and it needs <b>no sorting</b> — that is its advantage over two pointers. The trade-off: two pointers on a sorted array is O(1) extra space but costs O(n log n) to sort, and it can find <i>all</i> pairs / handle duplicates more naturally.</p>\n<p>Rule: unsorted + &quot;does a pair exist&quot; → hash; sorted (or sortable and you also need order/extremes) → two pointers.</p>\n<p><small><b>From your own solutions:</b> Count Pairs Whose Sum is Less than Target (count-pairs-whose-sum-is-less-than-target), Two Sum IV - Input is a BST (two-sum-iv-input-is-a-bst)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §11.4 &#x27;The k-sum Problem&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.3.3, p. 96</em></small></p>"
   }
  },
  {
@@ -349,7 +349,7 @@
   ],
   "fields": {
    "Recto": "<p>Balanced brackets with a stack: the algorithm and the invariant it maintains?</p>",
-   "Verso": "<p>Scan left to right: push every opener; on a closer, the stack top <b>must</b> be its matching opener — pop it, otherwise return false. At the end the stack must be empty.</p>\n<p>Invariant: <i>the stack holds exactly the openers that have not been closed yet, in order</i>. That is why the top is always the most recent unmatched opener — LIFO matches the nesting structure of the string.</p>\n<p>Generalises to: minimum removals to make valid, longest valid parentheses (stack of indices), and &quot;remove k digits&quot;-style monotonic stack problems.</p>\n<p><small><b>From your own solutions:</b> Make The String Great (make-the-string-great), Clear Digits (clear-digits)</small></p>\n<p><small><em>Source: Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.1 &#x27;Stack&#x27;, p. 30; Wikipedia, &#x27;All nearest smaller values&#x27; (parenthesis matching application)</em></small></p>"
+   "Verso": "<p>Scan left to right: push every opener; on a closer, the stack top <b>must</b> be its matching opener — pop it, otherwise return false. At the end the stack must be empty.</p>\n<p>Invariant: <i>the stack holds exactly the openers that have not been closed yet, in order</i>. That is why the top is always the most recent unmatched opener — LIFO matches the nesting structure of the string.</p>\n<p>Generalises to: minimum removals to make valid, longest valid parentheses (stack of indices), and &quot;remove k digits&quot;-style monotonic stack problems.</p>\n<p><small><b>From your own solutions:</b> Valid Parentheses (valid-parentheses)</small></p>\n<p><small><em>Source: Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.1 &#x27;Stack&#x27;, p. 30; Wikipedia, &#x27;All nearest smaller values&#x27; (parenthesis matching application)</em></small></p>"
   }
  },
  {
@@ -416,7 +416,7 @@
   ],
   "fields": {
    "Recto": "<p>Reverse a singly linked list in place: the three-pointer loop and its invariant?</p>",
-   "Verso": "<p>``` prev = null; curr = head while curr != null:     next = curr.next      # save     curr.next = prev      # reverse the link     prev = curr           # advance     curr = next return prev               # new head ```</p>\n<p>Invariant: <i>everything before <code>curr</code> is already reversed, and <code>prev</code> is its new head</i>. <code>next</code> must be saved <b>before</b> overwriting <code>curr.next</code>, otherwise the rest of the list is lost.</p>\n<p>O(n) time, O(1) space; recursion also works but costs O(n) stack.</p>\n<p><small><b>From your own solutions:</b> Maximum Twin Sum of a Linked List (maximum-twin-sum-of-a-linked-list)</small></p>\n<p><small><em>Source: Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.3, p. 33; Khamies, How to Solve Algorithm Problems, §6.3 &#x27;Swapping Linked List&#x27;</em></small></p>"
+   "Verso": "<p>``` prev = null; curr = head while curr != null:     next = curr.next      # save     curr.next = prev      # reverse the link     prev = curr           # advance     curr = next return prev               # new head ```</p>\n<p>Invariant: <i>everything before <code>curr</code> is already reversed, and <code>prev</code> is its new head</i>. <code>next</code> must be saved <b>before</b> overwriting <code>curr.next</code>, otherwise the rest of the list is lost.</p>\n<p>O(n) time, O(1) space; recursion also works but costs O(n) stack.</p>\n<p><small><b>From your own solutions:</b> Reverse Linked List (reverse-linked-list), Maximum Twin Sum of a Linked List (maximum-twin-sum-of-a-linked-list)</small></p>\n<p><small><em>Source: Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.3, p. 33; Khamies, How to Solve Algorithm Problems, §6.3 &#x27;Swapping Linked List&#x27;</em></small></p>"
   }
  },
  {
@@ -430,7 +430,7 @@
   ],
   "fields": {
    "Recto": "<p>Fast &amp; slow pointers: three problems solved by the same trick?</p>",
-   "Verso": "<p>Both start at head, slow moves 1, fast moves 2:</p>\n<p>1. <b>Middle</b> — when fast reaches the end, slow is at the middle (that is how you split for merge sort, or find the twin-sum partner). 2. <b>k-th from the end</b> — start fast k steps ahead, then move both until fast ends; slow is the target. (Needs a dummy when k = length, i.e. deleting the head.) 3. <b>Cycle detection (Floyd)</b> — if fast and slow meet, there is a cycle; if fast hits null, there is not.</p>\n<p>Why it is O(1) space: you never store visited nodes, unlike a <code>HashSet</code> of nodes.</p>\n<p><small><b>From your own solutions:</b> Maximum Twin Sum of a Linked List (maximum-twin-sum-of-a-linked-list)</small></p>\n<p><small><em>Source: Khamies, How to Solve Algorithm Problems, §6.1 &#x27;Detect a Linked List Cycle&#x27;, §6.2 &#x27;Remove the Nth Node From the End&#x27;</em></small></p>"
+   "Verso": "<p>Both start at head, slow moves 1, fast moves 2:</p>\n<p>1. <b>Middle</b> — when fast reaches the end, slow is at the middle (that is how you split for merge sort, or find the twin-sum partner). 2. <b>k-th from the end</b> — start fast k steps ahead, then move both until fast ends; slow is the target. (Needs a dummy when k = length, i.e. deleting the head.) 3. <b>Cycle detection (Floyd)</b> — if fast and slow meet, there is a cycle; if fast hits null, there is not.</p>\n<p>Why it is O(1) space: you never store visited nodes, unlike a <code>HashSet</code> of nodes.</p>\n<p><small><b>From your own solutions:</b> Middle of the Linked List (middle-of-the-linked-list), Maximum Twin Sum of a Linked List (maximum-twin-sum-of-a-linked-list)</small></p>\n<p><small><em>Source: Khamies, How to Solve Algorithm Problems, §6.1 &#x27;Detect a Linked List Cycle&#x27;, §6.2 &#x27;Remove the Nth Node From the End&#x27;</em></small></p>"
   }
  },
  {
@@ -444,7 +444,7 @@
   ],
   "fields": {
    "Recto": "<p>Merging two sorted linked lists: the invariant, and why the dummy head is mandatory here?</p>",
-   "Verso": "<p>Keep a <code>tail</code> pointer on the result (starting at a dummy node). At each step append the smaller head and advance it; when one list is exhausted, append the whole remainder in O(1).</p>\n<p>Invariant: <i>the result so far is sorted and every remaining node is ≥ its last element.</i></p>\n<p>The dummy is what lets you append <b>before knowing which list provides the first node</b> — without it you need a branch for the first element, which is where most bugs live. This is also the building block of merge sort (on lists) and of k-way merge (with a heap).</p>\n<p><small><b>From your own solutions:</b> Merge Nodes in Between Zeros (merge-nodes-in-between-zeros), Merge In Between Linked Lists (merge-in-between-linked-lists)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §4.1 &#x27;Merge of Sorted Lists&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.3, p. 33</em></small></p>"
+   "Verso": "<p>Keep a <code>tail</code> pointer on the result (starting at a dummy node). At each step append the smaller head and advance it; when one list is exhausted, append the whole remainder in O(1).</p>\n<p>Invariant: <i>the result so far is sorted and every remaining node is ≥ its last element.</i></p>\n<p>The dummy is what lets you append <b>before knowing which list provides the first node</b> — without it you need a branch for the first element, which is where most bugs live. This is also the building block of merge sort (on lists) and of k-way merge (with a heap).</p>\n<p><small><b>From your own solutions:</b> Merge Two Sorted Lists (merge-two-sorted-lists), Merge Nodes in Between Zeros (merge-nodes-in-between-zeros)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §4.1 &#x27;Merge of Sorted Lists&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.1.3, p. 33</em></small></p>"
   }
  },
  {
@@ -500,7 +500,7 @@
   ],
   "fields": {
    "Recto": "<p>Level-order traversal: why a queue, and what does the &#x27;level size&#x27; loop buy you?</p>",
-   "Verso": "<p>BFS on a tree = queue: pop a node, push its children. Because a FIFO pops in the order the nodes were discovered, nodes come out <b>by increasing depth</b>.</p>\n<p>To process level by level, snapshot the queue length <i>before</i> the inner loop: <code>for _ in range(len(q))</code>. That freezes the current level, so the children you push belong to the next round. Nothing else gives you level boundaries for free — DFS needs an explicit depth parameter.</p>\n<p>O(n) time, O(width) memory (which is O(n) for the last level) — the reason &quot;does it fit in memory&quot; matters for wide trees.</p>\n<p><small><b>From your own solutions:</b> Even Odd Tree (even-odd-tree), Find Elements in a Contaminated Binary Tree (find-elements-in-a-contaminated-binary-tree)</small></p>\n<p><small><em>Source: Chatterjee, Guleria &amp; Kiao, Binary Tree Problems, ch. 9 &#x27;Find Level of each node from root node&#x27;; Dürr &amp; Vie, Competitive Programming in Python, §6.4 &#x27;Breadth-First Search&#x27;</em></small></p>"
+   "Verso": "<p>BFS on a tree = queue: pop a node, push its children. Because a FIFO pops in the order the nodes were discovered, nodes come out <b>by increasing depth</b>.</p>\n<p>To process level by level, snapshot the queue length <i>before</i> the inner loop: <code>for _ in range(len(q))</code>. That freezes the current level, so the children you push belong to the next round. Nothing else gives you level boundaries for free — DFS needs an explicit depth parameter.</p>\n<p>O(n) time, O(width) memory (which is O(n) for the last level) — the reason &quot;does it fit in memory&quot; matters for wide trees.</p>\n<p><small><b>From your own solutions:</b> Binary Tree Level Order Traversal (binary-tree-level-order-traversal)</small></p>\n<p><small><em>Source: Chatterjee, Guleria &amp; Kiao, Binary Tree Problems, ch. 9 &#x27;Find Level of each node from root node&#x27;; Dürr &amp; Vie, Competitive Programming in Python, §6.4 &#x27;Breadth-First Search&#x27;</em></small></p>"
   }
  },
  {
@@ -665,7 +665,7 @@
   ],
   "fields": {
    "Recto": "<p>Grids are implicit graphs: what are the standard tricks (neighbours, visited, multi-source)?</p>",
-   "Verso": "<ul>\n<li><b>Neighbours</b>: the 4-direction array <code>{{0,1},{1,0},{0,-1},{-1,0}}</code> (8 for diagonals), loop it instead of writing four <code>if</code>s; bounds-check inside.</li>\n<li><b>Visited</b>: a <code>boolean[][]</code> (or mutate the grid) — marking at <i>push</i> time, not pop time, prevents duplicates in the queue. This is the #1 BFS bug.</li>\n<li><b>Multi-source BFS</b>: seed the queue with <i>all</i> starting cells and run one BFS → gives the distance to the nearest source in O(V+E), instead of one BFS per source.</li>\n<li><b>Implicit state</b>: when moves change a configuration (locks, water jugs), the &quot;node&quot; is the whole state and the visited set holds states, not cells.</li>\n</ul>\n<p>Recognition: &quot;grid + minimum steps + uniform cost&quot; → BFS; &quot;count regions/enclosed areas&quot; → DFS flood fill.</p>\n<p><small><b>From your own solutions:</b> Flood Fill (flood-fill), Detect Cycles in 2D Grid (detect-cycles-in-2d-grid), Matrix Cells in Distance Order (matrix-cells-in-distance-order)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §6.2 &#x27;Implicit Graphs&#x27; and §3.1 &#x27;Shortest Path in a Grid&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §7.1.2 &#x27;Adjacency List&#x27;, p. 155</em></small></p>"
+   "Verso": "<ul>\n<li><b>Neighbours</b>: the 4-direction array <code>{{0,1},{1,0},{0,-1},{-1,0}}</code> (8 for diagonals), loop it instead of writing four <code>if</code>s; bounds-check inside.</li>\n<li><b>Visited</b>: a <code>boolean[][]</code> (or mutate the grid) — marking at <i>push</i> time, not pop time, prevents duplicates in the queue. This is the #1 BFS bug.</li>\n<li><b>Multi-source BFS</b>: seed the queue with <i>all</i> starting cells and run one BFS → gives the distance to the nearest source in O(V+E), instead of one BFS per source.</li>\n<li><b>Implicit state</b>: when moves change a configuration (locks, water jugs), the &quot;node&quot; is the whole state and the visited set holds states, not cells.</li>\n</ul>\n<p>Recognition: &quot;grid + minimum steps + uniform cost&quot; → BFS; &quot;count regions/enclosed areas&quot; → DFS flood fill.</p>\n<p><small><b>From your own solutions:</b> Number of Islands (number-of-islands), Flood Fill (flood-fill)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §6.2 &#x27;Implicit Graphs&#x27; and §3.1 &#x27;Shortest Path in a Grid&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §7.1.2 &#x27;Adjacency List&#x27;, p. 155</em></small></p>"
   }
  },
  {
@@ -735,7 +735,7 @@
   ],
   "fields": {
    "Recto": "<p>When do you reach for Union-Find instead of a DFS/BFS?</p>",
-   "Verso": "<p>When the graph is <b>built incrementally</b> or you only need <i>connectivity</i>, not structure:</p>\n<ul>\n<li>edges arrive over time and you must answer &quot;are these connected <i>now</i>&quot; (offline DFS can&#x27;t),</li>\n<li>you only need to know if adding an edge creates a <b>cycle</b> (Kruskal, redundant connection),</li>\n<li>you must count or merge <b>components</b> while merging sets, and re-running O(V+E) each time would be too slow,</li>\n<li>the relation is transitive (equivalence): &quot;same account&quot;, &quot;same island&quot;, &quot;same group after unions&quot;.</li>\n</ul>\n<p>DFS/BFS is better when you need paths, distances, or the actual component members.</p>\n<p>Typical size trick: keep a <code>size[]</code>/<code>count</code> array next to <code>parent[]</code> so the component size is O(1) after a <code>find</code>.</p>\n<p><small><b>From your own solutions:</b> Count Servers that Communicate (count-servers-that-communicate), Count the Number of Complete Components (count-the-number-of-complete-components)</small></p>\n<p><small><em>Source: cp-algorithms.com &#x27;Disjoint Set Union&#x27; — &#x27;Applications: connected components in a graph&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §7.3, p. 161</em></small></p>"
+   "Verso": "<p>When the graph is <b>built incrementally</b> or you only need <i>connectivity</i>, not structure:</p>\n<ul>\n<li>edges arrive over time and you must answer &quot;are these connected <i>now</i>&quot; (offline DFS can&#x27;t),</li>\n<li>you only need to know if adding an edge creates a <b>cycle</b> (Kruskal, redundant connection),</li>\n<li>you must count or merge <b>components</b> while merging sets, and re-running O(V+E) each time would be too slow,</li>\n<li>the relation is transitive (equivalence): &quot;same account&quot;, &quot;same island&quot;, &quot;same group after unions&quot;.</li>\n</ul>\n<p>DFS/BFS is better when you need paths, distances, or the actual component members.</p>\n<p>Typical size trick: keep a <code>size[]</code>/<code>count</code> array next to <code>parent[]</code> so the component size is O(1) after a <code>find</code>.</p>\n<p><small><b>From your own solutions:</b> Lexicographically Smallest Equivalent String (lexicographically-smallest-equivalent-string), Count the Number of Complete Components (count-the-number-of-complete-components)</small></p>\n<p><small><em>Source: cp-algorithms.com &#x27;Disjoint Set Union&#x27; — &#x27;Applications: connected components in a graph&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §7.3, p. 161</em></small></p>"
   }
  },
  {
@@ -832,7 +832,7 @@
   ],
   "fields": {
    "Recto": "<p>Binary search on a sorted array: the invariant that prevents infinite loops?</p>",
-   "Verso": "<p>Maintain <b><code>lo</code>/<code>hi</code> as candidate bounds and shrink them</b>, never recompute from scratch. Two equivalent styles:</p>\n<p>1. <code>while (lo &lt;= hi)</code>: <code>mid = lo + (hi-lo)/2</code>; if found return; else <code>hi = mid-1</code> or <code>lo = mid+1</code>. The window shrinks every iteration → terminates in O(log n). 2. <code>while (lo &lt; hi)</code>: <code>mid = lo + (hi-lo)/2</code>; <code>hi = mid</code> or <code>lo = mid+1</code>. Requires answers that are monotone (predicate), and terminates when lo == hi.</p>\n<p>The invariant is the point: <i>everything left of lo is ≤ target, everything right of hi is &gt; target</i>. Use <code>lo + (hi-lo)/2</code>, not <code>(lo+hi)/2</code> — the latter <b>overflows</b> for large ints and misbehaves for negative ranges.</p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §6.2.1 &#x27;Binary Search&#x27;, p. 181; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §5.1 &#x27;Binary Search&#x27;, p. 116</em></small></p>"
+   "Verso": "<p>Maintain <b><code>lo</code>/<code>hi</code> as candidate bounds and shrink them</b>, never recompute from scratch. Two equivalent styles:</p>\n<p>1. <code>while (lo &lt;= hi)</code>: <code>mid = lo + (hi-lo)/2</code>; if found return; else <code>hi = mid-1</code> or <code>lo = mid+1</code>. The window shrinks every iteration → terminates in O(log n). 2. <code>while (lo &lt; hi)</code>: <code>mid = lo + (hi-lo)/2</code>; <code>hi = mid</code> or <code>lo = mid+1</code>. Requires answers that are monotone (predicate), and terminates when lo == hi.</p>\n<p>The invariant is the point: <i>everything left of lo is ≤ target, everything right of hi is &gt; target</i>. Use <code>lo + (hi-lo)/2</code>, not <code>(lo+hi)/2</code> — the latter <b>overflows</b> for large ints and misbehaves for negative ranges.</p>\n<p><small><b>From your own solutions:</b> Binary Search (binary-search), Longest Subsequence With Limited Sum (longest-subsequence-with-limited-sum)</small></p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §6.2.1 &#x27;Binary Search&#x27;, p. 181; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §5.1 &#x27;Binary Search&#x27;, p. 116</em></small></p>"
   }
  },
  {
@@ -939,7 +939,7 @@
   ],
   "fields": {
    "Recto": "<p>1-D DP: &#x27;take it or leave it&#x27; — the house-robber recurrence and why it is 1-D?</p>",
-   "Verso": "<p><code>rob[i] = max(rob[i-1], rob[i-2] + value[i])</code> — either you skip house i (same as i−1) or you take it and add the best up to i−2.</p>\n<p>The state only needs the last two answers → two variables, O(n) time and <b>O(1) space</b>. That collapse is the mark of a well-chosen 1-D state: only a fixed prefix of the table is ever read.</p>\n<p>Same shape: maximum subarray (Kadane), &quot;best time to buy/sell stock&quot; (keep the min price so far), &quot;climbing stairs&quot; (counts), &quot;decode ways&quot; (with a validity condition on the pair).</p>\n<p><small><b>From your own solutions:</b> Best Time to Buy and Sell Stock (best-time-to-buy-and-sell-stock), Min Cost Climbing Stairs (min-cost-climbing-stairs)</small></p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §7.1 &#x27;Number of Paths&#x27;, p. 218; Dürr &amp; Vie, Competitive Programming in Python, §4.4 &#x27;Maximum Subarray Sum&#x27;</em></small></p>"
+   "Verso": "<p><code>rob[i] = max(rob[i-1], rob[i-2] + value[i])</code> — either you skip house i (same as i−1) or you take it and add the best up to i−2.</p>\n<p>The state only needs the last two answers → two variables, O(n) time and <b>O(1) space</b>. That collapse is the mark of a well-chosen 1-D state: only a fixed prefix of the table is ever read.</p>\n<p>Same shape: maximum subarray (Kadane), &quot;best time to buy/sell stock&quot; (keep the min price so far), &quot;climbing stairs&quot; (counts), &quot;decode ways&quot; (with a validity condition on the pair).</p>\n<p><small><b>From your own solutions:</b> Solving Questions With Brainpower (solving-questions-with-brainpower), Best Time to Buy and Sell Stock (best-time-to-buy-and-sell-stock)</small></p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §7.1 &#x27;Number of Paths&#x27;, p. 218; Dürr &amp; Vie, Competitive Programming in Python, §4.4 &#x27;Maximum Subarray Sum&#x27;</em></small></p>"
   }
  },
  {
@@ -1537,6 +1537,92 @@
   "fields": {
    "Recto": "<p><b>Shape:</b> &#x27;design a data structure&#x27; with an API (stream, cache, stack with extra query).</p>",
    "Verso": "<p><b>→ Choose the structure by the required complexity, then combine two of them.</b> Amortized O(1) push/pop → stack/queue; O(1) min as well → store (value, min-so-far) pairs; O(log n) k-th largest → min-heap of size k; ordered iteration → TreeMap/TreeSet.</p>\n<p>State in the interview <i>what each operation must cost</i> — that sentence determines the design, and it is exactly what the interviewer is grading.</p>\n<p><small><b>From your own solutions:</b> Design an Ordered Stream (design-an-ordered-stream), Kth Largest Element in a Stream (kth-largest-element-in-a-stream), Design Neighbor Sum Service (design-neighbor-sum-service)</small></p>\n<p><small><em>Source: cp-algorithms.com &#x27;Minimum Stack / Minimum Queue&#x27; (stack with O(1) minimum); Dürr &amp; Vie, Competitive Programming in Python, §1.5 &#x27;Abstract Types and Essential Data Structures&#x27;</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::16 Intervals",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "intervals",
+   "sorting"
+  ],
+  "fields": {
+   "Recto": "<p>Merging / inserting intervals: the algorithm and why sorting by <b>start</b> is the right key?</p>",
+   "Verso": "<p>Sort the intervals by <b>start</b>, keep a <code>current</code> interval and sweep:</p>\n<ul>\n<li>if <code>next.start &lt;= current.end</code> → they overlap, merge: <code>current.end = max(current.end, next.end)</code>;</li>\n<li>otherwise flush <code>current</code> to the result and take <code>next</code> as the new current.</li>\n</ul>\n<p>Sorting by start guarantees that once you reach an interval, <b>everything already merged ends no later than it starts</b> — so a single pass suffices, O(n log n) dominated by the sort.</p>\n<p>&quot;Insert interval&quot; is the same sweep with the new interval merged in place: copy the intervals strictly before it, absorb everything that overlaps, then copy the rest. Do not re-sort: the input is already sorted, so the whole thing is <b>O(n)</b>.</p>\n<p><small><b>From your own solutions:</b> Insert Interval (insert-interval)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §5.2 &#x27;Union of Intervals&#x27;; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, ch. 11 (interval structures), p. 217</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::16 Intervals",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "intervals",
+   "greedy",
+   "proof"
+  ],
+  "fields": {
+   "Recto": "<p>Selecting the maximum number of non-overlapping intervals: which sort key, and what is the exchange argument?</p>",
+   "Verso": "<p>Sort by <b>end time ascending</b>, then greedily take an interval if its start is ≥ the end of the last taken one.</p>\n<p><b>Exchange argument</b>: let G be the greedy pick with the earliest end, and O any optimal solution whose first interval is f. Since <code>G.end &lt;= f.end</code>, swapping f for G leaves every later interval of O feasible (it only relaxes the constraint), so O&#x27; = O − {f} + {G} is still optimal and agrees with the greedy choice → by induction greedy is optimal.</p>\n<p>Sorting by start or by length <b>fails</b>: one early-starting long interval, or one tiny interval in the middle, blocks more than it contributes.</p>\n<p>Same rule for &quot;burst balloons with arrows&quot;, &quot;minimum lecture halls&quot; (variant: sort starts and ends separately), and &quot;erase overlapping intervals&quot;.</p>\n<p><small><b>From your own solutions:</b> Minimum Number of Arrows to Burst Balloons (minimum-number-of-arrows-to-burst-balloons)</small></p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §3.1 &#x27;Collecting Signatures&#x27;, p. 124-146; Dürr &amp; Vie, Competitive Programming in Python, §5.3 &#x27;The Interval Point Cover Problem&#x27;</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::06 Linked Lists",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "linked-list",
+   "two-pointers",
+   "proof"
+  ],
+  "fields": {
+   "Recto": "<p>Floyd&#x27;s algorithm, part 2: why do the fast and slow pointers <b>meet</b>, and how do you find the cycle&#x27;s <b>entry</b>?</p>",
+   "Verso": "<p><b>Meeting</b>: once both pointers are inside the cycle, the fast one gains exactly 1 position per step on the slow one, so the gap (mod cycle length) must reach 0 within one lap.</p>\n<p><b>Entry point</b>: let <code>a</code> = distance head → entry, <code>b</code> = distance entry → meeting point, <code>c</code> = cycle length. Slow travelled <code>a + b</code>; fast travelled <code>a + b + k·c</code>; fast = 2·slow ⟹ <code>a + b = k·c</code> ⟹ <b><code>a ≡ −b (mod c)</code></b>. So a pointer restarted at <code>head</code> and a pointer left at the meeting point, both moving one step at a time, arrive at the entry <b>simultaneously</b>.</p>\n<p>O(n) time, O(1) space — no hash set of visited nodes needed. If you only need &quot;is there a cycle&quot;, stop at the first meeting.</p>\n<p><small><b>From your own solutions:</b> Linked List Cycle II (linked-list-cycle-ii)</small></p>\n<p><small><em>Source: Khamies, How to Solve Algorithm Problems, §6.1 &#x27;Detect a Linked List Cycle&#x27;</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::12 Binary Search",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "binary-search",
+   "java"
+  ],
+  "fields": {
+   "Recto": "<p>What exactly does <code>Arrays.binarySearch</code> return when the key is <b>absent</b>, and how do you turn that into an insertion point?</p>",
+   "Verso": "<ul>\n<li>Found → the index of <b>some</b> occurrence (not necessarily the first — duplicates are unspecified).</li>\n<li>Not found → <b><code>-(insertionPoint) - 1</code></b>, where <code>insertionPoint</code> is the index of the first element greater than the key.</li>\n</ul>\n<p>So <code>insertionPoint = -(result) - 1</code> and the check is <code>if (result &lt; 0)</code>.</p>\n<p>Traps: the array must be <b>sorted</b> (for the natural order of its type), the result is meaningless otherwise — no exception; on a sorted array with duplicates you still need a hand-written lower bound if you want the <i>first</i> occurrence; and <code>Arrays.binarySearch</code> on an <code>int[]</code> uses primitive comparisons, whereas on <code>Integer[]</code>/objects it uses <code>compareTo</code>/comparator.</p>\n<p><small><b>From your own solutions:</b> Binary Search (binary-search)</small></p>\n<p><small><em>Source: Kulikov &amp; Pevzner, Learning Algorithms Through Programming and Puzzle Solving, §6.2.2 &#x27;Binary Search with Duplicates&#x27;, p. 185; Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §5.1 &#x27;Binary Search&#x27;, p. 116</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::04 Strings & String Matching",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "strings",
+   "hashing"
+  ],
+  "fields": {
+   "Recto": "<p>Isomorphic strings / word pattern: why is a <b>one-way</b> mapping not enough?</p>",
+   "Verso": "<p>The mapping must be a <b>bijection</b>: every character of <code>s</code> maps to exactly one character of <code>t</code> <b>and</b> every character of <code>t</code> is the image of exactly one character of <code>s</code>.</p>\n<p>A single <code>map</code> (s→t) accepts &quot;bad&quot; pairs: <code>s = &quot;ab&quot;</code>, <code>t = &quot;aa&quot;</code> — <code>a→a</code>, <code>b→a</code> is consistent one way, but two different letters collapse onto one. You need the reverse check too, typically a second map or a <code>HashSet</code> of used targets.</p>\n<p>Same shape for &quot;word pattern&quot; (words instead of letters) and for detecting a consistent relabelling of a sequence. Complexity O(n) with hash maps, O(1) with a 26-slot array when the alphabet is lowercase.</p>\n<p><small><b>From your own solutions:</b> Isomorphic Strings (isomorphic-strings), Word Pattern (word-pattern)</small></p>\n<p><small><em>Source: Dürr &amp; Vie, Competitive Programming in Python, §2.1 &#x27;Anagrams&#x27; (counting/signature view of strings); Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §3.3.3, p. 96</em></small></p>"
+  }
+ },
+ {
+  "deck": "Leetcode::Theory::04 Strings & String Matching",
+  "type": "Basique",
+  "tags": [
+   "leetcode",
+   "theory",
+   "strings",
+   "sorting"
+  ],
+  "fields": {
+   "Recto": "<p>Longest common prefix of a set of strings: the two standard solutions?</p>",
+   "Verso": "<p>1. <b>Vertical scan</b>: compare character <code>i</code> of every string; stop at the first mismatch or the first string that ends. O(total characters) worst case, O(1) extra memory, early exit on the first divergence. 2. <b>Sort and compare the extremes</b>: after sorting, the LCP of the whole array equals the LCP of the <b>first and last</b> strings (everything in between shares that prefix because sorted order is lexicographic). O(n log n) for the sort + O(|first|) comparison — less code, but no early exit.</p>\n<p>Choosing between them: few long strings that differ early → vertical scan wins; many short strings → sorting is simpler.</p>\n<p>Trap: <code>strs</code> empty, or a string being a prefix of another (the loop must stop at <code>min length</code>).</p>\n<p><small><b>From your own solutions:</b> Longest Common Prefix (longest-common-prefix)</small></p>\n<p><small><em>Source: Esparza Alba &amp; Ruiz Leal, Algorithms for Competitive Programming, §4.8 &#x27;Sorting With the algorithm Library&#x27;, p. 108-111 (lexicographic order); Dürr &amp; Vie, Competitive Programming in Python, §2.3 &#x27;Spell Checking With a Lexicographic Tree&#x27;</em></small></p>"
   }
  }
 ]

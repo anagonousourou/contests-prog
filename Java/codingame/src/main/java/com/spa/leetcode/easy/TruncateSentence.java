@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class TruncateSentence {
 
+    // https://leetcode.com/problems/truncate-sentence/submissions/1162818936/
+
     public String truncateSentence(String s, int k) {
         int nbspaces = 0;
         for (int i = 0; i < s.length(); i++) {

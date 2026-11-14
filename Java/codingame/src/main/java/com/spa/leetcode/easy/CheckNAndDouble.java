@@ -2,7 +2,7 @@ package com.spa.leetcode.easy;
 
 public class CheckNAndDouble {
 
-    // https://leetcode.com/problems/check-if-n-and-its-double-exist/description/
+    // https://leetcode.com/problems/check-if-n-and-its-double-exist/submissions/1390955329/description/
     public boolean checkIfExist(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {

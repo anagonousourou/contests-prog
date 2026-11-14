@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class NumberOfGoodPairs {
 
-    //https://leetcode.com/problems/number-of-good-pairs/
+    //https://leetcode.com/problems/number-of-good-pairs/submissions/1161889251/
     public static int numIdenticalPairs(int[] nums) {
         var frequencies = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         int result = 0;

@@ -4,7 +4,7 @@ import com.spa.leetcode.TreeNode;
 
 public class EvaluateBooleanBinaryTree {
 
-    //https://leetcode.com/problems/evaluate-boolean-binary-tree/
+    //https://leetcode.com/problems/evaluate-boolean-binary-tree/submissions/1175068479/
     public boolean evaluateTree(TreeNode root) {
         if (root.right == null && root.left == null) {
             return root.val == 1;

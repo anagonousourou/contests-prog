@@ -2,6 +2,8 @@ package com.spa.leetcode.easy;
 
 //https://leetcode.com/problems/move-zeroes
 public class MoveZeroes {
+    // https://leetcode.com/problems/move-zeroes/submissions/1123321172/
+
     public void moveZeroes(int[] nums) {
         int frontier = 0;
         int seek = 0;

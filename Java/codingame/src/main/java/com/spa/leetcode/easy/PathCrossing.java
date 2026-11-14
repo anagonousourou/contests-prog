@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class PathCrossing {
 
+    // https://leetcode.com/problems/path-crossing/submissions/1126719453/
+
     private record Point(int x, int y) {
         Point move(char direction) {
             return switch (direction) {

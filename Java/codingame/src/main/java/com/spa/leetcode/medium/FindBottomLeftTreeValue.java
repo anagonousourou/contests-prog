@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FindBottomLeftTreeValue {
 
-    //https://leetcode.com/problems/find-bottom-left-tree-value/description/
+    //https://leetcode.com/problems/find-bottom-left-tree-value/submissions/1189018715/description/
     private record ValueDepth(int depth, int value){}
 
     public int findBottomLeftValue(TreeNode root) {

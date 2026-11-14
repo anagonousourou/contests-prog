@@ -5,6 +5,8 @@ import java.util.List;
 
 public class NumberOfLaserBeamsInBank {
 
+    // https://leetcode.com/problems/number-of-laser-beams-in-a-bank/submissions/1135460798/
+
 
     //https://leetcode.com/problems/number-of-laser-beams-in-a-bank/submissions/
     public int numberOfBeams(String[] bank) {

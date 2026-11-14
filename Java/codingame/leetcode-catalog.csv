@@ -11,15 +11,15 @@
 10,Regular Expression Matching,hard,regular-expression-matching,no,yes,leetcode/hard/RegularExpressionMatching.java
 11,Container With Most Water,medium,container-with-most-water,no,yes,leetcode/medium/ContainerWithMostWater.java
 12,Integer to Roman,medium,integer-to-roman,no,no,
-13,Roman to Integer,easy,roman-to-integer,no,no,
-14,Longest Common Prefix,easy,longest-common-prefix,no,no,
+13,Roman to Integer,easy,roman-to-integer,no,yes,leetcode/easy/RomanToInteger.java
+14,Longest Common Prefix,easy,longest-common-prefix,no,yes,leetcode/easy/LongestCommonPrefix.java
 15,3Sum,medium,3sum,no,no,
 16,3Sum Closest,medium,3sum-closest,no,no,
 17,Letter Combinations of a Phone Number,medium,letter-combinations-of-a-phone-number,no,no,
 18,4Sum,medium,4sum,no,no,
 19,Remove Nth Node From End of List,medium,remove-nth-node-from-end-of-list,no,yes,leetcode/medium/RemoveNthNodeFromEnd.java
-20,Valid Parentheses,easy,valid-parentheses,no,no,
-21,Merge Two Sorted Lists,easy,merge-two-sorted-lists,no,no,
+20,Valid Parentheses,easy,valid-parentheses,no,yes,leetcode/easy/ValidParentheses.java
+21,Merge Two Sorted Lists,easy,merge-two-sorted-lists,no,yes,leetcode/easy/MergeTwoSortedLists.java
 22,Generate Parentheses,medium,generate-parentheses,no,no,
 23,Merge k Sorted Lists,hard,merge-k-sorted-lists,no,no,
 24,Swap Nodes in Pairs,medium,swap-nodes-in-pairs,no,no,
@@ -55,7 +55,7 @@
 54,Spiral Matrix,medium,spiral-matrix,no,no,
 55,Jump Game,medium,jump-game,no,no,
 56,Merge Intervals,medium,merge-intervals,no,no,
-57,Insert Interval,medium,insert-interval,no,no,
+57,Insert Interval,medium,insert-interval,no,yes,leetcode/medium/InsertInterval.java
 58,Length of Last Word,easy,length-of-last-word,no,yes,leetcode/easy/LengthOfLastWord.java
 59,Spiral Matrix II,medium,spiral-matrix-ii,no,no,
 60,Permutation Sequence,hard,permutation-sequence,no,no,
@@ -100,7 +100,7 @@
 99,Recover Binary Search Tree,medium,recover-binary-search-tree,no,no,
 100,Same Tree,easy,same-tree,no,yes,leetcode/easy/SameTree.java
 101,Symmetric Tree,easy,symmetric-tree,no,yes,leetcode/easy/SymmetricTree.java
-102,Binary Tree Level Order Traversal,medium,binary-tree-level-order-traversal,no,no,
+102,Binary Tree Level Order Traversal,medium,binary-tree-level-order-traversal,no,yes,leetcode/medium/BinaryTreeLevelOrderTraversal.java
 103,Binary Tree Zigzag Level Order Traversal,medium,binary-tree-zigzag-level-order-traversal,no,no,
 104,Maximum Depth of Binary Tree,easy,maximum-depth-of-binary-tree,no,yes,leetcode/easy/MaximumDepthOfBinaryTree.java
 105,Construct Binary Tree from Preorder and Inorder Traversal,medium,construct-binary-tree-from-preorder-and-inorder-traversal,no,no,
@@ -140,7 +140,7 @@
 139,Word Break,medium,word-break,no,no,
 140,Word Break II,hard,word-break-ii,no,no,
 141,Linked List Cycle,easy,linked-list-cycle,no,yes,leetcode/easy/LinkedListCycle.java
-142,Linked List Cycle II,medium,linked-list-cycle-ii,no,no,
+142,Linked List Cycle II,medium,linked-list-cycle-ii,no,yes,leetcode/medium/LinkedListCycleIi.java
 143,Reorder List,medium,reorder-list,no,no,
 144,Binary Tree Preorder Traversal,easy,binary-tree-preorder-traversal,no,yes,leetcode/easy/BinaryTreePreorderTraversal.java
 145,Binary Tree Postorder Traversal,easy,binary-tree-postorder-traversal,no,yes,leetcode/easy/PostOrderTraversal.java
@@ -198,13 +198,13 @@
 197,Rising Temperature,easy,rising-temperature,no,no,
 198,House Robber,medium,house-robber,no,yes,leetcode/medium/HouseRobber.java
 199,Binary Tree Right Side View,medium,binary-tree-right-side-view,no,no,
-200,Number of Islands,medium,number-of-islands,no,no,
+200,Number of Islands,medium,number-of-islands,no,yes,leetcode/medium/NumberOfIslands.java
 201,Bitwise AND of Numbers Range,medium,bitwise-and-of-numbers-range,no,yes,leetcode/medium/BitwiseANDOfNumbersRange.java
 202,Happy Number,easy,happy-number,no,yes,leetcode/easy/HappyNumber.java
 203,Remove Linked List Elements,easy,remove-linked-list-elements,no,yes,leetcode/easy/RemoveLinkedListElements.java
 204,Count Primes,medium,count-primes,no,yes,leetcode/medium/CountPrimes.java
-205,Isomorphic Strings,easy,isomorphic-strings,no,no,
-206,Reverse Linked List,easy,reverse-linked-list,no,no,
+205,Isomorphic Strings,easy,isomorphic-strings,no,yes,leetcode/easy/IsomorphicStrings.java
+206,Reverse Linked List,easy,reverse-linked-list,no,yes,leetcode/easy/ReverseLinkedList.java
 207,Course Schedule,medium,course-schedule,no,no,
 208,Implement Trie (Prefix Tree),medium,implement-trie-prefix-tree,no,no,
 209,Minimum Size Subarray Sum,medium,minimum-size-subarray-sum,no,no,
@@ -229,10 +229,10 @@
 228,Summary Ranges,easy,summary-ranges,no,yes,leetcode/easy/SummaryRanges.java
 229,Majority Element II,medium,majority-element-ii,no,no,
 230,Kth Smallest Element in a BST,medium,kth-smallest-element-in-a-bst,no,no,
-231,Power of Two,easy,power-of-two,no,no,
+231,Power of Two,easy,power-of-two,no,yes,leetcode/easy/PowerOfTwo.java
 232,Implement Queue using Stacks,easy,implement-queue-using-stacks,no,yes,leetcode/easy/ImplementQueueUsingStacks.java
 233,Number of Digit One,hard,number-of-digit-one,no,no,
-234,Palindrome Linked List,easy,palindrome-linked-list,no,no,
+234,Palindrome Linked List,easy,palindrome-linked-list,no,yes,leetcode/easy/PalindromeLinkedList.java
 235,Lowest Common Ancestor of a Binary Search Tree,medium,lowest-common-ancestor-of-a-binary-search-tree,no,yes,leetcode/SolutionLeetCode.java
 236,Lowest Common Ancestor of a Binary Tree,medium,lowest-common-ancestor-of-a-binary-tree,no,no,
 237,Delete Node in a Linked List,medium,delete-node-in-a-linked-list,no,yes,leetcode/medium/DeleteNodeInALinkedList.java
@@ -240,7 +240,7 @@
 239,Sliding Window Maximum,hard,sliding-window-maximum,no,no,
 240,Search a 2D Matrix II,medium,search-a-2d-matrix-ii,no,no,
 241,Different Ways to Add Parentheses,medium,different-ways-to-add-parentheses,no,no,
-242,Valid Anagram,easy,valid-anagram,no,no,
+242,Valid Anagram,easy,valid-anagram,no,yes,leetcode/easy/ValidAnagram.java
 243,Shortest Word Distance,easy,shortest-word-distance,yes,no,
 244,Shortest Word Distance II,medium,shortest-word-distance-ii,yes,no,
 245,Shortest Word Distance III,medium,shortest-word-distance-iii,yes,no,
@@ -381,7 +381,7 @@
 380,Insert Delete GetRandom O(1),medium,insert-delete-getrandom-o1,no,no,
 381,Insert Delete GetRandom O(1) - Duplicates allowed,hard,insert-delete-getrandom-o1-duplicates-allowed,no,no,
 382,Linked List Random Node,medium,linked-list-random-node,no,no,
-383,Ransom Note,easy,ransom-note,no,no,
+383,Ransom Note,easy,ransom-note,no,yes,leetcode/easy/RansomNote.java
 384,Shuffle an Array,medium,shuffle-an-array,no,no,
 385,Mini Parser,medium,mini-parser,no,no,
 386,Lexicographical Numbers,medium,lexicographical-numbers,no,yes,leetcode/medium/LexicographicalNumbers.java
@@ -407,10 +407,10 @@
 406,Queue Reconstruction by Height,medium,queue-reconstruction-by-height,no,no,
 407,Trapping Rain Water II,hard,trapping-rain-water-ii,no,no,
 408,Valid Word Abbreviation,easy,valid-word-abbreviation,yes,no,
-409,Longest Palindrome,easy,longest-palindrome,no,no,
+409,Longest Palindrome,easy,longest-palindrome,no,yes,leetcode/easy/LongestPalindrome.java
 410,Split Array Largest Sum,hard,split-array-largest-sum,no,no,
 411,Minimum Unique Word Abbreviation,hard,minimum-unique-word-abbreviation,yes,no,
-412,Fizz Buzz,easy,fizz-buzz,no,no,
+412,Fizz Buzz,easy,fizz-buzz,no,yes,leetcode/easy/FizzBuzz.java
 413,Arithmetic Slices,medium,arithmetic-slices,no,no,
 414,Third Maximum Number,easy,third-maximum-number,no,yes,leetcode/easy/ThirdMaximumNumber.java
 415,Add Strings,easy,add-strings,no,yes,leetcode/easy/AddStrings.java
@@ -474,7 +474,7 @@
 473,Matchsticks to Square,medium,matchsticks-to-square,no,no,
 474,Ones and Zeroes,medium,ones-and-zeroes,no,no,
 475,Heaters,medium,heaters,no,no,
-476,Number Complement,easy,number-complement,no,no,
+476,Number Complement,easy,number-complement,no,yes,leetcode/easy/NumberComplement.java
 477,Total Hamming Distance,medium,total-hamming-distance,no,no,
 478,Generate Random Point in a Circle,medium,generate-random-point-in-a-circle,no,yes,leetcode/medium/GenerateRandomPointsInCircle.java
 479,Largest Palindrome Product,hard,largest-palindrome-product,no,no,
@@ -507,7 +507,7 @@
 506,Relative Ranks,easy,relative-ranks,no,yes,leetcode/easy/RelativeRanks.java
 507,Perfect Number,easy,perfect-number,no,yes,leetcode/easy/PerfectNumber.java
 508,Most Frequent Subtree Sum,medium,most-frequent-subtree-sum,no,no,
-509,Fibonacci Number,easy,fibonacci-number,no,no,
+509,Fibonacci Number,easy,fibonacci-number,no,yes,leetcode/easy/FibonacciNumber.java
 510,Inorder Successor in BST II,medium,inorder-successor-in-bst-ii,yes,no,
 511,Game Play Analysis I,easy,game-play-analysis-i,no,no,
 512,Game Play Analysis II,easy,game-play-analysis-ii,yes,no,
@@ -555,7 +555,7 @@
 554,Brick Wall,medium,brick-wall,no,no,
 555,Split Concatenated Strings,medium,split-concatenated-strings,yes,no,
 556,Next Greater Element III,medium,next-greater-element-iii,no,no,
-557,Reverse Words in a String III,easy,reverse-words-in-a-string-iii,no,no,
+557,Reverse Words in a String III,easy,reverse-words-in-a-string-iii,no,yes,leetcode/easy/ReverseWordsInAStringIii.java
 558,Logical OR of Two Binary Grids Represented as Quad-Trees,medium,logical-or-of-two-binary-grids-represented-as-quad-trees,no,no,
 559,Maximum Depth of N-ary Tree,easy,maximum-depth-of-n-ary-tree,no,no,
 560,Subarray Sum Equals K,medium,subarray-sum-equals-k,no,no,
@@ -587,7 +587,7 @@
 586,Customer Placing the Largest Number of Orders,easy,customer-placing-the-largest-number-of-orders,no,no,
 587,Erect the Fence,hard,erect-the-fence,no,no,
 588,Design In-Memory File System,hard,design-in-memory-file-system,yes,no,
-589,N-ary Tree Preorder Traversal,easy,n-ary-tree-preorder-traversal,no,no,
+589,N-ary Tree Preorder Traversal,easy,n-ary-tree-preorder-traversal,no,yes,leetcode/easy/NAryTreePreorderTraversal.java
 590,N-ary Tree Postorder Traversal,easy,n-ary-tree-postorder-traversal,no,yes,leetcode/easy/NAryPostOrder.java
 591,Tag Validator,hard,tag-validator,no,no,
 592,Fraction Addition and Subtraction,medium,fraction-addition-and-subtraction,no,no,
@@ -634,7 +634,7 @@
 633,Sum of Square Numbers,medium,sum-of-square-numbers,no,no,
 634,Find the Derangement of An Array,medium,find-the-derangement-of-an-array,yes,no,
 635,Design Log Storage System,medium,design-log-storage-system,yes,no,
-636,Exclusive Time of Functions,medium,exclusive-time-of-functions,no,no,
+636,Exclusive Time of Functions,medium,exclusive-time-of-functions,no,yes,leetcode/medium/ExclusiveTimeOfFunctions.java
 637,Average of Levels in Binary Tree,easy,average-of-levels-in-binary-tree,no,no,
 638,Shopping Offers,medium,shopping-offers,no,no,
 639,Decode Ways II,hard,decode-ways-ii,no,no,
@@ -702,12 +702,12 @@
 701,Insert into a Binary Search Tree,medium,insert-into-a-binary-search-tree,no,no,
 702,Search in a Sorted Array of Unknown Size,medium,search-in-a-sorted-array-of-unknown-size,yes,no,
 703,Kth Largest Element in a Stream,easy,kth-largest-element-in-a-stream,no,yes,leetcode/easy/KthLargest.java
-704,Binary Search,easy,binary-search,no,no,
+704,Binary Search,easy,binary-search,no,yes,leetcode/easy/BinarySearch.java
 705,Design HashSet,easy,design-hashset,no,no,
 706,Design HashMap,easy,design-hashmap,no,no,
 707,Design Linked List,medium,design-linked-list,no,no,
 708,Insert into a Sorted Circular Linked List,medium,insert-into-a-sorted-circular-linked-list,yes,no,
-709,To Lower Case,easy,to-lower-case,no,no,
+709,To Lower Case,easy,to-lower-case,no,yes,leetcode/easy/ToLowerCase.java
 710,Random Pick with Blacklist,hard,random-pick-with-blacklist,no,no,
 711,Number of Distinct Islands II,hard,number-of-distinct-islands-ii,yes,no,
 712,Minimum ASCII Delete Sum for Two Strings,medium,minimum-ascii-delete-sum-for-two-strings,no,no,
@@ -744,7 +744,7 @@
 743,Network Delay Time,medium,network-delay-time,no,no,
 744,Find Smallest Letter Greater Than Target,easy,find-smallest-letter-greater-than-target,no,yes,leetcode/easy/FindSmallestLetterGreaterThanTarget.java
 745,Prefix and Suffix Search,hard,prefix-and-suffix-search,no,no,
-746,Min Cost Climbing Stairs,easy,min-cost-climbing-stairs,no,no,
+746,Min Cost Climbing Stairs,easy,min-cost-climbing-stairs,no,yes,leetcode/easy/MinCostClimbingStairs.java
 747,Largest Number At Least Twice of Others,easy,largest-number-at-least-twice-of-others,no,yes,leetcode/easy/DominantHex.java
 748,Shortest Completing Word,easy,shortest-completing-word,no,yes,leetcode/easy/ShortestCompletingWord.java
 749,Contain Virus,hard,contain-virus,no,no,
@@ -788,7 +788,7 @@
 787,Cheapest Flights Within K Stops,medium,cheapest-flights-within-k-stops,no,no,
 788,Rotated Digits,medium,rotated-digits,no,no,
 789,Escape The Ghosts,medium,escape-the-ghosts,no,no,
-790,Domino and Tromino Tiling,medium,domino-and-tromino-tiling,no,no,
+790,Domino and Tromino Tiling,medium,domino-and-tromino-tiling,no,yes,leetcode/medium/DominoAndTrominoTiling.java
 791,Custom Sort String,medium,custom-sort-string,no,yes,leetcode/medium/CustomSortString.java
 792,Number of Matching Subsequences,medium,number-of-matching-subsequences,no,no,
 793,Preimage Size of Factorial Zeroes Function,hard,preimage-size-of-factorial-zeroes-function,no,no,
@@ -874,7 +874,7 @@
 873,Length of Longest Fibonacci Subsequence,medium,length-of-longest-fibonacci-subsequence,no,no,
 874,Walking Robot Simulation,medium,walking-robot-simulation,no,no,
 875,Koko Eating Bananas,medium,koko-eating-bananas,no,no,
-876,Middle of the Linked List,easy,middle-of-the-linked-list,no,no,
+876,Middle of the Linked List,easy,middle-of-the-linked-list,no,yes,leetcode/easy/MiddleOfTheLinkedList.java
 877,Stone Game,medium,stone-game,no,no,
 878,Nth Magical Number,hard,nth-magical-number,no,no,
 879,Profitable Schemes,hard,profitable-schemes,no,no,
@@ -1059,7 +1059,7 @@
 1058,Minimize Rounding Error to Meet Target,medium,minimize-rounding-error-to-meet-target,yes,no,
 1059,All Paths from Source Lead to Destination,medium,all-paths-from-source-lead-to-destination,yes,no,
 1060,Missing Element in Sorted Array,medium,missing-element-in-sorted-array,yes,no,
-1061,Lexicographically Smallest Equivalent String,medium,lexicographically-smallest-equivalent-string,no,no,
+1061,Lexicographically Smallest Equivalent String,medium,lexicographically-smallest-equivalent-string,no,yes,leetcode/medium/LexicographicallySmallestEquivalentString.java
 1062,Longest Repeating Substring,medium,longest-repeating-substring,yes,no,
 1063,Number of Valid Subarrays,hard,number-of-valid-subarrays,yes,no,
 1064,Fixed Point,easy,fixed-point,yes,no,
@@ -1231,7 +1231,7 @@
 1230,Toss Strange Coins,medium,toss-strange-coins,yes,no,
 1231,Divide Chocolate,hard,divide-chocolate,yes,no,
 1232,Check If It Is a Straight Line,easy,check-if-it-is-a-straight-line,no,yes,leetcode/easy/CheckStraightLine.java
-1233,Remove Sub-Folders from the Filesystem,medium,remove-sub-folders-from-the-filesystem,no,no,
+1233,Remove Sub-Folders from the Filesystem,medium,remove-sub-folders-from-the-filesystem,no,yes,leetcode/medium/RemoveSubFoldersFromTheFilesystem.java
 1234,Replace the Substring for Balanced String,medium,replace-the-substring-for-balanced-string,no,no,
 1235,Maximum Profit in Job Scheduling,hard,maximum-profit-in-job-scheduling,no,no,
 1236,Web Crawler,medium,web-crawler,yes,no,
@@ -1340,7 +1340,7 @@
 1339,Maximum Product of Splitted Binary Tree,medium,maximum-product-of-splitted-binary-tree,no,no,
 1340,Jump Game V,hard,jump-game-v,no,no,
 1341,Movie Rating,medium,movie-rating,no,no,
-1342,Number of Steps to Reduce a Number to Zero,easy,number-of-steps-to-reduce-a-number-to-zero,no,no,
+1342,Number of Steps to Reduce a Number to Zero,easy,number-of-steps-to-reduce-a-number-to-zero,no,yes,leetcode/easy/NumberOfStepsToReduceANumberToZero.java
 1343,Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold,medium,number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold,no,no,
 1344,Angle Between Hands of a Clock,medium,angle-between-hands-of-a-clock,no,no,
 1345,Jump Game IV,hard,jump-game-iv,no,no,
@@ -1439,7 +1439,7 @@
 1438,Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit,medium,longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit,no,no,
 1439,Find the Kth Smallest Sum of a Matrix With Sorted Rows,hard,find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows,no,no,
 1440,Evaluate Boolean Expression,medium,evaluate-boolean-expression,yes,no,
-1441,Build an Array With Stack Operations,medium,build-an-array-with-stack-operations,no,no,
+1441,Build an Array With Stack Operations,medium,build-an-array-with-stack-operations,no,yes,leetcode/medium/BuildAnArrayWithStackOperations.java
 1442,Count Triplets That Can Form Two Arrays of Equal XOR,medium,count-triplets-that-can-form-two-arrays-of-equal-xor,no,no,
 1443,Minimum Time to Collect All Apples in a Tree,medium,minimum-time-to-collect-all-apples-in-a-tree,no,yes,leetcode/medium/MinimumTimeToCollectAllApplesInATree.java
 1444,Number of Ways of Cutting a Pizza,hard,number-of-ways-of-cutting-a-pizza,no,no,
@@ -1478,7 +1478,7 @@
 1477,Find Two Non-overlapping Sub-arrays Each With Target Sum,medium,find-two-non-overlapping-sub-arrays-each-with-target-sum,no,no,
 1478,Allocate Mailboxes,hard,allocate-mailboxes,no,no,
 1479,Sales by Day of the Week,hard,sales-by-day-of-the-week,yes,no,
-1480,Running Sum of 1d Array,easy,running-sum-of-1d-array,no,no,
+1480,Running Sum of 1d Array,easy,running-sum-of-1d-array,no,yes,leetcode/easy/RunningSumOf1dArray.java
 1481,Least Number of Unique Integers after K Removals,medium,least-number-of-unique-integers-after-k-removals,no,no,
 1482,Minimum Number of Days to Make m Bouquets,medium,minimum-number-of-days-to-make-m-bouquets,no,no,
 1483,Kth Ancestor of a Tree Node,hard,kth-ancestor-of-a-tree-node,no,no,
@@ -1500,7 +1500,7 @@
 1499,Max Value of Equation,hard,max-value-of-equation,no,no,
 1500,Design a File Sharing System,medium,design-a-file-sharing-system,yes,no,
 1501,Countries You Can Safely Invest In,medium,countries-you-can-safely-invest-in,yes,no,
-1502,Can Make Arithmetic Progression From Sequence,easy,can-make-arithmetic-progression-from-sequence,no,no,
+1502,Can Make Arithmetic Progression From Sequence,easy,can-make-arithmetic-progression-from-sequence,no,yes,leetcode/easy/CanMakeArithmeticProgressionFromSequence.java
 1503,Last Moment Before All Ants Fall Out of a Plank,medium,last-moment-before-all-ants-fall-out-of-a-plank,no,no,
 1504,Count Submatrices With All Ones,medium,count-submatrices-with-all-ones,no,no,
 1505,Minimum Possible Integer After at Most K Adjacent Swaps On Digits,hard,minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits,no,no,
@@ -1670,7 +1670,7 @@
 1669,Merge In Between Linked Lists,medium,merge-in-between-linked-lists,no,yes,leetcode/medium/MergeInBetween.java
 1670,Design Front Middle Back Queue,medium,design-front-middle-back-queue,no,no,
 1671,Minimum Number of Removals to Make Mountain Array,hard,minimum-number-of-removals-to-make-mountain-array,no,no,
-1672,Richest Customer Wealth,easy,richest-customer-wealth,no,no,
+1672,Richest Customer Wealth,easy,richest-customer-wealth,no,yes,leetcode/easy/RichestCustomerWealth.java
 1673,Find the Most Competitive Subsequence,medium,find-the-most-competitive-subsequence,no,no,
 1674,Minimum Moves to Make Array Complementary,medium,minimum-moves-to-make-array-complementary,no,no,
 1675,Minimize Deviation in Array,hard,minimize-deviation-in-array,no,no,
@@ -1830,7 +1830,7 @@
 1829,Maximum XOR for Each Query,medium,maximum-xor-for-each-query,no,no,
 1830,Minimum Number of Operations to Make String Sorted,hard,minimum-number-of-operations-to-make-string-sorted,no,no,
 1831,Maximum Transaction Each Day,medium,maximum-transaction-each-day,yes,no,
-1832,Check if the Sentence Is Pangram,easy,check-if-the-sentence-is-pangram,no,no,
+1832,Check if the Sentence Is Pangram,easy,check-if-the-sentence-is-pangram,no,yes,leetcode/easy/CheckIfTheSentenceIsPangram.java
 1833,Maximum Ice Cream Bars,medium,maximum-ice-cream-bars,no,yes,leetcode/medium/MaximumIceCreamBars.java
 1834,Single-Threaded CPU,medium,single-threaded-cpu,no,no,
 1835,Find XOR Sum of All Pairs Bitwise AND,hard,find-xor-sum-of-all-pairs-bitwise-and,no,no,
@@ -1901,7 +1901,7 @@
 1900,The Earliest and Latest Rounds Where Players Compete,hard,the-earliest-and-latest-rounds-where-players-compete,no,no,
 1901,Find a Peak Element II,medium,find-a-peak-element-ii,no,no,
 1902,Depth of BST Given Insertion Order,medium,depth-of-bst-given-insertion-order,yes,no,
-1903,Largest Odd Number in String,easy,largest-odd-number-in-string,no,no,
+1903,Largest Odd Number in String,easy,largest-odd-number-in-string,no,yes,leetcode/easy/LargestOddNumberInString.java
 1904,The Number of Full Rounds You Have Played,medium,the-number-of-full-rounds-you-have-played,no,no,
 1905,Count Sub Islands,medium,count-sub-islands,no,no,
 1906,Minimum Absolute Difference Queries,medium,minimum-absolute-difference-queries,no,no,
@@ -2069,7 +2069,7 @@
 2068,Check Whether Two Strings are Almost Equivalent,easy,check-whether-two-strings-are-almost-equivalent,no,yes,leetcode/easy/CheckAlmostEquivalent.java
 2069,Walking Robot Simulation II,medium,walking-robot-simulation-ii,no,no,
 2070,Most Beautiful Item for Each Query,medium,most-beautiful-item-for-each-query,no,no,
-2071,Maximum Number of Tasks You Can Assign,hard,maximum-number-of-tasks-you-can-assign,no,no,
+2071,Maximum Number of Tasks You Can Assign,hard,maximum-number-of-tasks-you-can-assign,no,yes,leetcode/hard/MaximumNumberOfTasksYouCanAssign.java
 2072,The Winner University,easy,the-winner-university,yes,no,
 2073,Time Needed to Buy Tickets,easy,time-needed-to-buy-tickets,no,yes,leetcode/easy/TimeNeededToBuyTickets.java
 2074,Reverse Nodes in Even Length Groups,medium,reverse-nodes-in-even-length-groups,no,no,
@@ -2138,7 +2138,7 @@
 2137,Pour Water Between Buckets to Make Water Levels Equal,medium,pour-water-between-buckets-to-make-water-levels-equal,yes,no,
 2138,Divide a String Into Groups of Size k,easy,divide-a-string-into-groups-of-size-k,no,yes,leetcode/easy/DivideString.java
 2139,Minimum Moves to Reach Target Score,medium,minimum-moves-to-reach-target-score,no,no,
-2140,Solving Questions With Brainpower,medium,solving-questions-with-brainpower,no,no,
+2140,Solving Questions With Brainpower,medium,solving-questions-with-brainpower,no,yes,leetcode/medium/SolvingQuestionsWithBrainpower.java
 2141,Maximum Running Time of N Computers,hard,maximum-running-time-of-n-computers,no,no,
 2142,The Number of Passengers in Each Bus I,medium,the-number-of-passengers-in-each-bus-i,yes,no,
 2143,Choose Numbers From Two Arrays in Range,hard,choose-numbers-from-two-arrays-in-range,yes,no,
@@ -2233,7 +2233,7 @@
 2232,Minimize Result by Adding Parentheses to Expression,medium,minimize-result-by-adding-parentheses-to-expression,no,no,
 2233,Maximum Product After K Increments,medium,maximum-product-after-k-increments,no,no,
 2234,Maximum Total Beauty of the Gardens,hard,maximum-total-beauty-of-the-gardens,no,no,
-2235,Add Two Integers,easy,add-two-integers,no,no,
+2235,Add Two Integers,easy,add-two-integers,no,yes,leetcode/easy/AddTwoIntegers.java
 2236,Root Equals Sum of Children,easy,root-equals-sum-of-children,no,yes,leetcode/easy/CheckTree.java
 2237,Count Positions on Street With Required Brightness,medium,count-positions-on-street-with-required-brightness,yes,no,
 2238,Number of Times a Driver Was a Passenger,medium,number-of-times-a-driver-was-a-passenger,yes,no,
@@ -2300,7 +2300,7 @@
 2299,Strong Password Checker II,easy,strong-password-checker-ii,no,no,
 2300,Successful Pairs of Spells and Potions,medium,successful-pairs-of-spells-and-potions,no,no,
 2301,Match Substring After Replacement,hard,match-substring-after-replacement,no,no,
-2302,Count Subarrays With Score Less Than K,hard,count-subarrays-with-score-less-than-k,no,no,
+2302,Count Subarrays With Score Less Than K,hard,count-subarrays-with-score-less-than-k,no,yes,leetcode/hard/CountSubarraysWithScoreLessThanK.java
 2303,Calculate Amount Paid in Taxes,easy,calculate-amount-paid-in-taxes,no,yes,leetcode/easy/CalculateTax.java
 2304,Minimum Path Cost in a Grid,medium,minimum-path-cost-in-a-grid,no,no,
 2305,Fair Distribution of Cookies,medium,fair-distribution-of-cookies,no,no,
@@ -2419,7 +2419,7 @@
 2418,Sort the People,easy,sort-the-people,no,yes,leetcode/easy/SortThePeople.java
 2419,Longest Subarray With Maximum Bitwise AND,medium,longest-subarray-with-maximum-bitwise-and,no,no,
 2420,Find All Good Indices,medium,find-all-good-indices,no,no,
-2421,Number of Good Paths,hard,number-of-good-paths,no,no,
+2421,Number of Good Paths,hard,number-of-good-paths,no,yes,leetcode/hard/NumberOfGoodPaths.java
 2422,Merge Operations to Turn Array Into a Palindrome,medium,merge-operations-to-turn-array-into-a-palindrome,yes,no,
 2423,Remove Letter To Equalize Frequency,easy,remove-letter-to-equalize-frequency,no,yes,leetcode/easy/RemoveLetterToEqualizeFrequency.java
 2424,Longest Uploaded Prefix,medium,longest-uploaded-prefix,no,no,
@@ -3362,7 +3362,7 @@
 3361,Shift Distance Between Two Strings,medium,shift-distance-between-two-strings,no,no,
 3362,Zero Array Transformation III,medium,zero-array-transformation-iii,no,no,
 3363,Find the Maximum Number of Fruits Collected,hard,find-the-maximum-number-of-fruits-collected,no,no,
-3364,Minimum Positive Sum Subarray ,easy,minimum-positive-sum-subarray,no,no,
+3364,Minimum Positive Sum Subarray ,easy,minimum-positive-sum-subarray,no,yes,leetcode/easy/MinimumSumSubarray.java
 3365,Rearrange K Substrings to Form Target String,medium,rearrange-k-substrings-to-form-target-string,no,no,
 3366,Minimum Array Sum,medium,minimum-array-sum,no,no,
 3367,Maximize Sum of Weights after Edge Removals,hard,maximize-sum-of-weights-after-edge-removals,no,no,
@@ -3384,7 +3384,7 @@
 3383,Minimum Runes to Add to Cast Spell,hard,minimum-runes-to-add-to-cast-spell,yes,no,
 3384,Team Dominance by Pass Success,hard,team-dominance-by-pass-success,yes,no,
 3385,Minimum Time to Break Locks II,hard,minimum-time-to-break-locks-ii,yes,no,
-3386,Button with Longest Push Time,easy,button-with-longest-push-time,no,no,
+3386,Button with Longest Push Time,easy,button-with-longest-push-time,no,yes,leetcode/easy/ButtonWithLongestPushTime.java
 3387,Maximize Amount After Two Days of Conversions,medium,maximize-amount-after-two-days-of-conversions,no,no,
 3388,Count Beautiful Splits in an Array,medium,count-beautiful-splits-in-an-array,no,no,
 3389,Minimum Operations to Make Character Frequencies Equal,hard,minimum-operations-to-make-character-frequencies-equal,no,no,
@@ -3510,13 +3510,13 @@
 3509,Maximum Product of Subsequences With an Alternating Sum Equal to K,hard,maximum-product-of-subsequences-with-an-alternating-sum-equal-to-k,no,no,
 3510,Minimum Pair Removal to Sort Array II,hard,minimum-pair-removal-to-sort-array-ii,no,no,
 3511,Make a Positive Array,medium,make-a-positive-array,yes,no,
-3512,Minimum Operations to Make Array Sum Divisible by K,easy,minimum-operations-to-make-array-sum-divisible-by-k,no,no,
+3512,Minimum Operations to Make Array Sum Divisible by K,easy,minimum-operations-to-make-array-sum-divisible-by-k,no,yes,leetcode/easy/MinimumOperationsToMakeArraySumDivisibleByK.java
 3513,Number of Unique XOR Triplets I,medium,number-of-unique-xor-triplets-i,no,no,
 3514,Number of Unique XOR Triplets II,medium,number-of-unique-xor-triplets-ii,no,no,
 3515,Shortest Path in a Weighted Tree,hard,shortest-path-in-a-weighted-tree,no,no,
 3516,Find Closest Person,easy,find-closest-person,no,yes,leetcode/easy/FindClosestPerson.java
 3517,Smallest Palindromic Rearrangement I,medium,smallest-palindromic-rearrangement-i,no,yes,leetcode/medium/SmallestPalindrome.java
-3518,Smallest Palindromic Rearrangement II,hard,smallest-palindromic-rearrangement-ii,no,no,
+3518,Smallest Palindromic Rearrangement II,hard,smallest-palindromic-rearrangement-ii,no,yes,leetcode/hard/SmallestPalindromicRearrangementIi.java
 3519,Count Numbers with Non-Decreasing Digits ,hard,count-numbers-with-non-decreasing-digits,no,no,
 3520,Minimum Threshold for Inversion Pairs Count,medium,minimum-threshold-for-inversion-pairs-count,yes,no,
 3521,Find Product Recommendation Pairs,medium,find-product-recommendation-pairs,no,no,
@@ -3580,7 +3580,7 @@
 3579,Minimum Steps to Convert String with Operations,hard,minimum-steps-to-convert-string-with-operations,no,no,
 3580,Find Consistently Improving Employees,medium,find-consistently-improving-employees,no,no,
 3581,Count Odd Letters from Number,easy,count-odd-letters-from-number,yes,no,
-3582,Generate Tag for Video Caption,easy,generate-tag-for-video-caption,no,no,
+3582,Generate Tag for Video Caption,easy,generate-tag-for-video-caption,no,yes,leetcode/easy/GenerateTagForVideoCaption.java
 3583,Count Special Triplets,medium,count-special-triplets,no,no,
 3584,Maximum Product of First and Last Elements of a Subsequence,medium,maximum-product-of-first-and-last-elements-of-a-subsequence,no,no,
 3585,Find Weighted Median Node in Tree,hard,find-weighted-median-node-in-tree,no,no,
