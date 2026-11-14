@@ -1002,7 +1002,7 @@
 1001,Grid Illumination,hard,grid-illumination,no,no,
 1002,Find Common Characters,easy,find-common-characters,no,yes,leetcode/FindCommonCharacters.java; leetcode/easy/FindCommonCharacters.java
 1003,Check If Word Is Valid After Substitutions,medium,check-if-word-is-valid-after-substitutions,no,no,
-1004,Max Consecutive Ones III,medium,max-consecutive-ones-iii,no,no,
+1004,Max Consecutive Ones III,medium,max-consecutive-ones-iii,no,yes,leetcode/medium/MaxConsecutiveOnesIII.java
 1005,Maximize Sum Of Array After K Negations,easy,maximize-sum-of-array-after-k-negations,no,yes,leetcode/easy/LargestSumAfterKNegations.java
 1006,Clumsy Factorial,medium,clumsy-factorial,no,no,
 1007,Minimum Domino Rotations For Equal Row,medium,minimum-domino-rotations-for-equal-row,no,yes,leetcode/medium/DominoRotations.java
@@ -1454,7 +1454,7 @@
 1453,Maximum Number of Darts Inside of a Circular Dartboard,hard,maximum-number-of-darts-inside-of-a-circular-dartboard,no,no,
 1454,Active Users,medium,active-users,yes,no,
 1455,Check If a Word Occurs As a Prefix of Any Word in a Sentence,easy,check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence,no,yes,leetcode/easy/IsPrefixOfWord.java
-1456,Maximum Number of Vowels in a Substring of Given Length,medium,maximum-number-of-vowels-in-a-substring-of-given-length,no,no,
+1456,Maximum Number of Vowels in a Substring of Given Length,medium,maximum-number-of-vowels-in-a-substring-of-given-length,no,yes,leetcode/medium/MaxNumbersOfVowel.java
 1457,Pseudo-Palindromic Paths in a Binary Tree,medium,pseudo-palindromic-paths-in-a-binary-tree,no,no,
 1458,Max Dot Product of Two Subsequences,hard,max-dot-product-of-two-subsequences,no,no,
 1459,Rectangles Area,medium,rectangles-area,yes,no,
@@ -1677,7 +1677,7 @@
 1676,Lowest Common Ancestor of a Binary Tree IV,medium,lowest-common-ancestor-of-a-binary-tree-iv,yes,no,
 1677,Product's Worth Over Invoices,easy,products-worth-over-invoices,yes,no,
 1678,Goal Parser Interpretation,easy,goal-parser-interpretation,no,yes,leetcode/easy/GoalParserInterpretation.java
-1679,Max Number of K-Sum Pairs,medium,max-number-of-k-sum-pairs,no,yes,leetcode/medium/MaxNumberofKSumPairs.java
+1679,Max Number of K-Sum Pairs,medium,max-number-of-k-sum-pairs,no,yes,leetcode/medium/MaxNumberOfKSumPairs.java
 1680,Concatenation of Consecutive Binary Numbers,medium,concatenation-of-consecutive-binary-numbers,no,no,
 1681,Minimum Incompatibility,hard,minimum-incompatibility,no,no,
 1682,Longest Palindromic Subsequence II,medium,longest-palindromic-subsequence-ii,yes,no,

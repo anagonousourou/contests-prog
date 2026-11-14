@@ -8,6 +8,7 @@ import java.util.List;
 public class MaximumTwinSum {
 
     // https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/submissions/1421813798/
+    // https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/submissions/2195851061/?envType=study-plan-v2&envId=leetcode-75
     public int pairSum(ListNode head) {
         List<Integer> values = new ArrayList<>();
         for (var i = head; i != null; i = i.next) {

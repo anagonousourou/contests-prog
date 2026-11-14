@@ -3,6 +3,7 @@ package com.spa.leetcode.easy;
 public class Tribonacci {
 
     // https://leetcode.com/problems/n-th-tribonacci-number/submissions/1624247871/
+    // https://leetcode.com/problems/n-th-tribonacci-number/submissions/2195847031/?envType=study-plan-v2&envId=leetcode-75
 
     int[] cache = new int[37];
 
