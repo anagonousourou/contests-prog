@@ -20,6 +20,14 @@ This repository is for trying out languages, algorithms and writing down notes o
 - Add tracked files to current commit : `git commit --amend --no-edit`
 - Turn the repo to zip : `git archive -o <name>.zip HEAD`
 
+## Exercism JavaScript / ReasonML / WebAssembly exercises
+Each exercise keeps its own `package.json`, so `npm install && npm test` still works
+from the exercise directory. Lockfiles are intentionally **not** committed (the
+upstream Exercism tracks dropped theirs): they pinned hundreds of vulnerable
+*dev-only* transitive dependencies, which generated a constant stream of Dependabot
+alerts without protecting anything. Dependencies are therefore resolved on install,
+and only direct dependencies are tracked by Dependabot.
+
 ## Funny
 - [Software, Faster • Dan North • GOTO 2016](https://youtu.be/USc-yLHXNUg?t=625)
 - ["Design in Practice in Practice" by Alex Miller](https://youtu.be/VBnGhQOyTM4?list=PLZdCLR02grLr4TWUP6qeLxIn4OJLNwKNZ&t=1214)
